@@ -121,7 +121,15 @@ describe('syncProjectFromCode – ID-Erhalt', () => {
     const chordsBefore = tracks()[1]!.chain.map((b) => b.type);
     expect(edit('.lpf(1800)', '.lpf(1200)')).toBe('changed');
     expect(tracks()[1]!.chain.map((b) => b.type)).toEqual(chordsBefore);
-    load('house');
+    // House-Bass als Code-Quelle (die Vorlage selbst nutzt inzwischen einen Melodie-Block)
+    load('house', {}, (ast) => {
+      const i = ast.nodes.findIndex((n) => n.id === 'house-t3-b1');
+      ast.nodes[i] = {
+        id: 'house-t3-b1',
+        type: 'code',
+        params: { code: 'note("<a1 d2 e2 a1>").struct("[~ x ~ x]*4").s("sawtooth")' },
+      } as BlockNode;
+    });
     const bass = tracks()[2]!;
     expect(bass.chain[0]!.type).toBe('code');
     expect(edit('.lpf(600)', '.lpf(700)')).toBe('changed');

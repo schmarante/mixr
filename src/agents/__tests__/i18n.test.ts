@@ -252,6 +252,10 @@ describe('Vorlagen-Texte', () => {
       expectText(`templates.${tpl.id}.description`);
       expect(Object.keys(raw('en', `templates.${tpl.id}.tracks`) as object).sort()).toEqual([...new Set(tpl.trackKeys)].sort());
       for (const key of tpl.trackKeys) expectText(`templates.${tpl.id}.tracks.${key}`);
+      if (tpl.sectionKeys) {
+        expect(Object.keys(raw('en', `templates.${tpl.id}.sections`) as object).sort()).toEqual([...new Set(tpl.sectionKeys)].sort());
+        for (const key of tpl.sectionKeys) expectText(`templates.${tpl.id}.sections.${key}`);
+      }
     }
     expect(Object.keys(enTemplates).sort()).toEqual(TEMPLATES.map((t) => t.id).sort());
   });

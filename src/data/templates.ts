@@ -1,7 +1,8 @@
 import { DRUM_INSTRUMENTS, defaultParams } from '../blocks/catalog';
-import { templateTrackName } from '../blocks/text';
+import { templateSectionName, templateTrackName } from '../blocks/text';
 import { translateDynamic } from '../i18n';
 import type {
+  Arrangement,
   BlockNode,
   BlockType,
   DrumGridValue,
@@ -25,6 +26,8 @@ export interface ProjectTemplate {
   icon: string;
   /** Text-Keys der Spuren, in Reihenfolge (Spur-ID `<id>-t<i>` ↔ trackKeys[i-1]). */
   trackKeys: string[];
+  /** Text-Keys der Song-Abschnitte (Abschnitt-ID `<id>-s<i>` ↔ sectionKeys[i-1]); nur mit Arrangement. */
+  sectionKeys?: string[];
   settings: ProjectSettings;
   ast: VisualAst;
 }
@@ -40,6 +43,14 @@ interface BlockSpec {
   bypassed?: boolean;
 }
 
+/** Song-Abschnitt: Länge in Takten und welche Spuren spielen (true oder Varianten-Code wie ".hpf(700)"). */
+interface SectionSpec {
+  /** Text-Key des Abschnittsnamens (templates.<id>.sections.<key>), darf sich wiederholen. */
+  key: string;
+  cycles: number;
+  play: Record<string, true | string>;
+}
+
 interface TrackSpec {
   /** Text-Key des Spurnamens (templates.<id>.tracks.<key>). */
   key: string;
@@ -53,7 +64,11 @@ interface TrackSpec {
  * Spur `<tpl>-t<i>`, Block `<tpl>-t<i>-b<j>`, Kanten wie in actions.ts
  * (track → block1 → block2 …, ID `e-<source>-<target>`).
  */
-function buildAst(templateId: string, tracks: TrackSpec[]): Pick<ProjectTemplate, 'ast' | 'trackKeys'> {
+function buildAst(
+  templateId: string,
+  tracks: TrackSpec[],
+  sections?: SectionSpec[],
+): Pick<ProjectTemplate, 'ast' | 'trackKeys' | 'sectionKeys'> {
   const nodes: VisualAst['nodes'] = [];
   const edges: VisualEdge[] = [];
   tracks.forEach((spec, i) => {
@@ -75,7 +90,23 @@ function buildAst(templateId: string, tracks: TrackSpec[]): Pick<ProjectTemplate
       edges.push({ id: `e-${ids[k]}-${ids[k + 1]}`, source: ids[k]!, target: ids[k + 1]! });
     }
   });
-  return { ast: { nodes, edges }, trackKeys: tracks.map((t) => t.key) };
+  const trackKeys = tracks.map((t) => t.key);
+  if (!sections) return { ast: { nodes, edges }, trackKeys };
+
+  // Arrangement: jede Spur bekommt eine Zeile (fehlender Abschnitt = aus)
+  const arrangement: Arrangement = { sections: [], cells: {}, loopSection: null };
+  tracks.forEach((_t, i) => (arrangement.cells[`${templateId}-t${i + 1}`] = {}));
+  sections.forEach((spec, i) => {
+    const id = `${templateId}-s${i + 1}`;
+    const name = translateDynamic('en', `templates.${templateId}.sections.${spec.key}`) ?? spec.key;
+    arrangement.sections.push({ id, cycles: spec.cycles, name });
+    for (const [key, play] of Object.entries(spec.play)) {
+      const index = trackKeys.indexOf(key);
+      if (index < 0) throw new Error(`Vorlage ${templateId}: unbekannte Spur „${key}“ in Abschnitt ${spec.key}`);
+      arrangement.cells[`${templateId}-t${index + 1}`]![id] = play === true ? { on: true } : { on: true, code: play };
+    }
+  });
+  return { ast: { nodes, edges, arrangement }, trackKeys, sectionKeys: sections.map((s) => s.key) };
 }
 
 /**
@@ -91,10 +122,11 @@ function drums(rows: Partial<Record<string, string>>, steps = 16): DrumGridValue
   return { steps, rows: out };
 }
 
-/** Noten-Raster: Zahl = Skalenstufe, Array = Akkord, null = Pause. */
-function notes(line: Array<number | number[] | null>): NoteGridValue {
+/** Noten-Raster: Zahl = Skalenstufe, Array = Akkord, null = Pause. Mehrere Takte: `line` = steps × bars. */
+function notes(line: Array<number | number[] | null>, bars = 1): NoteGridValue {
   return {
-    steps: line.length,
+    steps: line.length / bars,
+    ...(bars > 1 ? { bars } : {}),
     cells: line.map((c) => (c === null ? [] : Array.isArray(c) ? [...c] : [c])),
   };
 }
@@ -269,7 +301,25 @@ const house: ProjectTemplate = {
       color: 'lime',
       volume: 0.6,
       blocks: [
-        { type: 'code', params: { code: 'note("<a1 d2 e2 a1>").struct("[~ x ~ x]*4").s("sawtooth")' } },
+        {
+          type: 'melody',
+          // Offbeat-Sechzehntel, ein Grundton pro Takt (A-Moll ab A1: 0 = A1, 3 = D2, 4 = E2).
+          params: {
+            grid: notes(
+              [
+                ...[_, 0, _, 0, _, 0, _, 0, _, 0, _, 0, _, 0, _, 0],
+                ...[_, 3, _, 3, _, 3, _, 3, _, 3, _, 3, _, 3, _, 3],
+                ...[_, 4, _, 4, _, 4, _, 4, _, 4, _, 4, _, 4, _, 4],
+                ...[_, 0, _, 0, _, 0, _, 0, _, 0, _, 0, _, 0, _, 0],
+              ],
+              4,
+            ),
+            sound: 'sawtooth',
+            root: 'A',
+            scale: 'minor',
+            octave: '1',
+          },
+        },
         { type: 'lpf', params: { cutoff: 600, resonance: 6 } },
         { type: 'adsr', params: { attack: 0, decay: 0.1, sustain: 0.4, release: 0.05 } },
       ],
@@ -417,7 +467,142 @@ const synthwave: ProjectTemplate = {
   ]),
 };
 
-export const TEMPLATES: ProjectTemplate[] = [techno, lofi, house, ambient, synthwave];
+/**
+ * Riff-Raster aus lesbaren Takt-Strings: Zeichen aus `voicing` = Anschlag (Stufen),
+ * "-" = vorherigen Ton halten, alles andere = Pause.
+ */
+function riff(bars: string[], voicing: Record<string, number[]>): NoteGridValue {
+  const line = bars.join('');
+  const cells: number[][] = [];
+  const lengths: number[][] = [];
+  for (let i = 0; i < line.length; i++) {
+    const hit = voicing[line[i]!];
+    let len = 1;
+    while (hit && line[i + len] === '-') len++;
+    cells.push(hit ? [...hit] : []);
+    lengths.push(hit ? hit.map(() => len) : []);
+  }
+  return { steps: line.length / bars.length, bars: bars.length, cells, lengths };
+}
+
+// 16-Bit-Rock in E-Moll (Stufen: 0 = E, 3 = A, 4 = B, 7 = E eine Oktave höher).
+// Statt echte Gitarren nachzuahmen: Square/Sägezahn, Bitcrusher und Echo im 16-Bit-Stil.
+// Boogie-Bass mit Oktavsprung pro Takt: Grundton, Grundton, Oktave, Grundton, kl. Septime, Grundton, Quinte, Quarte.
+const boogie = (root: number) => [0, 0, 7, 0, 6, 0, 4, 3].map((d) => root + d);
+// Akkordfolge: E | E | A | B (Turnaround)
+const CHIP_CHORDS = { E: [0, 4, 7], A: [3, 7, 10], B: [4, 8, 11] };
+const DIGITS = Object.fromEntries(Array.from({ length: 10 }, (_, d) => [String(d), [d]]));
+/** Bitcrusher + reduzierte Samplerate: der körnige 16-Bit-Klang. */
+const CHIP_FX: BlockSpec[] = [
+  { type: 'crush', params: { bits: 10 } },
+  { type: 'coarse', params: { amount: 2 } },
+];
+
+const chiprock: ProjectTemplate = {
+  id: 'chiprock',
+  icon: '🏁',
+  settings: { bpm: 150 },
+  ...buildAst(
+    'chiprock',
+    [
+      {
+        key: 'beat',
+        color: 'amber',
+        volume: 0.85,
+        blocks: [
+          {
+            type: 'drums',
+            params: {
+              grid: drums({
+                bd: 'x-----x-x-x-----',
+                sd: '----x-------x---',
+                hh: 'x-x-x-x-x-x-x-x-',
+              }),
+              bank: 'analog',
+            },
+          },
+          ...CHIP_FX,
+        ],
+      },
+      {
+        key: 'bass',
+        color: 'violet',
+        volume: 0.6,
+        blocks: [
+          {
+            type: 'melody',
+            params: {
+              grid: notes([...boogie(0), ...boogie(0), ...boogie(3), ...boogie(4)], 4),
+              sound: 'sawtooth',
+              root: 'E',
+              scale: 'minor',
+              octave: '1',
+            },
+          },
+          { type: 'lpf', params: { cutoff: 1200, resonance: 4 } },
+          { type: 'adsr', params: { attack: 0, decay: 0.12, sustain: 0.5, release: 0.05 } },
+          ...CHIP_FX,
+        ],
+      },
+      {
+        key: 'stabs',
+        color: 'rose',
+        volume: 0.35,
+        blocks: [
+          {
+            type: 'melody',
+            // Synkopierte Akkord-Stabs (3 + 3 + 2), im letzten Takt nachgeschoben
+            params: {
+              grid: riff(['E..E..E.', 'E..E..E.', 'A..A..A.', 'B..B.B.B'], CHIP_CHORDS),
+              sound: 'square',
+              root: 'E',
+              scale: 'minor',
+              octave: '3',
+            },
+          },
+          { type: 'adsr', params: { attack: 0, decay: 0.1, sustain: 0.2, release: 0.05 } },
+          { type: 'lpf', params: { cutoff: 2600 } },
+          ...CHIP_FX,
+          { type: 'pan', params: { position: 0.35 } },
+        ],
+      },
+      {
+        key: 'lead',
+        color: 'sky',
+        volume: 0.35,
+        blocks: [
+          {
+            type: 'melody',
+            // Pentatonik-Lead (0 = E4, 3 = B4, 5 = E5, 8 = B5): B E G A | B – A G | A – G E | B D B –
+            params: {
+              grid: riff(['3-5-6-7-', '8---7-6-', '7---6-5-', '3-4-3---'], DIGITS),
+              sound: 'square',
+              root: 'E',
+              scale: 'minor:pentatonic',
+              octave: '4',
+            },
+          },
+          { type: 'vib', params: { rate: 6, depth: 0.2 } },
+          { type: 'adsr', params: { attack: 0.005, decay: 0.2, sustain: 0.7, release: 0.1 } },
+          { type: 'lpf', params: { cutoff: 4000 } },
+          { type: 'crush', params: { bits: 10 } },
+          // Echo
+          { type: 'delay', params: { amount: 0.4, time: '0.375', feedback: 0.5 } },
+          { type: 'pan', params: { position: 0.65 } },
+        ],
+      },
+    ],
+    [
+      { key: 'intro', cycles: 4, play: { bass: true } },
+      { key: 'riff', cycles: 8, play: { beat: true, bass: true, stabs: true } },
+      { key: 'lead', cycles: 8, play: { beat: true, bass: true, stabs: true, lead: true } },
+      { key: 'break', cycles: 4, play: { beat: '.ply("<1 1 1 2>")', bass: '.lpf(500)' } },
+      { key: 'lead', cycles: 8, play: { beat: true, bass: true, stabs: true, lead: true } },
+    ],
+  ),
+};
+
+export const TEMPLATES: ProjectTemplate[] = [techno, lofi, house, ambient, synthwave, chiprock];
 
 /**
  * Projekt einer Vorlage zum Laden: tiefe Kopie, Spurnamen in der aktuellen
@@ -432,6 +617,10 @@ export function templateProject(id: string): { ast: VisualAst; settings: Project
     const index = Number(/-t(\d+)$/.exec(n.id)?.[1]) - 1;
     const key = tpl.trackKeys[index];
     return key ? { ...n, params: { ...n.params, name: templateTrackName(id, key) } } : n;
+  });
+  ast.arrangement?.sections.forEach((s, i) => {
+    const key = tpl.sectionKeys?.[i];
+    if (key) s.name = templateSectionName(id, key);
   });
   return { ast, settings: { ...tpl.settings } };
 }

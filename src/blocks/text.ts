@@ -104,3 +104,8 @@ export function templateDescription(id: string): string {
 export function templateTrackName(id: string, track: string): string {
   return tDynamic(`templates.${id}.tracks.${track}`) ?? track;
 }
+
+/** Abschnittsname im Song-Ablauf einer Vorlage. */
+export function templateSectionName(id: string, section: string): string {
+  return tDynamic(`templates.${id}.sections.${section}`) ?? section;
+}

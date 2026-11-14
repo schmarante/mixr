@@ -14,18 +14,18 @@ function soloTrack(ast: VisualAst, trackId: string): VisualAst {
 }
 
 describe('Vorlagen', () => {
-  it('4–5 Vorlagen mit eindeutigen IDs', () => {
+  it('4–6 Vorlagen mit eindeutigen IDs', () => {
     expect(TEMPLATES.length).toBeGreaterThanOrEqual(4);
-    expect(TEMPLATES.length).toBeLessThanOrEqual(5);
+    expect(TEMPLATES.length).toBeLessThanOrEqual(6);
     expect(new Set(TEMPLATES.map((t) => t.id)).size).toBe(TEMPLATES.length);
   });
 
   describe.each(TEMPLATES.map((t) => [t.id, t] as const))('%s', (_name, tpl) => {
     const tracks = resolveTracks(tpl.ast);
 
-    it('Struktur: 2–4 Spuren, Quelle vorne, deterministische IDs, Kanten wie actions.ts', () => {
+    it('Struktur: 2–4 Spuren (mit Song-Ablauf bis 6), Quelle vorne, deterministische IDs, Kanten wie actions.ts', () => {
       expect(tracks.length).toBeGreaterThanOrEqual(2);
-      expect(tracks.length).toBeLessThanOrEqual(4);
+      expect(tracks.length).toBeLessThanOrEqual(tpl.ast.arrangement ? 6 : 4);
       const ids = tpl.ast.nodes.map((n) => n.id);
       expect(new Set(ids).size).toBe(ids.length);
       for (const e of tpl.ast.edges) expect(e.id).toBe(`e-${e.source}-${e.target}`);
@@ -64,12 +64,30 @@ describe('Vorlagen', () => {
       expect(() => transpile(r.code)).not.toThrow();
     });
 
+    it('Song-Ablauf: jede Spur hat eine Zeile, Abschnitte mit Namen, jede Spur spielt irgendwo', () => {
+      const arr = tpl.ast.arrangement;
+      if (!arr) return;
+      expect(tpl.sectionKeys).toHaveLength(arr.sections.length);
+      arr.sections.forEach((s, i) => {
+        expect(s.id).toBe(`${tpl.id}-s${i + 1}`);
+        expect(s.cycles).toBeGreaterThan(0);
+        expect(s.name).toBeTruthy();
+      });
+      for (const t of tracks) {
+        const row = arr.cells[t.track.id];
+        expect(row, t.track.params.name).toBeDefined();
+        expect(Object.values(row!).some((c) => c.on), t.track.params.name).toBe(true);
+      }
+    });
+
     it('jede Spur erzeugt in Strudel Events', async () => {
+      // Mit Song-Ablauf über den ganzen Song abfragen (manche Spuren setzen erst später ein)
+      const cycles = tpl.ast.arrangement ? tpl.ast.arrangement.sections.reduce((n, s) => n + s.cycles, 0) : 4;
       for (const t of tracks) {
         const { code } = compile(soloTrack(tpl.ast, t.track.id), tpl.settings);
         const { query, cps } = await evaluateStrudel(code);
         expect(cps).toBeCloseTo(tpl.settings.bpm / 4 / 60);
-        const haps = query(0, 4);
+        const haps = query(0, cycles);
         expect(haps.length, t.track.params.name).toBeGreaterThan(0);
         for (const h of haps) {
           expect(h.value.gain).toBe(t.track.params.volume);

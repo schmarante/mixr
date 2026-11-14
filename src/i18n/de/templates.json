@@ -23,5 +23,11 @@
     "name": "Synthwave",
     "description": "Neon-80er: pumpender Achtelbass, breite Supersaw-Akkorde und eine Retro-Lead.",
     "tracks": { "beat": "Beat", "eighthBass": "Achtelbass", "chords": "Akkorde", "lead": "Lead" }
+  },
+  "chiprock": {
+    "name": "16-Bit-Rock",
+    "description": "Rock im 16-Bit-Stil: hüpfender Oktav-Bass, Square-Stabs, Lead mit Echo und Bitcrusher-Körnung.",
+    "tracks": { "beat": "Beat", "bass": "Bass", "stabs": "Stabs", "lead": "Lead" },
+    "sections": { "intro": "Intro", "riff": "Riff", "lead": "Lead", "break": "Break" }
   }
 }

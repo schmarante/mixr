@@ -14,7 +14,7 @@ Stack sounds, rhythms and effects like on a mixing desk – strudelmixr writes t
 ## Highlights
 
 - **A mixer, not a patch cable mess** – every track is a channel strip: `sound → rhythm → effects`. Add blocks with a click, reorder them by drag & drop (even across tracks), bypass or delete them; mute, solo and duplicate tracks.
-- **Start in seconds** – five templates (Techno, Lo-Fi Hip-Hop, House, Ambient, Synthwave): one click and it plays. Or start empty with drums, melody, chords, a sample or code.
+- **Start in seconds** – six templates (Techno, Lo-Fi Hip-Hop, House, Ambient, Synthwave, 16-Bit Rock): one click and it plays. Or start empty with drums, melody, chords, a sample or code.
 - **Step sequencer** for drums (kick, snare, clap, hi-hats, rimshot) with three synthesized kits (Modern, Analog, 808) – click or paint the steps. While playing, a playhead runs through the editors and the little previews on every track.
 - **Piano roll in the scale** – notes are scale degrees, so nothing can sound off. Pick root, scale (major, minor, pentatonic, modes …) and octave; two octaves, chords, **held notes** (drag a note longer) and melodies of **1–16 bars**.
 - **Chord progressions** with automatic voicings and rhythm (held, quarters, offbeat).
