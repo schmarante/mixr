@@ -1,0 +1,27 @@
+{
+  "techno": {
+    "name": "Techno",
+    "description": "Treibende 909-Kick, rollender Acid-Bass und hallende Stabs – geradeaus nach vorne.",
+    "tracks": { "beat": "Beat", "acidBass": "Acid-Bass", "stabs": "Stabs" }
+  },
+  "lofi": {
+    "name": "Lo-Fi Hip-Hop",
+    "description": "Entspannter, staubiger Beat mit warmen Jazz-Akkorden – Musik zum Lernen.",
+    "tracks": { "beat": "Beat", "chords": "Akkorde", "melody": "Melodie" }
+  },
+  "house": {
+    "name": "House",
+    "description": "Four-to-the-Floor, Offbeat-Akkorde und ein federnder Bass – Clubgefühl pur.",
+    "tracks": { "beat": "Beat", "organChords": "Orgel-Akkorde", "bass": "Bass" }
+  },
+  "ambient": {
+    "name": "Ambient",
+    "description": "Schwebende Flächen, glitzernde Echos und viel Raum – zum Abtauchen.",
+    "tracks": { "pad": "Fläche", "sparkle": "Glitzer", "bass": "Bass" }
+  },
+  "synthwave": {
+    "name": "Synthwave",
+    "description": "Neon-80er: pumpender Achtelbass, breite Supersaw-Akkorde und eine Retro-Lead.",
+    "tracks": { "beat": "Beat", "eighthBass": "Achtelbass", "chords": "Akkorde", "lead": "Lead" }
+  }
+}

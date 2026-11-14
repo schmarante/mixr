@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "title": "strudelmixr – Musik aus Bausteinen",
+    "description": "Baue Beats, Melodien und Effekte aus visuellen Bausteinen – strudelmixr übersetzt sie live in Strudel-Code. Der einfache Einstieg ins Live-Coding.",
+    "ogImageAlt": "strudelmixr-Logo (Strudel-Spirale) mit dem Schriftzug „Music from building blocks“"
+  },
+  "language": "Sprache",
+  "on": "An",
+  "off": "Aus",
+  "close": "Schließen",
+  "keys": {
+    "space": "Leertaste",
+    "delete": "Entf",
+    "ctrl": "Strg",
+    "alt": "Alt",
+    "esc": "Esc"
+  }
+}

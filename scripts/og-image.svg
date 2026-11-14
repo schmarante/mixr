@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Vorlage für public/og-image.png (Link-Vorschau, 1200×630) – rendern mit:
+       rsvg-convert -w 1200 -h 630 scripts/og-image.svg -o public/og-image.png -->
+  <defs>
+    <radialGradient id="bg" cx="0.3" cy="0.45" r="0.85">
+      <stop offset="0" stop-color="#1c2130" />
+      <stop offset="1" stop-color="#0b0d12" />
+    </radialGradient>
+    <linearGradient id="logo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffb36b" />
+      <stop offset="1" stop-color="#ff5f6d" />
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="28" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+
+  <!-- Logo: Strudel-Spirale auf warmem Verlauf (wie src/components/ui/Logo.tsx, 32 → 300 px) -->
+  <g transform="translate(110 165)">
+    <rect width="300" height="300" rx="84" fill="#ff7a5c" opacity="0.35" filter="url(#glow)" />
+    <g transform="scale(9.375)">
+      <rect width="32" height="32" rx="9" fill="url(#logo)" />
+      <path d="M13.5 16a2.5 2.5 0 0 1 5 0a5 5 0 0 1-10 0a7.5 7.5 0 0 1 15 0" fill="none" stroke="#1b0c03" stroke-width="2.6" stroke-linecap="round" />
+    </g>
+  </g>
+
+  <g font-family="Noto Sans, DejaVu Sans, Arial, sans-serif">
+    <text x="490" y="300" font-size="104" font-weight="700" letter-spacing="-2" fill="#eceef3">strudel<tspan fill="#ff8a4c">mixr</tspan></text>
+    <text x="494" y="364" font-size="38" fill="#d5d9e3">Music from building blocks</text>
+    <text x="494" y="422" font-size="27" fill="#8f97aa">Drums · Melodies · Effects · Song arrangement</text>
+    <text x="494" y="462" font-size="27" fill="#8f97aa">Live Strudel code · MIDI import &amp; export</text>
+  </g>
+</svg>

@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "title": "strudelmixr – music from building blocks",
+    "description": "Build beats, melodies and effects from visual building blocks – strudelmixr turns them into Strudel code live. The easy way into live coding.",
+    "ogImageAlt": "strudelmixr logo (a swirl) with the tagline “Music from building blocks”"
+  },
+  "language": "Language",
+  "on": "On",
+  "off": "Off",
+  "close": "Close",
+  "keys": {
+    "space": "Space",
+    "delete": "Del",
+    "ctrl": "Ctrl",
+    "alt": "Alt",
+    "esc": "Esc"
+  }
+}

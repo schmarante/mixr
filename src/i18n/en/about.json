@@ -1,0 +1,57 @@
+{
+  "heading": "About {name}",
+  "description": "Music from building blocks: stack sounds, rhythms and effects like on a mixing desk – strudelmixr turns them into Strudel code live.",
+  "close": "Close",
+  "author": "Author",
+  "email": "Email",
+  "version": "Version",
+  "language": "Language",
+  "madeWith": "Designed with ❤️. Powered by Claude.",
+  "openSource": "strudelmixr is built on great open-source projects. Thanks to everyone who contributes to them!",
+  "groups": {
+    "engine": "Music engine",
+    "app": "In the interface",
+    "sounds": "Sounds & samples",
+    "build": "For building"
+  },
+  "purposes": {
+    "strudel": "Live-coding music in the browser – the heart of strudelmixr",
+    "strudelCore": "Patterns, mini-notation and running the generated code",
+    "strudelTonal": "Scales, chords and voicings",
+    "strudelWebaudio": "Sound generation, effects and sample playback (Web Audio)",
+    "strudelWeb": "Embedding Strudel in your own pages",
+    "kabelsalat": "Modular audio graphs (used by Strudel)",
+    "tidalCycles": "The model for Strudel's pattern language and mini-notation",
+    "tonal": "Music theory: notes, intervals, scales",
+    "chordVoicings": "Automatic chord voicings",
+    "fractionJs": "Exact fractions for timing",
+    "acorn": "Parsing and rewriting the Strudel code",
+    "webmidi": "MIDI support (bundled with Strudel)",
+    "react": "Interactive islands: mixer, inspector, code view",
+    "nanostores": "State and event bus between the islands",
+    "codemirror": "Code editor with highlighting, search and autocompletion",
+    "uzuDrumkit": "Drum kit “Modern” and the default drums – only the files by Switch Angel",
+    "freepats": "Drum kit “Analog” (Roberto, zenvoid.org – synthesized with Yoshimi and Geonkick)",
+    "hydrogen808": "Drum kit “808” (ArtemioLabs – synthesized from sine waves and noise)",
+    "salamander": "Piano sound – Alexander Holm, a selection as MP3 via Tone.js",
+    "sonicPi": "Sample library: tabla, electro, percussion, glitch, bass, ambient, vinyl",
+    "astro": "Web framework with SSR and islands (@astrojs/node, @astrojs/react)",
+    "vite": "Build tool and dev server",
+    "tailwind": "CSS framework",
+    "typescript": "Type safety (strictest)",
+    "vitest": "Tests – the generated code is checked by real Strudel",
+    "ddev": "Local development environment (Docker)",
+    "claudeCode": "AI pair programming during development",
+    "strudelExtras": "Microtonal tunings, MIDI in/out, device sensors and Csound – loaded only when code uses them",
+    "csound": "Csound sound engine for csound() code – loaded only on first use"
+  },
+  "licenses": {
+    "proprietary": "proprietary"
+  },
+  "footnote": "Strudel and its packages are licensed under the GNU AGPL-3.0. All samples are served by strudelmixr itself and are under free licenses. “Salamander Grand Piano” by Alexander Holm, licensed under {ccBy}. Details: {details}.",
+  "table": {
+    "project": "Project",
+    "purpose": "Used for",
+    "license": "License"
+  }
+}

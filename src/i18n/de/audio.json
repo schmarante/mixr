@@ -1,0 +1,43 @@
+{
+  "sources": {
+    "drums": "Drums",
+    "piano": "Piano",
+    "sonicpi": "Sample-Bibliothek"
+  },
+  "syntax": {
+    "unterminatedString": "Ein Anführungszeichen wird nicht geschlossen.",
+    "unterminatedTemplate": "Ein Backtick-Text (`…`) wird nicht geschlossen.",
+    "unterminatedComment": "Ein Kommentar /* … */ wird nicht geschlossen.",
+    "unexpectedSlash": "Ein „/“ steht an einer unerwarteten Stelle.",
+    "unexpectedCharacter": "Unerwartetes Zeichen „{char}“.",
+    "unexpectedToken": "Unerwartetes Zeichen – fehlt eine Klammer, ein Komma oder ein Anführungszeichen?",
+    "duplicateName": "Der Name „{name}“ wird doppelt vergeben."
+  },
+  "soundNotInBank": "Den Klang „{name}“ gibt es im Drumcomputer „{bank}“ nicht.",
+  "soundNotFound": "Den Klang „{sound}“ gibt es nicht (Tippfehler oder Samples noch nicht geladen?).",
+  "miniNotation": "Fehler in der Mini-Notation (Muster in Anführungszeichen): {detail}",
+  "sampleNotLoaded": "Das Sample „{sample}“ konnte nicht geladen werden.",
+  "soundsNotLoaded": "Klänge konnten nicht geladen werden – bitte Verbindung prüfen.",
+  "syntaxError": "Syntaxfehler im Code{where}: {detail}",
+  "inTrack": " (Spur „{track}“)",
+  "inLine": " (Zeile {line})",
+  "unknownName": "Unbekannter Name „{name}“ – Tippfehler im Code?",
+  "notAFunction": "„{name}“ ist keine bekannte Strudel-Funktion – Tippfehler im Code?",
+  "newerFunction": "„{name}“ gibt es erst in einer neueren Strudel-Version als der, die strudelmixr nutzt – auf strudel.cc läuft es bereits.",
+  "unsupported": {
+    "osc": "„{name}“ sendet OSC-Nachrichten (z. B. an SuperCollider/SuperDirt). Dafür braucht es einen lokalen OSC-Server – das geht in strudelmixr nicht. Auf dem eigenen Rechner: strudel.cc zusammen mit der OSC-Brücke von Strudel verwenden.",
+    "other": "„{name}“ wird in strudelmixr nicht unterstützt."
+  },
+  "extensionNotLoaded": "Eine Erweiterung für diesen Code konnte nicht geladen werden ({pkg}) – bitte Verbindung prüfen und den Code ändern oder erneut Play drücken.",
+  "invalidExpression": "Ungültiger Ausdruck im Code: {detail}",
+  "codeError": "Fehler im Code: {detail}",
+  "unknownError": "Unbekannter Fehler im Code.",
+  "noWebAudio": "Dein Browser unterstützt kein Web Audio.",
+  "timeout": "Zeitüberschreitung beim Laden",
+  "engineNotLoaded": "Die Audio-Engine konnte nicht geladen werden – bitte Verbindung prüfen und erneut auf Play drücken.",
+  "engineNotStarted": "Die Audio-Engine konnte nicht gestartet werden: {detail}",
+  "samplesNotLoaded": "Die Klänge (Samples) konnten nicht geladen werden – bitte Verbindung prüfen und erneut auf Play drücken.",
+  "someSoundsMissing": "Einige Klänge fehlen ({sources}) – Verbindung prüfen, beim nächsten Play wird es erneut versucht.",
+  "workletsInsecure": "Klänge und Effekte wie supersaw, crush, shape oder distort brauchen AudioWorklets – die gibt es im Browser nur über HTTPS oder localhost. Diese Seite läuft über {origin}; bitte per HTTPS oder http://localhost öffnen.",
+  "workletsFailed": "Die Audio-Worklets (supersaw, crush, shape, distort …) konnten nicht geladen werden – bitte die Seite neu laden."
+}

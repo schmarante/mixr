@@ -1,0 +1,30 @@
+{
+  "unnamedTrack": "Spur",
+  "invalidTempo": "Das Tempo ist ungültig – ich verwende {bpm} BPM.",
+  "sourceBypassed": "„{track}“ ist stumm, weil die Klangquelle überbrückt ist.",
+  "noSource": "„{track}“ hat noch keine Klangquelle – füge z. B. Drums oder eine Melodie hinzu.",
+  "extraSource": "„{track}“ hat mehr als eine Klangquelle – „{block}“ wird ignoriert.",
+  "invalidVolume": "„{track}“: Die Lautstärke ist ungültig – ich verwende 0.8.",
+  "unknownBlock": "Unbekannter Block „{type}“ – wird übersprungen.",
+  "blockSkipped": "{block}: {message} Der Block wird übersprungen.",
+  "param": {
+    "notANumber": "„{param}“ ist keine gültige Zahl.",
+    "empty": "„{param}“ ist leer.",
+    "unknownValue": "„{param}“ hat einen unbekannten Wert („{value}“).",
+    "notText": "„{param}“ ist kein Text.",
+    "damaged": "„{param}“ ist beschädigt.",
+    "noSteps": "„{param}“ hat keine Schritte.",
+    "brackets": "„{param}“: Die Klammern passen nicht zusammen.",
+    "notAToggle": "„{param}“ ist weder an noch aus."
+  },
+  "block": {
+    "emptyDrumGrid": "Das Raster ist leer – klicke ein paar Kästchen an.",
+    "emptyNoteGrid": "Noch keine Noten gesetzt – klicke ein paar an.",
+    "emptyCode": "Das Code-Feld ist leer.",
+    "needsScale": "Das funktioniert nur mit einer Melodie (es braucht eine Tonleiter).",
+    "rangeOrder": "Das Ende muss nach dem Anfang liegen.",
+    "unknownControl": "Strudel kennt keinen Parameter „{name}“.",
+    "unknownControlSuggest": "Strudel kennt keinen Parameter „{name}“ – meintest du „{suggestion}“?"
+  },
+  "invalidSection": "Ein Abschnitt des Arrangements hat eine ungültige Länge und wurde übersprungen."
+}

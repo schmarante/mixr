@@ -1,0 +1,73 @@
+{
+  "error": {
+    "notMidi": "This file isn't a MIDI file (.mid).",
+    "smpte": "This MIDI file uses SMPTE timing (film/video time code). Only files with bars and beats (ticks per quarter note) can be imported.",
+    "truncated": "This MIDI file is damaged or incomplete.",
+    "noTracks": "This MIDI file has no tracks.",
+    "noNotes": "This MIDI file doesn't contain any notes.",
+    "tooLarge": "This MIDI file is too big (more than 4 MB).",
+    "unreadable": "The MIDI file couldn't be read."
+  },
+  "names": {
+    "drums": "Drums",
+    "low": "{name} (low)",
+    "mid": "{name} (mid)",
+    "high": "{name} (high)"
+  },
+  "note": {
+    "splitRange": "“{name}” spans more than two octaves and was split by register into {count} tracks.",
+    "tempo": "Tempo: {bpm} BPM.",
+    "tempoAdjusted": "Tempo {original} BPM was set to {bpm} BPM (whole numbers from 40 to 220).",
+    "tempoDefault": "The file has no tempo – using {bpm} BPM.",
+    "tempoChanges": "The tempo changes during the piece – strudelmixr plays everything at {bpm} BPM.",
+    "timeSignature": "The piece is in {signature} – strudelmixr counts in 4/4 bars, so bar lines may be in different places (the notes stay where they are).",
+    "quantized": { "one": "{count} note didn't sit exactly on a 16th – moved to the nearest 16th.", "other": "{count} notes didn't sit exactly on a 16th (e.g. triplets, swing or played live) – moved to the nearest 16th." },
+    "songCapped": "{count} notes after bar {bars} were left out.",
+    "loop": "The piece ({bars} bars) repeats every {loop} bars – imported as a loop.",
+    "arrangement": { "one": "The piece ({bars} bars) became a song arrangement with {count} section – each different part of a track is its own track that is switched on in the right sections.", "other": "The piece ({bars} bars) became a song arrangement with {count} sections – each different part of a track is its own track that is switched on in the right sections." },
+    "truncated": "The piece ({bars} bars) is too varied for a song arrangement – only the first 16 bars were imported as a loop.",
+    "tracksCapped": { "one": "{count} more track was left out (at most {max}).", "other": "{count} more tracks were left out (at most {max})." },
+    "drums": "Drum notes turned into a step grid (kit “modern”) – same rhythm.",
+    "drumsLong": "The drum pattern is {bars} bars long – kept as a sample block with one bar per step (<…>), same rhythm.",
+    "drumMapped": "Drum sound “{from}” is played by “{to}”.",
+    "drumDropped": "Drum notes without a matching sound were left out: {notes}.",
+    "melody": { "one": "Notes turned into a melody block ({root} {scale}, octave {octave}, {count} bar) – same notes.", "other": "Notes turned into a melody block ({root} {scale}, octave {octave}, {count} bars) – same notes." },
+    "noteCode": "The notes don't fit into one scale – kept as exact note code (note(\"…\")).",
+    "heldShortened": { "one": "{count} held note was shortened at the end of the pattern.", "other": "{count} held notes were shortened at the end of the pattern." },
+    "sound": "Instrument “{from}” is played with the sound “{to}”.",
+    "velocityPattern": "The notes have very different velocities – the track volume is the average, the accents are kept as a code block (velocity)."
+  },
+  "export": {
+    "trackSkipped": "“{track}” has no playable source and was left out.",
+    "trackFailed": "“{track}” couldn't be evaluated (code error) and was left out.",
+    "trackSilent": "“{track}” plays no notes in this length and was left out.",
+    "channelsShared": "More than {count} melodic tracks – some share a MIDI channel.",
+    "percussion": "Samples without a pitch ({names}) were written to channel 10 as percussion."
+  },
+  "ui": {
+    "importMenu": "Import MIDI…",
+    "exportMenu": "Export as MIDI…",
+    "importTitle": "Import MIDI file",
+    "importSubtitle": "Tracks, notes and tempo from {name}",
+    "reading": "Reading MIDI file …",
+    "exportTitle": "Export as MIDI",
+    "exportIntro": "Saves the notes your project plays as a MIDI file (.mid) – for DAWs, notation programs or hardware.",
+    "barsLabel": "Length",
+    "barsUnit": { "one": "bar", "other": "bars" },
+    "barsHint": "1–64 bars · suggested: {bars}",
+    "barsSuggesting": "Finding the length …",
+    "whatTitle": "What ends up in the file",
+    "whatNotes": "Every note Strudel plays – including code blocks, setup code and the song arrangement.",
+    "whatDrums": "Drums on channel 10 (General MIDI), other samples as percussion.",
+    "whatNot": "Sounds and effects (filter, reverb …) are not part of MIDI – a DAW plays the notes with its own instruments.",
+    "whatTracks": { "one": "{count} track will be exported (muted tracks are left out).", "other": "{count} tracks will be exported (muted tracks are left out)." },
+    "noTracks": "There are no audible tracks to export.",
+    "export": "Download .mid",
+    "exporting": "Exporting …",
+    "toastExported": { "one": "MIDI file saved · {count} track · {bars} bars", "other": "MIDI file saved · {count} tracks · {bars} bars" },
+    "toastFailed": "The MIDI file couldn't be created.",
+    "toastImported": { "one": "MIDI imported · {count} track", "other": "MIDI imported · {count} tracks" },
+    "dropTitle": "Drop to import MIDI",
+    "dropText": "A MIDI file (.mid) becomes tracks with drum grids and melodies."
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "error": {
+    "notMidi": "Diese Datei ist keine MIDI-Datei (.mid).",
+    "smpte": "Diese MIDI-Datei nutzt SMPTE-Zeitcode (Film/Video). Importieren lassen sich nur Dateien mit Takten und Schlägen (Ticks pro Viertel).",
+    "truncated": "Diese MIDI-Datei ist beschädigt oder unvollständig.",
+    "noTracks": "Diese MIDI-Datei enthält keine Spuren.",
+    "noNotes": "Diese MIDI-Datei enthält keine Noten.",
+    "tooLarge": "Diese MIDI-Datei ist zu groß (mehr als 4 MB).",
+    "unreadable": "Die MIDI-Datei konnte nicht gelesen werden."
+  },
+  "names": {
+    "drums": "Drums",
+    "low": "{name} (tief)",
+    "mid": "{name} (Mitte)",
+    "high": "{name} (hoch)"
+  },
+  "note": {
+    "splitRange": "„{name}“ reicht über mehr als zwei Oktaven und wurde nach Lage in {count} Spuren geteilt.",
+    "tempo": "Tempo: {bpm} BPM.",
+    "tempoAdjusted": "Tempo {original} BPM wurde auf {bpm} BPM gesetzt (ganze Zahlen von 40 bis 220).",
+    "tempoDefault": "Die Datei hat kein Tempo – es gilt {bpm} BPM.",
+    "tempoChanges": "Das Tempo ändert sich im Stück – strudelmixr spielt alles mit {bpm} BPM.",
+    "timeSignature": "Das Stück steht im {signature}-Takt – strudelmixr zählt in 4/4-Takten, Taktstriche können also woanders liegen (die Noten bleiben, wo sie sind).",
+    "quantized": { "one": "{count} Note lag nicht genau auf einer 16tel – auf die nächste 16tel verschoben.", "other": "{count} Noten lagen nicht genau auf einer 16tel (z. B. Triolen, Swing oder live eingespielt) – auf die nächste 16tel verschoben." },
+    "songCapped": "{count} Noten nach Takt {bars} wurden weggelassen.",
+    "loop": "Das Stück ({bars} Takte) wiederholt sich alle {loop} Takte – als Schleife importiert.",
+    "arrangement": { "one": "Aus dem Stück ({bars} Takte) wurde ein Song-Ablauf mit {count} Abschnitt – jeder andere Teil einer Spur ist eine eigene Spur, die in den passenden Abschnitten eingeschaltet ist.", "other": "Aus dem Stück ({bars} Takte) wurde ein Song-Ablauf mit {count} Abschnitten – jeder andere Teil einer Spur ist eine eigene Spur, die in den passenden Abschnitten eingeschaltet ist." },
+    "truncated": "Das Stück ({bars} Takte) ist für einen Song-Ablauf zu abwechslungsreich – nur die ersten 16 Takte wurden als Schleife importiert.",
+    "tracksCapped": { "one": "{count} weitere Spur wurde weggelassen (höchstens {max}).", "other": "{count} weitere Spuren wurden weggelassen (höchstens {max})." },
+    "drums": "Drum-Noten wurden zum Step-Raster (Kit „modern“) – gleicher Rhythmus.",
+    "drumsLong": "Das Drum-Muster ist {bars} Takte lang – als Sample-Baustein mit einem Takt pro Schritt (<…>) übernommen, gleicher Rhythmus.",
+    "drumMapped": "Drum-Klang „{from}“ wird von „{to}“ gespielt.",
+    "drumDropped": "Drum-Noten ohne passenden Klang wurden weggelassen: {notes}.",
+    "melody": { "one": "Noten wurden zum Melodie-Baustein ({root} {scale}, Lage {octave}, {count} Takt) – gleiche Töne.", "other": "Noten wurden zum Melodie-Baustein ({root} {scale}, Lage {octave}, {count} Takte) – gleiche Töne." },
+    "noteCode": "Die Töne passen in keine Skala – als exakter Noten-Code (note(\"…\")) übernommen.",
+    "heldShortened": { "one": "{count} Halteton wurde am Ende des Musters gekürzt.", "other": "{count} Haltetöne wurden am Ende des Musters gekürzt." },
+    "sound": "Instrument „{from}“ wird mit dem Klang „{to}“ gespielt.",
+    "velocityPattern": "Die Noten sind sehr unterschiedlich laut – die Spur-Lautstärke ist der Mittelwert, die Betonungen bleiben als Code-Baustein (velocity) erhalten."
+  },
+  "export": {
+    "trackSkipped": "„{track}“ hat keine spielbare Klangquelle und wurde weggelassen.",
+    "trackFailed": "„{track}“ ließ sich nicht auswerten (Fehler im Code) und wurde weggelassen.",
+    "trackSilent": "„{track}“ spielt in dieser Länge keine Noten und wurde weggelassen.",
+    "channelsShared": "Mehr als {count} melodische Spuren – einige teilen sich einen MIDI-Kanal.",
+    "percussion": "Samples ohne Tonhöhe ({names}) wurden als Perkussion auf Kanal 10 geschrieben."
+  },
+  "ui": {
+    "importMenu": "MIDI importieren…",
+    "exportMenu": "Als MIDI exportieren…",
+    "importTitle": "MIDI-Datei importieren",
+    "importSubtitle": "Spuren, Noten und Tempo aus {name}",
+    "reading": "MIDI-Datei wird gelesen …",
+    "exportTitle": "Als MIDI exportieren",
+    "exportIntro": "Speichert die Noten, die dein Projekt spielt, als MIDI-Datei (.mid) – für DAWs, Notenprogramme oder Hardware.",
+    "barsLabel": "Länge",
+    "barsUnit": { "one": "Takt", "other": "Takte" },
+    "barsHint": "1–64 Takte · Vorschlag: {bars}",
+    "barsSuggesting": "Länge wird ermittelt …",
+    "whatTitle": "Was in der Datei landet",
+    "whatNotes": "Jede Note, die Strudel spielt – auch aus Code-Bausteinen, Setup-Code und dem Song-Ablauf.",
+    "whatDrums": "Drums auf Kanal 10 (General MIDI), andere Samples als Perkussion.",
+    "whatNot": "Klänge und Effekte (Filter, Hall …) gehören nicht zu MIDI – eine DAW spielt die Noten mit ihren eigenen Instrumenten.",
+    "whatTracks": { "one": "{count} Spur wird exportiert (stumme Spuren bleiben weg).", "other": "{count} Spuren werden exportiert (stumme Spuren bleiben weg)." },
+    "noTracks": "Es gibt keine hörbaren Spuren zum Exportieren.",
+    "export": ".mid herunterladen",
+    "exporting": "Wird exportiert …",
+    "toastExported": { "one": "MIDI-Datei gespeichert · {count} Spur · {bars} Takte", "other": "MIDI-Datei gespeichert · {count} Spuren · {bars} Takte" },
+    "toastFailed": "Die MIDI-Datei konnte nicht erstellt werden.",
+    "toastImported": { "one": "MIDI importiert · {count} Spur", "other": "MIDI importiert · {count} Spuren" },
+    "dropTitle": "Loslassen, um MIDI zu importieren",
+    "dropText": "Eine MIDI-Datei (.mid) wird zu Spuren mit Drum-Rastern und Melodien."
+  }
+}

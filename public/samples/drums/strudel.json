@@ -1,0 +1,95 @@
+{
+ "modern_bd": [
+  "modern/10_bd_switchangel.wav",
+  "modern/14_bd_switchangel.wav",
+  "modern/15_bd_switchangel.wav"
+ ],
+ "modern_sd": [
+  "modern/11_sd_switchangel_3.wav",
+  "modern/10_sd_switchangel-bounce-2.wav",
+  "modern/12_sd_switchangel_2.wav"
+ ],
+ "modern_cp": [
+  "modern/10_cp_switchangel.wav"
+ ],
+ "modern_hh": [
+  "modern/12_hh_switchangel.wav",
+  "modern/10_hh_switchangel.wav",
+  "modern/13_hh_switchangel.wav"
+ ],
+ "modern_oh": [
+  "modern/12_oh_switchangel.wav",
+  "modern/10_oh_switchangel.wav"
+ ],
+ "modern_rim": [
+  "modern/10_rim_switchangel.wav",
+  "modern/11_rim_switch_angel.wav"
+ ],
+ "analog_bd": [
+  "analog/Kick04.wav",
+  "analog/Kick06.wav"
+ ],
+ "analog_sd": [
+  "analog/Snare09.wav",
+  "analog/Snare14.wav"
+ ],
+ "analog_cp": [
+  "analog/Clap01.wav"
+ ],
+ "analog_hh": [
+  "analog/ClosedHiHat01-01.wav",
+  "analog/ClosedHiHat02-01.wav"
+ ],
+ "analog_oh": [
+  "analog/OpenHiHat02-01.wav"
+ ],
+ "analog_rim": [
+  "analog/Claves01.wav"
+ ],
+ "emu808_bd": [
+  "emu808/808_Kick_Long.flac",
+  "emu808/808_Kick_Short.flac"
+ ],
+ "emu808_sd": [
+  "emu808/808_Snare_1.flac",
+  "emu808/808_Snare_2.flac"
+ ],
+ "emu808_cp": [
+  "emu808/808_Clap.flac"
+ ],
+ "emu808_hh": [
+  "emu808/808_Hat_Closed.flac"
+ ],
+ "emu808_oh": [
+  "emu808/808_Hat_Open.flac"
+ ],
+ "emu808_rim": [
+  "emu808/808_Clave.flac"
+ ],
+ "bd": [
+  "modern/10_bd_switchangel.wav",
+  "modern/14_bd_switchangel.wav",
+  "modern/15_bd_switchangel.wav"
+ ],
+ "sd": [
+  "modern/11_sd_switchangel_3.wav",
+  "modern/10_sd_switchangel-bounce-2.wav",
+  "modern/12_sd_switchangel_2.wav"
+ ],
+ "cp": [
+  "modern/10_cp_switchangel.wav"
+ ],
+ "hh": [
+  "modern/12_hh_switchangel.wav",
+  "modern/10_hh_switchangel.wav",
+  "modern/13_hh_switchangel.wav"
+ ],
+ "oh": [
+  "modern/12_oh_switchangel.wav",
+  "modern/10_oh_switchangel.wav"
+ ],
+ "rim": [
+  "modern/10_rim_switchangel.wav",
+  "modern/11_rim_switch_angel.wav"
+ ]
+}

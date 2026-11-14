@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AudioEngine from '../components/audio/AudioEngine.astro';
+import TopBar from '../components/ui/TopBar.tsx';
+import NodeWorkspace from '../components/ui/NodeWorkspace.tsx';
+import ParameterSidebar from '../components/ui/ParameterSidebar.tsx';
+import CodeMonitor from '../components/ui/CodeMonitor.tsx';
+import { LogoWordmark } from '../components/ui/Logo.tsx';
+import { translate } from '../i18n';
+import { requestLanguage } from '../i18n/server';
+
+/*
+ * Die Inseln sind client:only, weil der Projektstand erst im Browser
+ * (localStorage) geladen wird – so gibt es keine Hydration-Mismatches.
+ * Das Grundgerüst (Kopfzeile, Platzhalter) rendert der Server als Fallback,
+ * damit vor der Hydration kein leerer Bildschirm erscheint – in der Sprache der Anfrage.
+ */
+const lang = requestLanguage(Astro);
+---
+
+<Layout>
+  <div class="flex h-dvh flex-col">
+    <TopBar client:only="react">
+      <header
+        slot="fallback"
+        class="grid h-16 shrink-0 grid-cols-[1fr_auto_1fr] items-center gap-3 border-b border-line bg-panel px-3 sm:px-5"
+      >
+        <div class="flex items-center"><LogoWordmark /></div>
+        <div class="flex items-center gap-3.5" aria-hidden="true">
+          <span class="size-11 rounded-full bg-accent/35"></span>
+          <span class="h-10 w-[8.5rem] rounded-xl bg-card ring-1 ring-line"></span>
+        </div>
+        <div></div>
+      </header>
+    </TopBar>
+
+    <div class="flex min-h-0 flex-1">
+      <main class="flex min-w-0 flex-1 flex-col">
+        <NodeWorkspace client:only="react">
+          <div slot="fallback" class="min-h-0 flex-1 overflow-hidden" aria-busy="true">
+            <p class="sr-only">{translate(lang, 'ui.page.loading')}</p>
+            <div class="mx-auto flex max-w-[110rem] flex-col gap-3 px-3 py-4 sm:px-5 sm:py-5" aria-hidden="true">
+              {
+                [0, 1, 2].map((i) => (
+                  <div class="flex h-[118px] rounded-2xl border border-line bg-panel motion-safe:animate-pulse-soft" style={`animation-delay:${i * 120}ms`}>
+                    <div class="w-60 border-r border-line"></div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </NodeWorkspace>
+        <ParameterSidebar client:only="react" />
+      </main>
+      <CodeMonitor client:only="react" />
+    </div>
+  </div>
+
+  <noscript>
+    <div class="fixed inset-x-4 bottom-4 rounded-2xl border border-line-strong bg-panel p-4 text-sm text-muted">
+      {translate(lang, 'ui.page.noscript')}
+    </div>
+  </noscript>
+
+  <AudioEngine />
+</Layout>
+
+<script>
+  import { startCompilerAgent } from '../agents/CompilerAgent';
+  import { startUserSamplesAgent } from '../agents/UserSamplesAgent';
+  import { startWebMcpAgent } from '../agents/WebMcpAgent';
+  import { initPersistence } from '../store/persistence';
+
+  // Reihenfolge: erst gespeicherten Stand laden, dann kompilieren (beides idempotent)
+  initPersistence();
+  startCompilerAgent();
+  // Eigene Samples (Slots) für die Engine registrieren – lädt Strudel erst, wenn es Slots gibt
+  startUserSamplesAgent();
+  // Werkzeuge für KI-Agenten im Browser (WebMCP) – No-op ohne Browser-Unterstützung
+  startWebMcpAgent();
+</script>

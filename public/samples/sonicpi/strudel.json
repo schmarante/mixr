@@ -1,0 +1,61 @@
+{
+ "ambi": [
+  "ambi_choir.flac",
+  "ambi_drone.flac",
+  "ambi_glass_hum.flac",
+  "ambi_lunar_land.flac",
+  "ambi_piano.flac"
+ ],
+ "bass": [
+  "bass_hard_c.flac",
+  "bass_hit_c.flac",
+  "bass_thick_c.flac",
+  "bass_voxy_c.flac",
+  "bass_woodsy_c.flac"
+ ],
+ "elec": [
+  "elec_bell.flac",
+  "elec_blip.flac",
+  "elec_blip2.flac",
+  "elec_ping.flac",
+  "elec_plip.flac",
+  "elec_pop.flac",
+  "elec_tick.flac",
+  "elec_twang.flac"
+ ],
+ "glitch": [
+  "glitch_perc1.flac",
+  "glitch_perc2.flac",
+  "glitch_perc3.flac",
+  "glitch_perc4.flac",
+  "glitch_perc5.flac"
+ ],
+ "misc": [
+  "misc_cineboom.flac",
+  "misc_crow.flac"
+ ],
+ "perc": [
+  "perc_bell.flac",
+  "perc_impact1.flac",
+  "perc_snap.flac",
+  "perc_snap2.flac",
+  "perc_swash.flac",
+  "perc_till.flac"
+ ],
+ "tabla": [
+  "tabla_dhec.flac",
+  "tabla_ghe1.flac",
+  "tabla_ke1.flac",
+  "tabla_na.flac",
+  "tabla_tas1.flac",
+  "tabla_tas2.flac",
+  "tabla_tas3.flac",
+  "tabla_te1.flac"
+ ],
+ "vinyl": [
+  "vinyl_backspin.flac",
+  "vinyl_hiss.flac",
+  "vinyl_rewind.flac",
+  "vinyl_scratch.flac"
+ ]
+}

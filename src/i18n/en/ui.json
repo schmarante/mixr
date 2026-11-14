@@ -1,0 +1,510 @@
+{
+  "page": {
+    "loading": "Loading the studio …",
+    "noscript": "strudelmixr needs JavaScript to make music. Please turn on JavaScript in your browser."
+  },
+  "regions": {
+    "start": "Start",
+    "tracks": "Tracks",
+    "tracksHeading": {
+      "one": "{count} track",
+      "other": "{count} tracks"
+    },
+    "settings": "Settings",
+    "playback": "Playback"
+  },
+  "topbar": {
+    "home": "strudelmixr – home",
+    "undo": "Undo",
+    "redo": "Redo",
+    "templates": "Templates",
+    "templatesOpen": "Open templates",
+    "templatesTooltip": "Load a template",
+    "templatesTitle": "Pick a template",
+    "new": "New",
+    "newProject": "New project",
+    "newProjectTooltip": "Start a new project",
+    "code": "Code",
+    "codeShow": "Show code",
+    "codeShowTooltip": "See the Strudel code",
+    "codeHideTooltip": "Hide the code",
+    "about": "About strudelmixr"
+  },
+  "transport": {
+    "play": "Play",
+    "stop": "Stop",
+    "addTrackFirst": "Add a track first",
+    "loadingSounds": "Loading sounds…",
+    "engineFailed": "The audio engine couldn't start.",
+    "notices": {
+      "one": "Hint",
+      "other": "{count} hints"
+    }
+  },
+  "bpm": {
+    "slower": "Slower (−1 BPM)",
+    "faster": "Faster (+1 BPM)",
+    "label": "Tempo in BPM",
+    "input": "Type in a tempo (BPM)",
+    "dragTitle": "Drag up or down, or click to type"
+  },
+  "templatesDialog": {
+    "replaceNotice": "This replaces your current project – press Undo ({shortcut}) to get it back."
+  },
+  "start": {
+    "templatesHeading": "Start with a template",
+    "templatesText": "One click and you'll hear music right away. Then change whatever you like.",
+    "autoplay": "Play right away",
+    "trackCount": {
+      "one": "{count} track",
+      "other": "{count} tracks"
+    },
+    "emptyHeadingOr": "Or start from scratch",
+    "emptyHeading": "What would you like to start with?",
+    "emptyText": "Pick your first sound – you can add more tracks any time.",
+    "sourceHints": {
+      "drums": "Beats on a grid",
+      "melody": "Click in notes",
+      "chords": "Ready-made harmonies",
+      "sample": "Sounds by name",
+      "code": "For pros"
+    }
+  },
+  "onboarding": {
+    "title": "Music from building blocks",
+    "intro": "Stack sounds, rhythms and effects like on a mixing desk. strudelmixr turns them into {strudel} code live – you hear every change instantly and pick up the code along the way.",
+    "tip": "Tip: {key} starts and stops the music. Nothing can break – you can undo everything."
+  },
+  "workspace": {
+    "newTrack": "New track",
+    "newTrackGroup": "Add a new track with a sound",
+    "newTrackWith": "New track: {source}",
+    "trackGroup": "Track {name}",
+    "chooseSound": "Choose a sound",
+    "chooseSoundTitle": "What should this track sound like?",
+    "addBlock": "Add block",
+    "addBlockShort": "Block",
+    "addBlockTooltip": "Add a rhythm or effect",
+    "emptyPreview": "Still empty – click me"
+  },
+  "chain": {
+    "withSummary": "{label}: {summary}",
+    "sourceName": "Sound source {label}",
+    "offSuffix": "{name} (off)",
+    "edit": "{name} – edit",
+    "turnOn": "Turn {label} on",
+    "bypass": "Bypass {label} (turn off)",
+    "turnOnTooltip": "Turn on",
+    "bypassTooltip": "Turn off (bypass)",
+    "remove": "Remove {label}",
+    "removeTooltip": "Remove ({key})",
+    "notice": "Hint: {text}"
+  },
+  "track": {
+    "menu": "Actions for {name}",
+    "rename": "Rename",
+    "duplicate": "Duplicate",
+    "moveUp": "Move up",
+    "moveDown": "Move down",
+    "delete": "Delete track",
+    "nameInput": "Track name",
+    "nameTooltip": "Click: track settings · Double-click: rename",
+    "mute": "Mute",
+    "unmute": "Unmute",
+    "solo": "Solo – hear only this track",
+    "unsolo": "End solo",
+    "muteShort": "M",
+    "soloShort": "S",
+    "volumeOf": "Volume {name}"
+  },
+  "trackInspector": {
+    "title": "Track “{name}”",
+    "subtitle": "Applies to every block on this track.",
+    "duplicate": "Duplicate",
+    "delete": "Delete",
+    "name": "Name",
+    "color": "Color",
+    "volume": "Volume",
+    "mute": "Mute",
+    "solo": "Solo",
+    "soloHint": "– hear only this track (or these tracks)",
+    "signalChain": "Signal chain"
+  },
+  "colors": {
+    "violet": "Violet",
+    "sky": "Sky blue",
+    "emerald": "Emerald",
+    "amber": "Amber",
+    "rose": "Rose",
+    "cyan": "Turquoise",
+    "lime": "Lime",
+    "fuchsia": "Pink"
+  },
+  "inspector": {
+    "deselect": "Clear selection",
+    "openTrack": "Open track settings",
+    "blockActive": "Block on",
+    "swapSound": "Swap sound",
+    "swapSoundTitle": "Choose a different sound",
+    "remove": "Remove",
+    "removeTooltip": "Remove ({key})",
+    "noParams": "This block has no settings – it just works. Press Play and give it a listen!",
+    "moreOptions": "More options"
+  },
+  "emptyInspector": {
+    "step1Title": "Click a block",
+    "step1Text": "Its settings show up here – grids, sliders, sounds.",
+    "step2Title": "Hit “+ Block”",
+    "step2Text": "Rhythms and effects shape the track from left to right.",
+    "step3Title": "Listen",
+    "step3Text": "Press Play or the space bar. You'll hear every change instantly.",
+    "shortcutPlay": "Play / Stop",
+    "shortcutUndo": "Undo",
+    "shortcutDelete": "Delete block",
+    "shortcutMove": "Move block",
+    "dismiss": "Hide guide"
+  },
+  "picker": {
+    "searchPlaceholder": "Search, e.g. reverb, filter …",
+    "searchLabel": "Search blocks",
+    "replacesSource": "Replaces this track's current sound.",
+    "noResults": "Nothing found – try a different word."
+  },
+  "fields": {
+    "reset": "Reset {label}",
+    "resetTooltip": "Reset to default",
+    "enter": "Enter {label}",
+    "enterPercent": "Enter {label} (percent)",
+    "enterUnit": "Enter {label} ({unit})",
+    "clickToType": "Click to type",
+    "syntaxMini": "Mini-notation",
+    "syntaxCode": "Strudel code",
+    "syntaxTooltip": "What is {name}? (opens strudel.cc)"
+  },
+  "grid": {
+    "clear": "Clear",
+    "drumHint": "Click the boxes or drag across them. Each column is one sixteenth note.",
+    "noteHint": "Click to set a note, drag its right edge to hold it longer (or Shift+→/←). Top = high, stack notes for chords.",
+    "drumLabel": "{label} – grid",
+    "noteLabel": "{label} – piano roll",
+    "cell": "{row}, step {step}"
+  },
+  "code": {
+    "title": "Strudel code",
+    "subtitle": "Your song as code – edit it and the blocks follow.",
+    "panelLabel": "Strudel code",
+    "codeLabel": "Generated Strudel code",
+    "closeBackdrop": "Close code view",
+    "copy": "Copy",
+    "copied": "Copied",
+    "openInStrudel": "Open in Strudel",
+    "empty": "No code yet – add a track, or simply type Strudel code here.",
+    "footer": "Every block becomes a function like {example}. Edit the code right here – or open it in Strudel.",
+    "playbackError": "Something went wrong during playback",
+    "jumpToBlock": "Jump to the block",
+    "whereTrack": "Track “{name}”",
+    "whereIn": "in “{name}”",
+    "editorLabel": "Strudel code editor",
+    "placeholder": "// Type Strudel code here, e.g. $: s(\"bd*4\")",
+    "status": {
+      "synced": "In sync with the blocks",
+      "typing": "Applying after a short pause …",
+      "linkedPlaying": "Your code is playing – the blocks follow",
+      "linked": "Blocks updated from your code",
+      "live": "Live",
+      "liveTooltip": "This code is playing right now"
+    },
+    "shortcuts": "{apply} apply · {stop} stop",
+    "codeMode": {
+      "syntax": "Syntax error in line {line}. The last working version keeps playing, the blocks stay as they were.",
+      "noPattern": "There’s no pattern here that could become blocks yet. The blocks stay as they were.",
+      "arrangement": "This song structure can’t be shown as blocks (every track needs the same sections). The blocks stay as they were.",
+      "error": "This code can’t be turned into blocks. The blocks stay as they were.",
+      "back": "Back to the blocks",
+      "backTooltip": "Discard your code changes and use the blocks again"
+    },
+    "aligned": {
+      "zero": "Code tidied up to match the blocks.",
+      "one": "Code tidied up to match the blocks – {count} sound was swapped for a free one.",
+      "other": "Code tidied up to match the blocks – {count} sounds were swapped for free ones."
+    },
+    "replaced": "The blocks changed – your code draft was replaced.",
+    "restore": "Restore draft",
+    "dismiss": "Dismiss hint"
+  },
+  "editor": {
+    "completion": {
+      "function": "Strudel function",
+      "ownSample": "your sample",
+      "kit": "drum kit",
+      "sound": "sound",
+      "alias": "{detail} · alias of {name}"
+    }
+  },
+  "import": {
+    "button": "Import",
+    "open": "Import Strudel code",
+    "tooltip": "Bring in code from strudel.cc",
+    "codePanel": "Import code",
+    "codePanelEmpty": "Or import existing Strudel code",
+    "title": "Import Strudel code",
+    "subtitle": "Paste a piece from strudel.cc, a share link or open a file – you'll get tracks and blocks you can keep editing.",
+    "codeLabel": "Your Strudel code",
+    "placeholder": "Paste code here, for example:\n\nsetcpm(30)\n$: s(\"bd sd [~ bd] sd\")\n$: note(\"c3 eb3 g3\").s(\"sawtooth\").lpf(800)",
+    "codeHint": "{shortcut} opens it as a new project",
+    "fromFile": "From {name}",
+    "fromLink": "Unpacked from the strudel.cc link",
+    "openFile": "Open file…",
+    "clear": "Clear",
+    "previewHeading": "Preview",
+    "updating": "Updating …",
+    "openAsNew": "Open as new project",
+    "addToProject": "Add to project",
+    "addToProjectHint": "Adds the tracks to your project – your tempo stays the same.",
+    "replaceNotice": "Replaces your current project – Undo ({shortcut}) brings it back.",
+    "fileWrongType": "“{name}” can't be imported – please use a .js, .txt or .strudel file.",
+    "fileTooLarge": "“{name}” is too big to be a Strudel piece.",
+    "fileUnreadable": "“{name}” couldn't be read.",
+    "dropTitle": "Drop to import",
+    "dropText": "Strudel code as a .js, .txt or .strudel file",
+    "start": {
+      "heading": "Already have Strudel code?",
+      "text": "Found something you like on strudel.cc? Bring it in and keep working on it with blocks.",
+      "button": "Import code",
+      "buttonHint": "Paste code, a link or open a file",
+      "pasteTip": "Or simply press {key} anywhere."
+    },
+    "preview": {
+      "emptyTitle": "Your preview shows up here",
+      "emptyText": "As soon as you paste some code, you'll see the tempo, the tracks and their blocks.",
+      "bpm": "BPM",
+      "tracks": {
+        "one": "track",
+        "other": "tracks"
+      },
+      "blocks": {
+        "one": "block",
+        "other": "blocks"
+      },
+      "trackCount": {
+        "one": "{count} track",
+        "other": "{count} tracks"
+      },
+      "blockCount": {
+        "one": "{count} block",
+        "other": "{count} blocks"
+      },
+      "summary": "Preview: {tracks}, {blocks}, {bpm} BPM",
+      "tracksHeading": "What you'll get",
+      "chainOf": "Blocks of {name}",
+      "emptyTrack": "No blocks",
+      "muted": "muted",
+      "noTracksTitle": "No music found yet",
+      "preludeNamed": "Setup code: {names}",
+      "preludeHint": "Runs before all tracks – you can edit it later.",
+      "noTracksText": "This code doesn't play anything we could turn into tracks. Strudel pieces usually contain lines like $: s(\"bd sd\")."
+    },
+    "notes": {
+      "heading": "Good to know",
+      "substituted": "Swapped for something similar",
+      "substitutedHint": "Not available here, so we picked the closest match.",
+      "keptAsCode": "Kept as code",
+      "keptAsCodeHint": "There's no block for this yet – it still plays, and you can edit it as code.",
+      "dropped": "Left out",
+      "droppedHint": "Mostly visuals or controls that don't work here.",
+      "converted": "Turned into blocks",
+      "convertedHint": "Translated so you can edit it with the usual controls.",
+      "info": "Other notes",
+      "infoHint": "Nothing to do – just so you know."
+    },
+    "error": {
+      "title": "This code can't be read yet",
+      "unknown": "Something in this code got the importer confused.",
+      "jumpToLine": "Show line {line}",
+      "jumpToLineColumn": "Show line {line}, column {column}",
+      "help": "Was the whole piece copied? A missing bracket or quote at the end is the most common cause.",
+      "linkInvalid": "This link doesn't contain any code we can read. Copy the code from the editor on strudel.cc instead."
+    },
+    "toast": {
+      "imported": {
+        "one": "{count} track imported",
+        "other": "{count} tracks imported"
+      },
+      "added": {
+        "one": "{count} track added",
+        "other": "{count} tracks added"
+      },
+      "substituted": {
+        "one": "{count} sound swapped",
+        "other": "{count} sounds swapped"
+      },
+      "keptAsCode": {
+        "one": "{count} part kept as code",
+        "other": "{count} parts kept as code"
+      },
+      "dropped": {
+        "one": "{count} part left out",
+        "other": "{count} parts left out"
+      }
+    }
+  },
+  "prelude": {
+    "title": "Setup code",
+    "cardTooltip": "Show the setup code",
+    "cardHint": "Runs before all tracks",
+    "namesLabel": "Defines: {names}",
+    "explain": "Runs before all tracks – this is where your own functions and constants live.",
+    "editorLabel": "Code",
+    "remove": "Remove setup code",
+    "removeHint": "Undo ({shortcut}) brings it back.",
+    "emptyHint": "Empty setup code isn't saved – use “Remove setup code” to get rid of it."
+  },
+  "noteGrid": {
+    "length": "Length",
+    "barsOption": { "one": "{count} bar", "other": "{count} bars" },
+    "barsUnit": { "one": "bar", "other": "bars" },
+    "barLabel": "Bar {bar}",
+    "barOf": "Bar {bar} / {total}",
+    "barsOf": "Bars {from}–{to} / {total}",
+    "navigation": "Switch bars",
+    "prev": "Previous bars",
+    "next": "Next bars",
+    "follow": "Follow playback",
+    "overview": "All bars – click to jump",
+    "overviewBar": { "one": "Bar {bar} – {count} note", "other": "Bar {bar} – {count} notes" },
+    "repeatFirst": "Repeat bar 1 in the empty bars",
+    "barsRemoved": { "one": "Shortened – {count} note in the removed bars is gone", "other": "Shortened – {count} notes in the removed bars are gone" },
+    "range": "Range",
+    "octaveUp": "Octave up",
+    "octaveDown": "Octave down",
+    "allOctaves": "Show all octaves",
+    "hiddenNotes": { "one": "{count} hidden", "other": "{count} hidden" },
+    "posStep": "step {step}",
+    "posBar": "bar {bar}, step {step}",
+    "cellNote": { "one": "{name} – note, {count} step long", "other": "{name} – note, {count} steps long" },
+    "cellHeld": "{name} – held from {start}",
+    "resize": "Drag to make the note longer or shorter"
+  },
+  "song": {
+    "region": "Song timeline",
+    "view": "View",
+    "viewTracks": "Tracks",
+    "viewSong": "Song",
+    "create": "Create song structure",
+    "createHint": "Arrange your tracks into sections like intro, verse and drop – each track on or off per section.",
+    "openTimeline": "Open the song timeline",
+    "short": "{bars} · {time}",
+    "summary": "{sections} · {bars} · {time} min",
+    "sectionCount": { "one": "{count} section", "other": "{count} sections" },
+    "bars": { "one": "{count} bar", "other": "{count} bars" },
+    "sectionFallback": "Section {number}",
+    "tip": "Click cells to switch a track on or off in a section – drag to paint.",
+    "looping": "Looping “{name}”",
+    "wholeSong": "Whole song",
+    "addSection": "Section",
+    "menu": "Song options",
+    "showTracks": "Back to the tracks",
+    "removeArrangement": "Remove song structure",
+    "gridLabel": "Tracks per section",
+    "tracksColumn": "Tracks",
+    "trackSettings": "Track settings",
+    "always": "plays throughout",
+    "nameLabel": "Section name",
+    "rename": "Rename",
+    "renameTooltip": "Click to rename",
+    "loopOn": "Loop only “{name}”",
+    "loopOff": "Play the whole song again",
+    "sectionMenu": "Options for “{name}”",
+    "insertBefore": "Insert section before",
+    "insertAfter": "Insert section after",
+    "duplicate": "Duplicate",
+    "moveLeft": "Move left",
+    "moveRight": "Move right",
+    "deleteSection": "Delete section",
+    "lengthOf": "Length of “{name}”",
+    "shorter": "One bar shorter",
+    "longer": "One bar longer",
+    "cellLabel": "{track} in {section}: {state}",
+    "cellOn": "on",
+    "cellOff": "off",
+    "cellOnVariant": "on, with {code}",
+    "variantAdd": "Add a variation for {track} in {section}",
+    "variantAddTooltip": "Add a variation for this section",
+    "variantEdit": "Edit variation {code}",
+    "variantTitle": "{track} in “{section}”",
+    "variantLabel": "Variation (Strudel code)",
+    "variantHint": "Added to the track only in this section – e.g. .lpf(800) for a muffled sound or .gain(0.5) for quieter.",
+    "variantRemove": "Remove variation",
+    "done": "Done"
+  },
+  "samples": {
+    "open": "Samples",
+    "title": "Your samples",
+    "subtitle": "Drop in your own sounds – each slot becomes a Strudel sound you can play with s(\"name\"), variations with s(\"name:1\").",
+    "listLabel": "Sample slots",
+    "nameLabel": "Sound name",
+    "removeSlot": "Delete slot “{name}”",
+    "emptySlot": "Still empty – drop audio files here.",
+    "variants": { "one": "{count} variation", "other": "{count} variations" },
+    "preview": "Listen to {ref} ({file})",
+    "missingFile": "{ref} is missing ({file})",
+    "removeFile": "Remove {file}",
+    "missing": { "one": "“{file}” is missing – drop it here to bring it back.", "other": "{count} files are missing (e.g. “{file}”) – drop them here to bring them back." },
+    "addVariant": "Add",
+    "dropHere": "+ Drop audio here",
+    "dropHint": "WAV, MP3, OGG, FLAC … or a whole folder: every subfolder becomes a sound.",
+    "chooseFiles": "Choose files…",
+    "chooseFolder": "Choose folder…",
+    "privacy": "Your files stay on this device – nothing is uploaded. When using other people's samples, make sure you're allowed to.",
+    "dropOverlayTitle": "Drop to add as samples",
+    "dropOverlayText": "Each file becomes a sound – folders become one sound with variations.",
+    "suggestions": "Your samples",
+    "useTooltip": "Use {name} (Shift: add to the pattern)",
+    "manage": "Manage samples",
+    "addOwn": "Add your own samples",
+    "toast": {
+      "added": { "one": "Sample added: {names}", "other": "{count} samples added: {names}" },
+      "relinked": { "one": "{count} missing file found", "other": "{count} missing files found" },
+      "skipped": { "one": "{count} file skipped (not audio)", "other": "{count} files skipped (not audio)" }
+    }
+  },
+  "projectFile": {
+    "menu": "Project",
+    "openFile": "Open file…",
+    "download": "Download project (.zip)",
+    "openTitle": "Open project",
+    "more": { "one": "… and {count} more track", "other": "… and {count} more tracks" },
+    "missingHint": { "one": "{count} sample file isn't included. Drop it in later to hear it.", "other": "{count} sample files aren't included. Drop them in later to hear them." },
+    "dropTitle": "Drop to open the project",
+    "dropText": "A strudelmixr project (.zip or strudelmixr.json).",
+    "dropAnyTitle": "Drop to import",
+    "dropAnyText": "Projects (.zip, .json), samples (audio files or folders), MIDI files (.mid) or Strudel code (.js, .txt).",
+    "toast": {
+      "opened": { "one": "Project opened · {count} track", "other": "Project opened · {count} tracks" },
+      "samples": { "one": "{count} sample", "other": "{count} samples" },
+      "missing": { "one": "{count} file missing", "other": "{count} files missing" },
+      "downloaded": "Project downloaded"
+    },
+    "errors": {
+      "invalid": "This project file is damaged or incomplete.",
+      "notJson": "This file isn't a project file (no valid JSON).",
+      "notProject": "This JSON file isn't a strudelmixr project.",
+      "version": "This project was saved with a newer strudelmixr version.",
+      "notZip": "This file isn't a ZIP archive.",
+      "zipUnsupported": "This ZIP uses a format we can't read (e.g. password or very large archives).",
+      "zipBroken": "This ZIP archive seems to be damaged.",
+      "emptyZip": "There's no project or audio file in this ZIP.",
+      "unknownFile": "“{name}” can't be used here – drop projects, audio files or Strudel code.",
+      "unreadable": "The file couldn't be read.",
+      "exportFailed": "The project couldn't be packed – please try again."
+    }
+  },
+  "songBar": {
+    "label": "Song playback",
+    "sections": "Sections – click to play from there",
+    "playFrom": "Play from “{name}”",
+    "fromStart": "Play from the start",
+    "barOf": "bar {bar} / {total}",
+    "position": "Bar {bar} / {total} · {time} / {duration}"
+  }
+}

@@ -1,0 +1,909 @@
+{
+  "track": {
+    "untitled": "Spur {number}",
+    "numbered": "{name} {number}",
+    "copy": "{name} (Kopie)"
+  },
+  "kinds": {
+    "source": {
+      "label": "Klang",
+      "description": "Womit fängt die Spur an?"
+    },
+    "modifier": {
+      "label": "Rhythmus",
+      "description": "Verändert Timing, Muster und Tonhöhe."
+    },
+    "effect": {
+      "label": "Effekte",
+      "description": "Formt den Klang."
+    }
+  },
+  "units": {
+    "bars": {
+      "one": "Takt",
+      "other": "Takte"
+    },
+    "bit": {
+      "one": "Bit",
+      "other": "Bit"
+    },
+    "semitones": {
+      "one": "Halbton",
+      "other": "Halbtöne"
+    },
+    "steps": {
+      "one": "Stufe",
+      "other": "Stufen"
+    }
+  },
+  "instruments": {
+    "bd": "Kick",
+    "sd": "Snare",
+    "cp": "Clap",
+    "hh": "Hi-Hat",
+    "oh": "Open Hat",
+    "rim": "Rimshot"
+  },
+  "options": {
+    "banks": {
+      "modern": "Modern (House, Techno)",
+      "analog": "Analog (Electro, Synthpop)",
+      "emu808": "808 (Hip-Hop, Trap)"
+    },
+    "sounds": {
+      "sawtooth": "Säge – hell & kräftig",
+      "square": "Rechteck – retro, hohl",
+      "triangle": "Dreieck – weich",
+      "sine": "Sinus – rund & rein",
+      "supersaw": "Supersaw – breit (Trance)",
+      "piano": "Piano"
+    },
+    "notes": {
+      "C": "C",
+      "C#": "C#",
+      "D": "D",
+      "Eb": "Eb",
+      "E": "E",
+      "F": "F",
+      "F#": "F#",
+      "G": "G",
+      "Ab": "Ab",
+      "A": "A",
+      "Bb": "Bb",
+      "B": "B"
+    },
+    "scales": {
+      "minor": "Moll – melancholisch",
+      "major": "Dur – fröhlich",
+      "minor:pentatonic": "Moll-Pentatonik – klingt immer",
+      "major:pentatonic": "Dur-Pentatonik – leicht & offen",
+      "dorian": "Dorisch – jazzig, funky",
+      "phrygian": "Phrygisch – düster",
+      "mixolydian": "Mixolydisch – rockig",
+      "harmonic:minor": "Harmonisch Moll – orientalisch"
+    },
+    "octaves": {
+      "1": "1 – Bass",
+      "2": "2 – Bass",
+      "3": "3 – Mitte",
+      "4": "4 – Hoch",
+      "5": "5 – Hoch"
+    },
+    "delayTimes": {
+      "0_125": "1/8 – schnell",
+      "0_1875": "3/16 – punktiert",
+      "0_25": "1/4 – ruhig",
+      "0_375": "3/8 – weit"
+    },
+    "lfoShapes": {
+      "sine": "Welle (weich)",
+      "saw": "Rampe (steigend)",
+      "tri": "Dreieck",
+      "square": "Sprung (an/aus)",
+      "perlin": "Zufällig (organisch)"
+    },
+    "progressions": {
+      "<Am F C G>": "Am – F – C – G (Pop)",
+      "<C G Am F>": "C – G – Am – F (Hymne)",
+      "<Dm7 G7 C^7 C^7>": "Dm7 – G7 – Cmaj7 (Jazz)",
+      "<Am7 Dm7 Em7 Am7>": "Am7 – Dm7 – Em7 (Lo-Fi)",
+      "<Cm Ab Eb Bb>": "Cm – Ab – Eb – Bb (Episch)"
+    },
+    "rhythms": {
+      "hold": "Liegend",
+      "quarter": "Viertel",
+      "offbeat": "Offbeat (Reggae/House)"
+    },
+    "variationActions": {
+      "rev": "Rückwärts",
+      "fast": "Doppelt so schnell",
+      "up": "Eine Oktave höher",
+      "degrade": "Lücken"
+    },
+    "sometimesActions": {
+      "ply": "Doppelschlag",
+      "up": "Oktave höher",
+      "crush": "Kratzig"
+    },
+    "sweepFilters": {
+      "lpf": "Dumpf – nimmt Höhen weg",
+      "hpf": "Dünn – nimmt Bass weg"
+    },
+    "distortTypes": {
+      "scurve": "Klassisch – warm",
+      "soft": "Weich – sanft",
+      "hard": "Hart – abgeschnitten",
+      "cubic": "Kubisch – rund",
+      "diode": "Diode – wie ein Effektpedal",
+      "asym": "Asymmetrisch – rau",
+      "fold": "Falten – metallisch",
+      "sinefold": "Sinus-Falten – blubbernd",
+      "chebyshev": "Tschebyschow – Obertöne"
+    },
+    "offsets": {
+      "0_0625": "1/16 – ganz knapp",
+      "0_125": "1/8 – knapp",
+      "0_1875": "3/16 – punktiert",
+      "0_25": "1/4 – ein Schlag",
+      "0_5": "1/2 – halber Takt"
+    },
+    "intervals": {
+      "12": "Oktave höher (+12)",
+      "7": "Quinte höher (+7)",
+      "5": "Quarte höher (+5)",
+      "0": "Gleiche Tonhöhe",
+      "-12": "Oktave tiefer (−12)"
+    },
+    "swingGrids": {
+      "4": "Achtel – Hip-Hop, Jazz",
+      "8": "Sechzehntel – House, Funk"
+    },
+    "lingerParts": {
+      "0_5": "Erste Hälfte",
+      "0_25": "Erstes Viertel",
+      "0_125": "Erstes Achtel"
+    },
+    "shuffleModes": {
+      "shuffle": "Mischen – jeder Teil einmal",
+      "scramble": "Zufall – Teile können sich wiederholen"
+    },
+    "arpModes": {
+      "up": "Aufwärts",
+      "down": "Abwärts",
+      "updown": "Auf und ab",
+      "converge": "Von außen nach innen"
+    },
+    "vowels": {
+      "a": "A – offen",
+      "e": "E – hell",
+      "i": "I – dünn",
+      "o": "O – rund",
+      "u": "U – dunkel",
+      "<a e i o u>": "Wechselnd – einer pro Takt"
+    },
+    "tremoloRates": {
+      "2": "2 pro Takt – langsam",
+      "4": "4 pro Takt – Viertel",
+      "8": "8 pro Takt – Achtel",
+      "16": "16 pro Takt – schnell"
+    },
+    "fmWaves": {
+      "sine": "Sinus – weich",
+      "triangle": "Dreieck – mild",
+      "square": "Rechteck – hohl",
+      "sawtooth": "Säge – scharf"
+    }
+  },
+  "types": {
+    "drums": {
+      "label": "Drums",
+      "description": "Ein Beat aus Kick, Snare & Hi-Hats – einfach Kästchen anklicken.",
+      "params": {
+        "grid": {
+          "label": "Beat"
+        },
+        "bank": {
+          "label": "Drumcomputer"
+        }
+      }
+    },
+    "melody": {
+      "label": "Melodie",
+      "description": "Töne in einer Tonleiter – es kann nichts schief klingen.",
+      "params": {
+        "grid": {
+          "label": "Noten"
+        },
+        "sound": {
+          "label": "Klang"
+        },
+        "root": {
+          "label": "Grundton"
+        },
+        "scale": {
+          "label": "Tonleiter"
+        },
+        "octave": {
+          "label": "Lage"
+        }
+      }
+    },
+    "chords": {
+      "label": "Akkorde",
+      "description": "Eine Akkordfolge, die automatisch schön gesetzt wird.",
+      "params": {
+        "progression": {
+          "label": "Akkordfolge"
+        },
+        "custom": {
+          "label": "Eigene Akkorde",
+          "hint": "Überschreibt die Auswahl oben. Jeder Akkord dauert einen Takt.",
+          "placeholder": "<Am F C G>"
+        },
+        "sound": {
+          "label": "Klang"
+        },
+        "rhythm": {
+          "label": "Anschlag"
+        }
+      }
+    },
+    "sample": {
+      "label": "Sample",
+      "description": "Spielt beliebige Klänge aus der Strudel-Sample-Bibliothek.",
+      "params": {
+        "pattern": {
+          "label": "Muster",
+          "hint": "Klänge: tabla, elec, perc, glitch, bass, ambi, vinyl, misc, piano und die Drums bd, sd, cp, hh, oh, rim. „~“ = Pause, „*2“ = doppelt, „:3“ = Variante 3.",
+          "placeholder": "elec ~ elec:3 ~"
+        },
+        "speed": {
+          "label": "Tonhöhe"
+        }
+      }
+    },
+    "code": {
+      "label": "Code",
+      "description": "Freier Strudel-Code für alles, was Blöcke (noch) nicht können.",
+      "params": {
+        "code": {
+          "label": "Strudel-Ausdruck",
+          "hint": "Ein Ausdruck, der ein Pattern ergibt – wie in der Strudel-REPL."
+        }
+      }
+    },
+    "fast": {
+      "label": "Schneller",
+      "description": "Spielt das Muster schneller ab.",
+      "params": {
+        "factor": {
+          "label": "Faktor"
+        }
+      }
+    },
+    "slow": {
+      "label": "Langsamer",
+      "description": "Dehnt das Muster über mehrere Takte.",
+      "params": {
+        "factor": {
+          "label": "Faktor"
+        }
+      }
+    },
+    "rev": {
+      "label": "Rückwärts",
+      "description": "Spielt das Muster rückwärts.",
+      "params": {}
+    },
+    "firstOf": {
+      "label": "Variation",
+      "description": "Verändert jeden n-ten Takt – bringt Abwechslung.",
+      "params": {
+        "every": {
+          "label": "Alle … Takte"
+        },
+        "action": {
+          "label": "Was passiert"
+        }
+      }
+    },
+    "degrade": {
+      "label": "Zufall",
+      "description": "Lässt zufällig Noten weg – klingt lebendiger.",
+      "params": {
+        "amount": {
+          "label": "Wie viel"
+        }
+      }
+    },
+    "ply": {
+      "label": "Stottern",
+      "description": "Wiederholt jede Note mehrfach.",
+      "params": {
+        "times": {
+          "label": "Wiederholungen"
+        }
+      }
+    },
+    "jux": {
+      "label": "Stereo-Spiegel",
+      "description": "Links normal, rechts rückwärts – sehr breiter Klang.",
+      "params": {
+        "width": {
+          "label": "Breite",
+          "hint": "100 % = ganz links und rechts, weniger = näher beieinander."
+        }
+      }
+    },
+    "sometimes": {
+      "label": "Manchmal",
+      "description": "Ab und zu wird eine Note verändert.",
+      "params": {
+        "chance": {
+          "label": "Wahrscheinlichkeit"
+        },
+        "action": {
+          "label": "Was passiert"
+        }
+      }
+    },
+    "euclid": {
+      "label": "Euklid-Rhythmus",
+      "description": "Verteilt eine Anzahl Schläge so gleichmäßig wie möglich – solche Rhythmen gibt es überall auf der Welt.",
+      "params": {
+        "pulses": {
+          "label": "Schläge",
+          "hint": "Wie viele Noten spielen."
+        },
+        "steps": {
+          "label": "Schritte",
+          "hint": "In wie viele Schritte der Takt geteilt wird. 3 von 8 = kubanischer Tresillo."
+        },
+        "rotation": {
+          "label": "Verschieben",
+          "hint": "Verschiebt den Rhythmus um ein paar Schritte."
+        }
+      }
+    },
+    "off": {
+      "label": "Versetzte Kopie",
+      "description": "Spielt eine Kopie etwas später – auf Wunsch höher oder tiefer. Toll für Melodien.",
+      "params": {
+        "time": {
+          "label": "Verzögerung"
+        },
+        "interval": {
+          "label": "Tonhöhe der Kopie"
+        }
+      }
+    },
+    "echo": {
+      "label": "Wiederholungen",
+      "description": "Wiederholt jede Note ein paar Mal, jedes Mal leiser – wie ein Echo aus echten Noten.",
+      "params": {
+        "times": {
+          "label": "Anzahl",
+          "hint": "Inklusive der Original-Note."
+        },
+        "time": {
+          "label": "Abstand"
+        },
+        "feedback": {
+          "label": "Lautstärke der Wiederholungen",
+          "hint": "Wie laut jede Wiederholung im Vergleich zur vorigen bleibt. 100 % = gar nicht leiser."
+        }
+      }
+    },
+    "chunk": {
+      "label": "Stück für Stück",
+      "description": "Teilt den Takt in Teile und verändert pro Takt einen davon – einen nach dem anderen.",
+      "params": {
+        "parts": {
+          "label": "Teile"
+        },
+        "action": {
+          "label": "Was passiert"
+        }
+      }
+    },
+    "iter": {
+      "label": "Weiterrücken",
+      "description": "Beginnt jeden Takt ein Stück später – das Muster rollt durch.",
+      "params": {
+        "parts": {
+          "label": "Teile"
+        },
+        "backwards": {
+          "label": "Andere Richtung"
+        }
+      }
+    },
+    "palindrome": {
+      "label": "Hin und zurück",
+      "description": "Jeden zweiten Takt rückwärts – vorwärts, rückwärts, vorwärts …",
+      "params": {}
+    },
+    "swing": {
+      "label": "Swing",
+      "description": "Verzögert jede zweite Note ein wenig – das federt und groovt.",
+      "params": {
+        "amount": {
+          "label": "Stärke",
+          "hint": "33 % = klassischer Triolen-Swing."
+        },
+        "grid": {
+          "label": "Swing auf"
+        }
+      }
+    },
+    "linger": {
+      "label": "Anfang wiederholen",
+      "description": "Wiederholt nur den Anfang des Takts – ein typischer DJ-Effekt.",
+      "params": {
+        "part": {
+          "label": "Wiederholter Teil"
+        }
+      }
+    },
+    "segment": {
+      "label": "In Schritte teilen",
+      "description": "Macht aus langen Noten und fließenden Bewegungen gleichmäßige Schritte.",
+      "params": {
+        "steps": {
+          "label": "Schritte pro Takt"
+        }
+      }
+    },
+    "shuffle": {
+      "label": "Mischen",
+      "description": "Schneidet den Takt in Teile und spielt sie in zufälliger Reihenfolge.",
+      "params": {
+        "parts": {
+          "label": "Teile"
+        },
+        "mode": {
+          "label": "Art"
+        }
+      }
+    },
+    "mask": {
+      "label": "Stumm-Muster",
+      "description": "Schaltet Teile des Musters an und aus – für Breaks und Steigerungen.",
+      "params": {
+        "pattern": {
+          "label": "Muster",
+          "hint": "1 = spielen, 0 = stumm. <…> = ein Wert pro Takt: „<1 1 1 [1 0]>“ macht in jedem 4. Takt die zweite Hälfte stumm.",
+          "placeholder": "1 0 1 1"
+        }
+      }
+    },
+    "transpose": {
+      "label": "Transponieren",
+      "description": "Verschiebt alle Noten nach oben oder unten. Drums und Samples klingen höher oder tiefer.",
+      "params": {
+        "semitones": {
+          "label": "Halbtöne",
+          "hint": "12 = eine Oktave, 7 = eine Quinte. Minus = tiefer."
+        }
+      }
+    },
+    "scaleTranspose": {
+      "label": "Tonleiter-Schritte",
+      "description": "Verschiebt die Noten innerhalb der Tonleiter – bleibt immer in der Tonart. Nur für Melodien.",
+      "params": {
+        "steps": {
+          "label": "Stufen",
+          "hint": "2 = eine Terz höher, 7 = eine Oktave (bei 7-stufigen Tonleitern)."
+        }
+      }
+    },
+    "arp": {
+      "label": "Arpeggio",
+      "description": "Spielt Akkorde Ton für Ton statt alle auf einmal.",
+      "params": {
+        "mode": {
+          "label": "Richtung"
+        },
+        "speed": {
+          "label": "Tempo"
+        },
+        "custom": {
+          "label": "Eigene Reihenfolge",
+          "hint": "Nummern der Akkordtöne, 0 = tiefster. Ersetzt die Auswahl oben.",
+          "placeholder": "0 2 1 3"
+        }
+      }
+    },
+    "superimpose": {
+      "label": "Doppeln",
+      "description": "Legt eine Kopie in anderer Tonhöhe darüber – klingt voller.",
+      "params": {
+        "interval": {
+          "label": "Kopie"
+        }
+      }
+    },
+    "vib": {
+      "label": "Vibrato",
+      "description": "Lässt die Tonhöhe schwingen – wie bei Gesang oder Geige.",
+      "params": {
+        "rate": {
+          "label": "Tempo"
+        },
+        "depth": {
+          "label": "Stärke"
+        }
+      }
+    },
+    "chop": {
+      "label": "Zerhacken",
+      "description": "Zerschneidet jedes Sample in kleine Stücke – für glitchige, körnige Klänge. Für Samples.",
+      "params": {
+        "parts": {
+          "label": "Stücke"
+        }
+      }
+    },
+    "striate": {
+      "label": "Verflechten",
+      "description": "Schneidet die Samples in Stücke und spielt sie verschachtelt über den Takt. Für Samples.",
+      "params": {
+        "parts": {
+          "label": "Stücke"
+        }
+      }
+    },
+    "slice": {
+      "label": "Scheiben",
+      "description": "Schneidet ein Sample (z. B. einen Drum-Loop) in gleiche Scheiben und spielt sie in neuer Reihenfolge.",
+      "params": {
+        "parts": {
+          "label": "Scheiben"
+        },
+        "order": {
+          "label": "Reihenfolge",
+          "hint": "Nummern der Scheiben, 0 = erste. „~“ = Pause, „*2“ = doppelt.",
+          "placeholder": "0 2 1 3"
+        }
+      }
+    },
+    "loopAt": {
+      "label": "An Takte anpassen",
+      "description": "Macht ein Sample schneller oder langsamer, sodass es genau so viele Takte dauert – für Loops.",
+      "params": {
+        "bars": {
+          "label": "Länge"
+        }
+      }
+    },
+    "code-mod": {
+      "label": "Code-Funktion",
+      "description": "Hängt beliebige Strudel-Funktionen an.",
+      "params": {
+        "code": {
+          "label": "Methoden",
+          "hint": "Beginnt mit einem Punkt, z. B. .euclid(3,8)"
+        }
+      }
+    },
+    "lpf": {
+      "label": "Filter (dumpf)",
+      "description": "Nimmt Höhen weg – macht den Klang weicher und dunkler.",
+      "params": {
+        "cutoff": {
+          "label": "Helligkeit"
+        },
+        "resonance": {
+          "label": "Resonanz"
+        }
+      }
+    },
+    "hpf": {
+      "label": "Filter (dünn)",
+      "description": "Nimmt Bässe weg – macht Platz im Mix.",
+      "params": {
+        "cutoff": {
+          "label": "Grenze"
+        },
+        "resonance": {
+          "label": "Resonanz"
+        }
+      }
+    },
+    "sweep": {
+      "label": "Filter-Fahrt",
+      "description": "Der Filter öffnet und schließt sich automatisch – der Klassiker.",
+      "params": {
+        "min": {
+          "label": "Von"
+        },
+        "max": {
+          "label": "Bis"
+        },
+        "cycles": {
+          "label": "Dauer"
+        },
+        "shape": {
+          "label": "Verlauf"
+        },
+        "filter": {
+          "label": "Filter"
+        }
+      }
+    },
+    "filterEnv": {
+      "label": "Filter-Hüllkurve",
+      "description": "Der Filter öffnet sich kurz bei jeder Note – das klassische „Wau“ von Synth-Bässen.",
+      "params": {
+        "cutoff": {
+          "label": "Helligkeit",
+          "hint": "Wie hell es bei geschlossenem Filter klingt."
+        },
+        "amount": {
+          "label": "Öffnung",
+          "hint": "Wie weit der Filter aufgeht. Minus = er schließt sich stattdessen."
+        },
+        "attack": {
+          "label": "Öffnet in"
+        },
+        "decay": {
+          "label": "Schließt in"
+        },
+        "sustain": {
+          "label": "Bleibt offen"
+        },
+        "release": {
+          "label": "Ausklingen"
+        },
+        "resonance": {
+          "label": "Resonanz"
+        }
+      }
+    },
+    "room": {
+      "label": "Hall",
+      "description": "Raumklang – von kleinem Zimmer bis Kathedrale.",
+      "params": {
+        "amount": {
+          "label": "Menge"
+        },
+        "size": {
+          "label": "Raumgröße"
+        }
+      }
+    },
+    "delay": {
+      "label": "Echo",
+      "description": "Wiederholt den Klang leiser werdend.",
+      "params": {
+        "amount": {
+          "label": "Menge"
+        },
+        "time": {
+          "label": "Abstand"
+        },
+        "feedback": {
+          "label": "Wiederholungen"
+        }
+      }
+    },
+    "pan": {
+      "label": "Panorama",
+      "description": "Verschiebt den Klang nach links oder rechts.",
+      "params": {
+        "position": {
+          "label": "Links ↔ Rechts"
+        }
+      }
+    },
+    "adsr": {
+      "label": "Hüllkurve",
+      "description": "Wie schnell ein Ton ein- und ausklingt.",
+      "params": {
+        "attack": {
+          "label": "Einschwingen"
+        },
+        "decay": {
+          "label": "Abfall"
+        },
+        "sustain": {
+          "label": "Halten"
+        },
+        "release": {
+          "label": "Ausklingen"
+        }
+      }
+    },
+    "crush": {
+      "label": "Bitcrusher",
+      "description": "Macht den Klang kratzig wie alte Videospiele.",
+      "params": {
+        "bits": {
+          "label": "Auflösung"
+        }
+      }
+    },
+    "coarse": {
+      "label": "Lo-Fi",
+      "description": "Senkt die Abtastrate – klingt körnig und alt. Funktioniert am besten in Chrome und Edge.",
+      "params": {
+        "amount": {
+          "label": "Stärke"
+        }
+      }
+    },
+    "distort": {
+      "label": "Verzerrung",
+      "description": "Mehr Dreck und Druck.",
+      "params": {
+        "amount": {
+          "label": "Stärke"
+        },
+        "type": {
+          "label": "Art"
+        }
+      }
+    },
+    "vowel": {
+      "label": "Vokal",
+      "description": "Lässt den Klang „sprechen“ wie eine Stimme, die a, e, i, o oder u sagt.",
+      "params": {
+        "vowel": {
+          "label": "Vokal"
+        }
+      }
+    },
+    "phaser": {
+      "label": "Phaser",
+      "description": "Ein kreisender, schwebender Klang – sehr 70er.",
+      "params": {
+        "rate": {
+          "label": "Tempo"
+        },
+        "depth": {
+          "label": "Stärke"
+        }
+      }
+    },
+    "tremolo": {
+      "label": "Tremolo",
+      "description": "Die Lautstärke pulsiert im Takt – von sanftem Wabern bis zu hartem Zerhacken.",
+      "params": {
+        "rate": {
+          "label": "Pulse"
+        },
+        "depth": {
+          "label": "Stärke"
+        }
+      }
+    },
+    "fm": {
+      "label": "FM-Klang",
+      "description": "Frequenzmodulation: von Glocken und E-Pianos bis zu metallischen Bässen. Für Synth-Klänge.",
+      "params": {
+        "amount": {
+          "label": "Helligkeit",
+          "hint": "Wie stark moduliert wird – höher = heller und schnarrender."
+        },
+        "ratio": {
+          "label": "Charakter",
+          "hint": "Ganze Zahlen (1, 2, 3) klingen musikalisch, krumme Werte metallisch wie Glocken."
+        },
+        "wave": {
+          "label": "Modulator-Welle"
+        },
+        "decay": {
+          "label": "Abklingen",
+          "hint": "0 = gleichbleibend. Sonst wird der Klang nach jedem Anschlag weicher – wie bei einer Glocke."
+        },
+        "sustain": {
+          "label": "Rest-Helligkeit"
+        }
+      }
+    },
+    "compressor": {
+      "label": "Kompressor",
+      "description": "Gleicht laute und leise Stellen an – klingt dichter und druckvoller.",
+      "params": {
+        "threshold": {
+          "label": "Schwelle",
+          "hint": "Alles, was lauter ist, wird komprimiert. Niedriger = mehr."
+        },
+        "ratio": {
+          "label": "Stärke",
+          "hint": "4× = was über die Schwelle geht, wird auf ein Viertel gedrückt."
+        },
+        "knee": {
+          "label": "Weichheit"
+        },
+        "attack": {
+          "label": "Greift nach"
+        },
+        "release": {
+          "label": "Lässt los nach"
+        }
+      }
+    },
+    "postgain": {
+      "label": "Pegel",
+      "description": "Macht nach den Effekten lauter oder leiser – z. B. nach dem Kompressor.",
+      "params": {
+        "level": {
+          "label": "Pegel",
+          "hint": "1× = unverändert."
+        }
+      }
+    },
+    "sampleRange": {
+      "label": "Sample-Ausschnitt",
+      "description": "Spielt nur einen Teil jedes Samples – z. B. nur den Anfang oder das Ende.",
+      "params": {
+        "begin": {
+          "label": "Anfang",
+          "hint": "0 % = Beginn des Samples."
+        },
+        "end": {
+          "label": "Ende",
+          "hint": "100 % = Ende des Samples."
+        }
+      }
+    },
+    "cut": {
+      "label": "Abschneiden",
+      "description": "Ein neuer Klang stoppt den vorherigen derselben Gruppe – wie eine offene Hi-Hat, die geschlossen wird.",
+      "params": {
+        "group": {
+          "label": "Gruppe",
+          "hint": "Spuren mit derselben Gruppe schneiden sich gegenseitig ab."
+        }
+      }
+    },
+    "param": {
+      "label": "Beliebiger Parameter",
+      "description": "Setzt einen beliebigen Strudel-Klangparameter über seinen Namen – für alles ohne eigenen Baustein.",
+      "params": {
+        "name": {
+          "label": "Parameter",
+          "hint": "Ein Strudel-Name wie fmh, wtdepth oder bpenv.",
+          "placeholder": "lpenv"
+        },
+        "value": {
+          "label": "Wert",
+          "hint": "Eine Zahl oder ein Muster, z. B. 0.5 oder <0 0.5 1>.",
+          "placeholder": "<0 0.5 1>"
+        }
+      }
+    },
+    "code-fx": {
+      "label": "Code-Effekt",
+      "description": "Beliebige Strudel-Effekte als Code.",
+      "params": {
+        "code": {
+          "label": "Methoden",
+          "hint": "Beginnt mit einem Punkt, z. B. .phaser(4)"
+        }
+      }
+    }
+  },
+  "controlGroups": {
+    "sound": "Klang & Lautstärke",
+    "envelope": "Hüllkurve",
+    "filter": "Filter",
+    "filterEnvelope": "Filter-Hüllkurve",
+    "filterLfo": "Filter-Modulation",
+    "pitch": "Tonhöhe & Vibrato",
+    "fm": "FM-Synthese",
+    "wavetable": "Wavetable",
+    "synth": "Synth",
+    "sample": "Samples",
+    "distortion": "Verzerrung",
+    "modulation": "Tremolo & Phaser",
+    "space": "Raum & Echo",
+    "dynamics": "Dynamik",
+    "voicing": "Akkord-Voicing",
+    "routing": "Routing",
+    "external": "MIDI & OSC",
+    "superdirt": "Nur SuperDirt",
+    "meta": "Anzeige & Info"
+  }
+}

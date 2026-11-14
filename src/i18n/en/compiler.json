@@ -1,0 +1,30 @@
+{
+  "unnamedTrack": "Track",
+  "invalidTempo": "The tempo isn't valid – using {bpm} BPM instead.",
+  "sourceBypassed": "“{track}” is silent because its sound source is switched off.",
+  "noSource": "“{track}” doesn't have a sound source yet – add Drums or a Melody, for example.",
+  "extraSource": "“{track}” has more than one sound source – “{block}” is ignored.",
+  "invalidVolume": "“{track}”: The volume isn't valid – using 0.8 instead.",
+  "unknownBlock": "Unknown block “{type}” – it will be skipped.",
+  "blockSkipped": "{block}: {message} This block will be skipped.",
+  "param": {
+    "notANumber": "“{param}” isn't a valid number.",
+    "empty": "“{param}” is empty.",
+    "unknownValue": "“{param}” has an unknown value (“{value}”).",
+    "notText": "“{param}” isn't text.",
+    "damaged": "“{param}” is damaged.",
+    "noSteps": "“{param}” has no steps.",
+    "brackets": "“{param}”: The brackets don't match up.",
+    "notAToggle": "“{param}” isn't on or off."
+  },
+  "block": {
+    "emptyDrumGrid": "The grid is empty – click a few boxes.",
+    "emptyNoteGrid": "No notes yet – click a few.",
+    "emptyCode": "The code field is empty.",
+    "needsScale": "This only works with a Melody (it needs a scale).",
+    "rangeOrder": "The end must come after the start.",
+    "unknownControl": "Strudel doesn't know a parameter called “{name}”.",
+    "unknownControlSuggest": "Strudel doesn't know a parameter called “{name}” – did you mean “{suggestion}”?"
+  },
+  "invalidSection": "A section of the arrangement has an invalid length and was skipped."
+}

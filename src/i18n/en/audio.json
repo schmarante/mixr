@@ -1,0 +1,43 @@
+{
+  "sources": {
+    "drums": "Drums",
+    "piano": "Piano",
+    "sonicpi": "Sample library"
+  },
+  "syntax": {
+    "unterminatedString": "A quotation mark is never closed.",
+    "unterminatedTemplate": "A backtick text (`…`) is never closed.",
+    "unterminatedComment": "A comment /* … */ is never closed.",
+    "unexpectedSlash": "A “/” is in an unexpected place.",
+    "unexpectedCharacter": "Unexpected character “{char}”.",
+    "unexpectedToken": "Unexpected character – is a bracket, comma or quotation mark missing?",
+    "duplicateName": "The name “{name}” is used twice."
+  },
+  "soundNotInBank": "There's no sound “{name}” in the drum machine “{bank}”.",
+  "soundNotFound": "There's no sound called “{sound}” (a typo, or the samples haven't loaded yet?).",
+  "miniNotation": "Error in the mini-notation (the pattern in quotes): {detail}",
+  "sampleNotLoaded": "The sample “{sample}” couldn't be loaded.",
+  "soundsNotLoaded": "Sounds couldn't be loaded – please check your connection.",
+  "syntaxError": "Syntax error in the code{where}: {detail}",
+  "inTrack": " (track “{track}”)",
+  "inLine": " (line {line})",
+  "unknownName": "Unknown name “{name}” – a typo in the code?",
+  "notAFunction": "“{name}” isn't a known Strudel function – a typo in the code?",
+  "newerFunction": "“{name}” only exists in a newer Strudel version than the one strudelmixr uses – it already works on strudel.cc.",
+  "unsupported": {
+    "osc": "“{name}” sends OSC messages (e.g. to SuperCollider/SuperDirt). That needs a local OSC server and doesn't work in strudelmixr – on your own computer, use strudel.cc together with the Strudel OSC bridge.",
+    "other": "“{name}” isn't supported in strudelmixr."
+  },
+  "extensionNotLoaded": "An extension for this code couldn't be loaded ({pkg}) – please check your connection and change the code or press Play again.",
+  "invalidExpression": "Invalid expression in the code: {detail}",
+  "codeError": "Error in the code: {detail}",
+  "unknownError": "Unknown error in the code.",
+  "noWebAudio": "Your browser doesn't support Web Audio.",
+  "timeout": "Loading took too long",
+  "engineNotLoaded": "The audio engine couldn't be loaded – please check your connection and press Play again.",
+  "engineNotStarted": "The audio engine couldn't be started: {detail}",
+  "samplesNotLoaded": "The sounds (samples) couldn't be loaded – please check your connection and press Play again.",
+  "someSoundsMissing": "Some sounds are missing ({sources}) – check your connection, they'll be tried again the next time you press Play.",
+  "workletsInsecure": "Sounds and effects like supersaw, crush, shape or distort need AudioWorklets, which browsers only provide over HTTPS or on localhost. This page runs on {origin} – please open it via HTTPS or http://localhost.",
+  "workletsFailed": "The audio worklets (supersaw, crush, shape, distort …) couldn't be loaded – please reload the page."
+}

@@ -1,0 +1,13 @@
+---
+/**
+ * Audio-Agent-Insel (Vanilla JS, keine Props, rendert nichts Sichtbares).
+ * Das Script läuft nur im Browser und ist vom React-Render-Zyklus entkoppelt.
+ * @strudel/web wird vom AudioAgent erst beim ersten Play dynamisch nachgeladen.
+ */
+---
+
+<script>
+  import { startAudioAgent } from '../../agents/AudioAgent';
+
+  startAudioAgent();
+</script>

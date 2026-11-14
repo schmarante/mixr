@@ -1,0 +1,57 @@
+{
+  "heading": "Über {name}",
+  "description": "Musik aus Bausteinen: Klänge, Rhythmen und Effekte wie in einem Mischpult stapeln – strudelmixr schreibt daraus live Strudel-Code.",
+  "close": "Schließen",
+  "author": "Autor",
+  "email": "E-Mail",
+  "version": "Version",
+  "language": "Sprache",
+  "madeWith": "Designed with ❤️. Powered by Claude.",
+  "openSource": "strudelmixr baut auf großartigen Open-Source-Projekten auf. Danke an alle, die daran mitarbeiten!",
+  "groups": {
+    "engine": "Musik-Engine",
+    "app": "In der Oberfläche",
+    "sounds": "Klänge & Samples",
+    "build": "Zum Bauen"
+  },
+  "purposes": {
+    "strudel": "Live-Coding-Musik im Browser – das Herz von strudelmixr",
+    "strudelCore": "Patterns, Mini-Notation und Auswertung des erzeugten Codes",
+    "strudelTonal": "Tonleitern, Akkorde und Voicings",
+    "strudelWebaudio": "Klangerzeugung, Effekte und Sample-Wiedergabe (Web Audio)",
+    "strudelWeb": "Einbindung von Strudel in eigene Seiten",
+    "kabelsalat": "Modulare Audio-Graphen (von Strudel genutzt)",
+    "tidalCycles": "Vorbild für Strudels Pattern-Sprache und Mini-Notation",
+    "tonal": "Musiktheorie: Noten, Intervalle, Skalen",
+    "chordVoicings": "Automatische Lage von Akkorden",
+    "fractionJs": "Exakte Brüche für das Timing",
+    "acorn": "Parsen und Umschreiben des Strudel-Codes",
+    "webmidi": "MIDI-Unterstützung (von Strudel mitgeliefert)",
+    "react": "Interaktive Inseln: Mixer, Inspector, Code-Ansicht",
+    "nanostores": "Zustand und Event-Bus zwischen den Inseln",
+    "codemirror": "Code-Editor mit Hervorhebung, Suche und Autovervollständigung",
+    "uzuDrumkit": "Drum-Kit „Modern“ und Standard-Drums – nur die Dateien von Switch Angel",
+    "freepats": "Drum-Kit „Analog“ (Roberto, zenvoid.org – mit Yoshimi und Geonkick synthetisiert)",
+    "hydrogen808": "Drum-Kit „808“ (ArtemioLabs – aus Sinus und Rauschen synthetisiert)",
+    "salamander": "Piano-Klang – Alexander Holm, Auswahl als MP3 über Tone.js",
+    "sonicPi": "Sample-Bibliothek: Tabla, Elektro, Percussion, Glitch, Bass, Ambient, Vinyl",
+    "astro": "Web-Framework mit SSR und Islands (@astrojs/node, @astrojs/react)",
+    "vite": "Build-Werkzeug und Dev-Server",
+    "tailwind": "CSS-Framework",
+    "typescript": "Typsicherheit (strictest)",
+    "vitest": "Tests – der erzeugte Code wird durch echtes Strudel geprüft",
+    "ddev": "Lokale Entwicklungsumgebung (Docker)",
+    "claudeCode": "KI-Pair-Programming beim Entwickeln",
+    "strudelExtras": "Mikrotonale Stimmungen, MIDI-Ein-/Ausgabe, Gerätesensoren und Csound – nur geladen, wenn Code sie nutzt",
+    "csound": "Csound-Klangengine für csound()-Code – erst bei der ersten Nutzung geladen"
+  },
+  "licenses": {
+    "proprietary": "proprietär"
+  },
+  "footnote": "Strudel und seine Pakete stehen unter der GNU AGPL-3.0. Alle Samples werden von strudelmixr selbst ausgeliefert und stehen unter freien Lizenzen. „Salamander Grand Piano“ von Alexander Holm, lizenziert unter {ccBy}. Details: {details}.",
+  "table": {
+    "project": "Projekt",
+    "purpose": "Wofür",
+    "license": "Lizenz"
+  }
+}

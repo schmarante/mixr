@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+/*
+ * Design-Tokens für strudelmixr.
+ * Dunkles, ruhiges Studio-Design mit einer warmen Akzentfarbe ("Strudel-Orange").
+ * Spurfarben kommen aus der Tailwind-Palette (siehe components/ui/lib/trackColors.ts).
+ */
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
+  --font-mono: ui-monospace, "JetBrains Mono", "Cascadia Code", "SFMono-Regular", Menlo, Consolas, "Liberation Mono",
+    monospace;
+
+  /* Flächen (von tief nach hoch) */
+  --color-canvas: #0b0d12;
+  --color-panel: #10131a;
+  --color-card: #171b24;
+  --color-raised: #1e2330;
+  --color-hover: #262c3a;
+  /* Raster: jede zweite Vierergruppe etwas dunkler */
+  --color-cell: #1f2431;
+  --color-cell-alt: #191d28;
+
+  /* Linien */
+  --color-line: rgb(255 255 255 / 0.07);
+  --color-line-strong: rgb(255 255 255 / 0.14);
+
+  /* Text */
+  --color-fg: #eceef3;
+  --color-muted: #a3abbd;
+  --color-faint: #7a8296;
+
+  /* Akzent */
+  --color-accent: #ff8a4c;
+  --color-accent-hover: #ff9d68;
+  --color-accent-soft: rgb(255 138 76 / 0.14);
+  --color-on-accent: #1b0c03;
+
+  /* Status */
+  --color-warn: #f2c063;
+  --color-warn-soft: rgb(242 192 99 / 0.12);
+  --color-danger: #ff7b7b;
+  --color-danger-soft: rgb(255 123 123 / 0.12);
+  --color-ok: #5fd39a;
+
+  /* Code-Highlighting */
+  --color-code-string: #a5d98a;
+  --color-code-number: #f2c063;
+  --color-code-method: #7cc4ff;
+  --color-code-fn: #d7a6ff;
+  --color-code-keyword: #ff9d68;
+  --color-code-comment: #6c7488;
+  --color-code-mini: #e6e08a;
+
+  --animate-pop-in: pop-in 140ms ease-out;
+  --animate-fade-in: fade-in 160ms ease-out;
+  --animate-slide-up: slide-up 200ms ease-out;
+  --animate-pulse-soft: pulse-soft 1.4s ease-in-out infinite;
+
+  @keyframes pop-in {
+    from {
+      opacity: 0;
+      transform: translateY(-4px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes pulse-soft {
+    0%,
+    100% {
+      opacity: 0.45;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-canvas font-sans text-fg antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  ::selection {
+    background: rgb(255 138 76 / 0.35);
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+
+  /* Native <dialog> */
+  dialog::backdrop {
+    background: rgb(5 6 9 / 0.7);
+    backdrop-filter: blur(3px);
+  }
+
+  /* Schlanke Scrollbars passend zum dunklen Design */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(255 255 255 / 0.14) transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "error": {
+    "syntax": "Der Code lässt sich in Zeile {line}, Spalte {column} nicht lesen: {message}",
+    "noPattern": "Kein abspielbares Muster gefunden. Strudel-Code enthält meist Zeilen wie $: s(\"bd sd\")."
+  },
+  "note": {
+    "tempo": "Tempo: {bpm} BPM.",
+    "tempoAdjusted": "Tempo {original} BPM wurde auf {bpm} BPM gesetzt (ganze Zahlen von 40 bis 220).",
+    "tempoNotConstant": "Das Tempo {code} ist keine feste Zahl – es gilt {bpm} BPM.",
+    "samplesDropped": "Klänge aus {code} werden nicht geladen – strudelmixr nutzt nur frei lizenzierte Klänge, unbekannte Klänge wurden ersetzt.",
+    "setupDropped": "Einstellung {code} wurde weggelassen.",
+    "statementDropped": "Zeile {line} ({code}) spielt nichts ab und wurde weggelassen – klanglich ändert sich nichts.",
+    "notPlayed": "Zeile {line} ({code}) spielt Strudel nicht ab (nur $:-Muster) – weggelassen, klanglich ändert sich nichts.",
+    "variableInlined": "Variable „{name}“ wurde direkt dort eingesetzt, wo sie verwendet wird – klingt wie das Original.",
+    "muted": "Diese Spur war im Original stummgeschaltet und ist es auch hier.",
+    "overwritten": "Der Name „{name}“ kommt später noch einmal vor und Strudel spielt nur den letzten – diese Spur ist deshalb stummgeschaltet.",
+    "drums": "Drum-Muster als Schritt-Raster übernommen (Kit „{kit}“) – gleicher Rhythmus.",
+    "drumKits": "Die Drum-Zeilen nutzten verschiedene Drumcomputer – das Raster verwendet für alle das Kit „{kit}“.",
+    "melody": "Melodie als Noten-Raster übernommen ({root}{octave} {scale}) – gleiche Töne.",
+    "chords": "Akkordfolge als Akkord-Baustein übernommen – gleiche Akkorde.",
+    "sample": "Sample-Muster als Sample-Baustein übernommen – gleiches Muster.",
+    "codeSource": "Als Code übernommen (klingt wie das Original): {code}",
+    "codeBlock": "Als Code-Baustein übernommen (klingt wie das Original): {code}",
+    "gainClamped": "Lautstärke {gain} liegt außerhalb von 0–1 – auf {volume} gesetzt, klingt daher etwas anders.",
+    "gainPattern": "Die wechselnde Lautstärke {code} bleibt als Code-Baustein erhalten (als velocity) – klingt wie das Original.",
+    "gainVelocity": "Lautstärken im Code wurden als velocity geschrieben, damit die Spur-Lautstärke sie nicht überschreibt – klingt wie das Original.",
+    "sound": "Klang „{from}“ ist nicht verfügbar – ersetzt durch „{to}“, klingt daher anders.",
+    "bank": "Drumcomputer „{from}“ durch Kit „{to}“ ersetzt – gleicher Rhythmus, andere Drum-Klänge.",
+    "drumSound": "Drum-Klang „{from}“ durch „{to}“ aus Kit „{kit}“ ersetzt – klingt anders.",
+    "recipe": {
+      "distortedGuitar": "Klang „{from}“ ist nicht verfügbar – ersetzt durch einen {to}-Klang, geformt wie eine verzerrte Gitarre (zusätzliche Bausteine direkt hinter der Quelle) – klingt ähnlich, nicht gleich.",
+      "cleanGuitar": "Klang „{from}“ ist nicht verfügbar – ersetzt durch einen {to}-Klang, geformt wie eine gezupfte Gitarre (zusätzliche Bausteine direkt hinter der Quelle) – klingt ähnlich, nicht gleich.",
+      "synthBass": "Klang „{from}“ ist nicht verfügbar – ersetzt durch einen {to}-Klang, geformt wie ein Synth-Bass (zusätzliche Bausteine direkt hinter der Quelle) – klingt ähnlich, nicht gleich.",
+      "bass": "Klang „{from}“ ist nicht verfügbar – ersetzt durch einen {to}-Klang, geformt wie ein Bass (zusätzliche Bausteine direkt hinter der Quelle) – klingt ähnlich, nicht gleich.",
+      "organ": "Klang „{from}“ ist nicht verfügbar – ersetzt durch einen {to}-Klang, geformt wie eine Orgel (zusätzliche Bausteine direkt hinter der Quelle) – klingt ähnlich, nicht gleich.",
+      "pad": "Klang „{from}“ ist nicht verfügbar – ersetzt durch einen {to}-Klang, geformt wie Streicher bzw. eine Fläche (zusätzliche Bausteine direkt hinter der Quelle) – klingt ähnlich, nicht gleich.",
+      "brass": "Klang „{from}“ ist nicht verfügbar – ersetzt durch einen {to}-Klang, geformt wie ein Blasinstrument (zusätzliche Bausteine direkt hinter der Quelle) – klingt ähnlich, nicht gleich.",
+      "flute": "Klang „{from}“ ist nicht verfügbar – ersetzt durch einen {to}-Klang, geformt wie eine Flöte (zusätzliche Bausteine direkt hinter der Quelle) – klingt ähnlich, nicht gleich.",
+      "bells": "Klang „{from}“ ist nicht verfügbar – ersetzt durch einen {to}-Klang, geformt wie eine Glocke bzw. ein Mallet (zusätzliche Bausteine direkt hinter der Quelle) – klingt ähnlich, nicht gleich.",
+      "lead": "Klang „{from}“ ist nicht verfügbar – ersetzt durch einen {to}-Klang, geformt wie ein Synth-Lead (zusätzliche Bausteine direkt hinter der Quelle) – klingt ähnlich, nicht gleich.",
+      "generic": "Klang „{from}“ ist nicht verfügbar – ersetzt durch einen {to}-Klang, geformt wie ein ausklingendes Instrument (zusätzliche Bausteine direkt hinter der Quelle) – klingt ähnlich, nicht gleich."
+    },
+    "visualsDropped": {
+      "one": "1 Anzeige-Funktion ({names}) weggelassen – sie macht keinen Ton.",
+      "other": "{count} Anzeige-Funktionen ({names}) weggelassen – sie machen keinen Ton."
+    },
+    "preludeKept": "Setup-Code übernommen (eigene Funktionen: {names}) – du findest ihn über den Spuren.",
+    "preludeKeptPlain": "Setup-Code übernommen (Konstanten und Einstellungen) – du findest ihn über den Spuren.",
+    "noteMelody": "Noten in einen Melodie-Baustein umgewandelt ({root}-{scale}, Lage {octave}) – gleiche Töne wie im Original.",
+    "arrangement": {
+      "one": "Song-Ablauf mit 1 Abschnitt übernommen ({tracks} Instrumente) – du findest ihn über den Spuren.",
+      "other": "Song-Ablauf mit {count} Abschnitten übernommen ({tracks} Instrumente) – du findest ihn über den Spuren."
+    },
+    "arrangementCode": "Der Song-Ablauf (arrange) bleibt eine Code-Spur: {reason} lässt sich nicht in Instrumente aufteilen – klingt wie das Original.",
+    "instrumentUnused": "Instrument „{name}“ kommt im Song nicht vor – stumm übernommen.",
+    "samplesSlots": "Samples aus {code} werden durch deine eigenen Slots ersetzt."
+  },
+  "names": {
+    "drums": "Drums",
+    "melody": "Melodie",
+    "bass": "Bass",
+    "chords": "Akkorde",
+    "noise": "Rauschen",
+    "track": "Spur {n}",
+    "row": "{track} · {part}"
+  }
+}

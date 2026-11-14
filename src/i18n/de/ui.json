@@ -1,0 +1,510 @@
+{
+  "page": {
+    "loading": "Studio wird geladen …",
+    "noscript": "strudelmixr braucht JavaScript, um Musik zu machen. Bitte aktiviere JavaScript in deinem Browser."
+  },
+  "regions": {
+    "start": "Start",
+    "tracks": "Spuren",
+    "tracksHeading": {
+      "one": "{count} Spur",
+      "other": "{count} Spuren"
+    },
+    "settings": "Einstellungen",
+    "playback": "Wiedergabe"
+  },
+  "topbar": {
+    "home": "strudelmixr – Startseite",
+    "undo": "Rückgängig",
+    "redo": "Wiederholen",
+    "templates": "Vorlagen",
+    "templatesOpen": "Vorlagen öffnen",
+    "templatesTooltip": "Vorlage laden",
+    "templatesTitle": "Vorlage wählen",
+    "new": "Neu",
+    "newProject": "Neues Projekt",
+    "newProjectTooltip": "Neues Projekt starten",
+    "code": "Code",
+    "codeShow": "Code anzeigen",
+    "codeShowTooltip": "Strudel-Code ansehen",
+    "codeHideTooltip": "Code ausblenden",
+    "about": "Über strudelmixr"
+  },
+  "transport": {
+    "play": "Abspielen",
+    "stop": "Stoppen",
+    "addTrackFirst": "Füge zuerst eine Spur hinzu",
+    "loadingSounds": "Lade Sounds…",
+    "engineFailed": "Die Audio-Engine konnte nicht starten.",
+    "notices": {
+      "one": "Hinweis",
+      "other": "{count} Hinweise"
+    }
+  },
+  "bpm": {
+    "slower": "Langsamer (−1 BPM)",
+    "faster": "Schneller (+1 BPM)",
+    "label": "Tempo in BPM",
+    "input": "Tempo in BPM eingeben",
+    "dragTitle": "Ziehen oder klicken zum Eintippen"
+  },
+  "templatesDialog": {
+    "replaceNotice": "Dein aktuelles Projekt wird ersetzt – mit Rückgängig ({shortcut}) holst du es zurück."
+  },
+  "start": {
+    "templatesHeading": "Mit einer Vorlage loslegen",
+    "templatesText": "Ein Klick – und du hörst sofort etwas. Danach alles nach Lust verändern.",
+    "autoplay": "Direkt abspielen",
+    "trackCount": {
+      "one": "{count} Spur",
+      "other": "{count} Spuren"
+    },
+    "emptyHeadingOr": "Oder leer starten",
+    "emptyHeading": "Womit möchtest du anfangen?",
+    "emptyText": "Wähle die erste Klangquelle – weitere Spuren kannst du jederzeit hinzufügen.",
+    "sourceHints": {
+      "drums": "Beat im Raster",
+      "melody": "Töne zum Klicken",
+      "chords": "Fertige Harmonien",
+      "sample": "Klänge per Text",
+      "code": "Für Profis"
+    }
+  },
+  "onboarding": {
+    "title": "Musik aus Bausteinen",
+    "intro": "Stapel Klänge, Rhythmen und Effekte wie in einem Mischpult. strudelmixr schreibt daraus live {strudel}-Code – du hörst jede Änderung sofort und lernst den Code ganz nebenbei.",
+    "tip": "Tipp: {key} startet und stoppt die Musik. Nichts kann kaputtgehen – alles lässt sich rückgängig machen."
+  },
+  "workspace": {
+    "newTrack": "Neue Spur",
+    "newTrackGroup": "Neue Spur mit Klangquelle anlegen",
+    "newTrackWith": "Neue Spur: {source}",
+    "trackGroup": "Spur {name}",
+    "chooseSound": "Klang wählen",
+    "chooseSoundTitle": "Womit soll die Spur klingen?",
+    "addBlock": "Baustein hinzufügen",
+    "addBlockShort": "Baustein",
+    "addBlockTooltip": "Rhythmus oder Effekt hinzufügen",
+    "emptyPreview": "Noch leer – klick mich"
+  },
+  "chain": {
+    "withSummary": "{label}: {summary}",
+    "sourceName": "Klangquelle {label}",
+    "offSuffix": "{name} (ausgeschaltet)",
+    "edit": "{name} – einstellen",
+    "turnOn": "{label} einschalten",
+    "bypass": "{label} überbrücken (aus)",
+    "turnOnTooltip": "Einschalten",
+    "bypassTooltip": "Ausschalten (überbrücken)",
+    "remove": "{label} entfernen",
+    "removeTooltip": "Entfernen ({key})",
+    "notice": "Hinweis: {text}"
+  },
+  "track": {
+    "menu": "Aktionen für {name}",
+    "rename": "Umbenennen",
+    "duplicate": "Duplizieren",
+    "moveUp": "Nach oben",
+    "moveDown": "Nach unten",
+    "delete": "Spur löschen",
+    "nameInput": "Spurname",
+    "nameTooltip": "Klicken: Spur einstellen · Doppelklick: umbenennen",
+    "mute": "Stumm schalten",
+    "unmute": "Stummschaltung aufheben",
+    "solo": "Solo – nur diese Spur hören",
+    "unsolo": "Solo beenden",
+    "muteShort": "M",
+    "soloShort": "S",
+    "volumeOf": "Lautstärke {name}"
+  },
+  "trackInspector": {
+    "title": "Spur „{name}“",
+    "subtitle": "Gilt für alle Bausteine dieser Spur.",
+    "duplicate": "Duplizieren",
+    "delete": "Löschen",
+    "name": "Name",
+    "color": "Farbe",
+    "volume": "Lautstärke",
+    "mute": "Stumm",
+    "solo": "Solo",
+    "soloHint": "– nur diese Spur(en) hören",
+    "signalChain": "Signalweg"
+  },
+  "colors": {
+    "violet": "Violett",
+    "sky": "Himmelblau",
+    "emerald": "Smaragd",
+    "amber": "Bernstein",
+    "rose": "Rosé",
+    "cyan": "Türkis",
+    "lime": "Limette",
+    "fuchsia": "Pink"
+  },
+  "inspector": {
+    "deselect": "Auswahl aufheben",
+    "openTrack": "Spur-Einstellungen öffnen",
+    "blockActive": "Baustein aktiv",
+    "swapSound": "Klang tauschen",
+    "swapSoundTitle": "Anderen Klang wählen",
+    "remove": "Entfernen",
+    "removeTooltip": "Entfernen ({key})",
+    "noParams": "Dieser Baustein hat keine Einstellungen – er wirkt einfach. Probier ihn mit Play aus!",
+    "moreOptions": "Mehr Optionen"
+  },
+  "emptyInspector": {
+    "step1Title": "Baustein anklicken",
+    "step1Text": "Seine Einstellungen erscheinen hier – Raster, Regler, Klänge.",
+    "step2Title": "„+ Baustein“ anhängen",
+    "step2Text": "Rhythmus und Effekte verändern die Spur von links nach rechts.",
+    "step3Title": "Anhören",
+    "step3Text": "Mit Play oder der Leertaste. Änderungen hörst du sofort.",
+    "shortcutPlay": "Play / Stop",
+    "shortcutUndo": "Rückgängig",
+    "shortcutDelete": "Baustein löschen",
+    "shortcutMove": "Baustein verschieben",
+    "dismiss": "Anleitung ausblenden"
+  },
+  "picker": {
+    "searchPlaceholder": "Suchen, z. B. Hall, Filter …",
+    "searchLabel": "Bausteine durchsuchen",
+    "replacesSource": "Ersetzt die aktuelle Klangquelle dieser Spur.",
+    "noResults": "Nichts gefunden – versuch’s mit einem anderen Wort."
+  },
+  "fields": {
+    "reset": "{label} zurücksetzen",
+    "resetTooltip": "Auf Standard zurücksetzen",
+    "enter": "{label} eingeben",
+    "enterPercent": "{label} eingeben (Prozent)",
+    "enterUnit": "{label} eingeben ({unit})",
+    "clickToType": "Klicken zum Eintippen",
+    "syntaxMini": "Mini-Notation",
+    "syntaxCode": "Strudel-Code",
+    "syntaxTooltip": "Was ist {name}? (öffnet strudel.cc)"
+  },
+  "grid": {
+    "clear": "Leeren",
+    "drumHint": "Kästchen anklicken oder darüberziehen. Jede Spalte ist ein Sechzehntel.",
+    "noteHint": "Klick setzt eine Note, am rechten Rand ziehen hält sie länger (oder Shift+→/←). Oben = hoch, übereinander = Akkord.",
+    "drumLabel": "{label} – Raster",
+    "noteLabel": "{label} – Piano-Roll",
+    "cell": "{row}, Schritt {step}"
+  },
+  "code": {
+    "title": "Strudel-Code",
+    "subtitle": "Dein Song als Code – bearbeite ihn, die Bausteine ziehen mit.",
+    "panelLabel": "Strudel-Code",
+    "codeLabel": "Generierter Strudel-Code",
+    "closeBackdrop": "Code-Ansicht schließen",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "openInStrudel": "In Strudel öffnen",
+    "empty": "Noch kein Code – füge eine Spur hinzu oder tippe einfach Strudel-Code hier ein.",
+    "footer": "Jeder Baustein wird zu einer Funktion wie {example}. Bearbeite den Code direkt hier – oder öffne ihn in Strudel.",
+    "playbackError": "Beim Abspielen hakt es",
+    "jumpToBlock": "Zum Baustein springen",
+    "whereTrack": "Spur „{name}“",
+    "whereIn": "in „{name}“",
+    "editorLabel": "Strudel-Code-Editor",
+    "placeholder": "// Tippe hier Strudel-Code, z. B. $: s(\"bd*4\")",
+    "status": {
+      "synced": "Synchron mit den Bausteinen",
+      "typing": "Wird nach einer kurzen Pause angewendet …",
+      "linkedPlaying": "Dein Code spielt – die Bausteine ziehen mit",
+      "linked": "Bausteine aus deinem Code aktualisiert",
+      "live": "Live",
+      "liveTooltip": "Dieser Code spielt gerade"
+    },
+    "shortcuts": "{apply} anwenden · {stop} Stopp",
+    "codeMode": {
+      "syntax": "Syntaxfehler in Zeile {line}. Die letzte funktionierende Fassung spielt weiter, die Bausteine bleiben unverändert.",
+      "noPattern": "Hier steht noch kein Pattern, aus dem Bausteine werden könnten. Die Bausteine bleiben unverändert.",
+      "arrangement": "Dieser Song-Ablauf lässt sich nicht als Bausteine darstellen (alle Spuren brauchen dieselben Abschnitte). Die Bausteine bleiben unverändert.",
+      "error": "Dieser Code lässt sich nicht in Bausteine umwandeln. Die Bausteine bleiben unverändert.",
+      "back": "Zurück zu den Bausteinen",
+      "backTooltip": "Code-Änderungen verwerfen und wieder die Bausteine verwenden"
+    },
+    "aligned": {
+      "zero": "Code an Bausteine angeglichen.",
+      "one": "Code an Bausteine angeglichen – {count} Klang wurde durch einen freien ersetzt.",
+      "other": "Code an Bausteine angeglichen – {count} Klänge wurden durch freie ersetzt."
+    },
+    "replaced": "Die Bausteine haben sich geändert – dein Code-Entwurf wurde ersetzt.",
+    "restore": "Entwurf wiederherstellen",
+    "dismiss": "Hinweis schließen"
+  },
+  "editor": {
+    "completion": {
+      "function": "Strudel-Funktion",
+      "ownSample": "dein Sample",
+      "kit": "Drum-Kit",
+      "sound": "Klang",
+      "alias": "{detail} · Alias von {name}"
+    }
+  },
+  "import": {
+    "button": "Import",
+    "open": "Strudel-Code importieren",
+    "tooltip": "Code von strudel.cc übernehmen",
+    "codePanel": "Code importieren",
+    "codePanelEmpty": "Oder vorhandenen Strudel-Code importieren",
+    "title": "Strudel-Code importieren",
+    "subtitle": "Füge ein Stück von strudel.cc oder einen Teilen-Link ein, oder öffne eine Datei – du bekommst Spuren und Bausteine, die du weiter bearbeiten kannst.",
+    "codeLabel": "Dein Strudel-Code",
+    "placeholder": "Code hier einfügen, zum Beispiel:\n\nsetcpm(30)\n$: s(\"bd sd [~ bd] sd\")\n$: note(\"c3 eb3 g3\").s(\"sawtooth\").lpf(800)",
+    "codeHint": "{shortcut} öffnet ihn als neues Projekt",
+    "fromFile": "Aus {name}",
+    "fromLink": "Aus dem strudel.cc-Link entpackt",
+    "openFile": "Datei öffnen …",
+    "clear": "Leeren",
+    "previewHeading": "Vorschau",
+    "updating": "Wird aktualisiert …",
+    "openAsNew": "Als neues Projekt öffnen",
+    "addToProject": "Zum Projekt hinzufügen",
+    "addToProjectHint": "Hängt die Spuren an dein Projekt an – dein Tempo bleibt, wie es ist.",
+    "replaceNotice": "Ersetzt dein aktuelles Projekt – mit Rückgängig ({shortcut}) holst du es zurück.",
+    "fileWrongType": "„{name}“ lässt sich nicht importieren – bitte eine .js-, .txt- oder .strudel-Datei verwenden.",
+    "fileTooLarge": "„{name}“ ist zu groß für ein Strudel-Stück.",
+    "fileUnreadable": "„{name}“ konnte nicht gelesen werden.",
+    "dropTitle": "Loslassen zum Importieren",
+    "dropText": "Strudel-Code als .js-, .txt- oder .strudel-Datei",
+    "start": {
+      "heading": "Schon Strudel-Code dabei?",
+      "text": "Auf strudel.cc etwas Schönes gefunden? Hol es herein und bau mit Bausteinen daran weiter.",
+      "button": "Code importieren",
+      "buttonHint": "Code oder Link einfügen, Datei öffnen",
+      "pasteTip": "Oder drück einfach irgendwo {key}."
+    },
+    "preview": {
+      "emptyTitle": "Hier erscheint die Vorschau",
+      "emptyText": "Sobald du Code einfügst, siehst du Tempo, Spuren und ihre Bausteine.",
+      "bpm": "BPM",
+      "tracks": {
+        "one": "Spur",
+        "other": "Spuren"
+      },
+      "blocks": {
+        "one": "Baustein",
+        "other": "Bausteine"
+      },
+      "trackCount": {
+        "one": "{count} Spur",
+        "other": "{count} Spuren"
+      },
+      "blockCount": {
+        "one": "{count} Baustein",
+        "other": "{count} Bausteine"
+      },
+      "summary": "Vorschau: {tracks}, {blocks}, {bpm} BPM",
+      "tracksHeading": "Das bekommst du",
+      "chainOf": "Bausteine von {name}",
+      "emptyTrack": "Keine Bausteine",
+      "muted": "stumm",
+      "noTracksTitle": "Noch keine Musik gefunden",
+      "preludeNamed": "Setup-Code: {names}",
+      "preludeHint": "Läuft vor allen Spuren – du kannst ihn später bearbeiten.",
+      "noTracksText": "Dieser Code spielt nichts, woraus sich Spuren machen ließen. Strudel-Stücke enthalten meist Zeilen wie $: s(\"bd sd\")."
+    },
+    "notes": {
+      "heading": "Gut zu wissen",
+      "substituted": "Durch Ähnliches ersetzt",
+      "substitutedHint": "Hier nicht verfügbar – wir haben das Nächstliegende gewählt.",
+      "keptAsCode": "Als Code behalten",
+      "keptAsCodeHint": "Dafür gibt es noch keinen Baustein – es klingt trotzdem und du kannst es als Code bearbeiten.",
+      "dropped": "Weggelassen",
+      "droppedHint": "Meist Visualisierungen oder Regler, die hier nicht funktionieren.",
+      "converted": "In Bausteine umgewandelt",
+      "convertedHint": "Übersetzt, damit du es mit den gewohnten Reglern bearbeiten kannst.",
+      "info": "Weitere Hinweise",
+      "infoHint": "Nichts zu tun – nur zur Info."
+    },
+    "error": {
+      "title": "Dieser Code lässt sich noch nicht lesen",
+      "unknown": "Irgendetwas in diesem Code hat den Import durcheinandergebracht.",
+      "jumpToLine": "Zeile {line} zeigen",
+      "jumpToLineColumn": "Zeile {line}, Spalte {column} zeigen",
+      "help": "Wurde das ganze Stück kopiert? Meist fehlt am Ende eine Klammer oder ein Anführungszeichen.",
+      "linkInvalid": "In diesem Link steckt kein lesbarer Code. Kopier den Code stattdessen aus dem Editor auf strudel.cc."
+    },
+    "toast": {
+      "imported": {
+        "one": "{count} Spur importiert",
+        "other": "{count} Spuren importiert"
+      },
+      "added": {
+        "one": "{count} Spur hinzugefügt",
+        "other": "{count} Spuren hinzugefügt"
+      },
+      "substituted": {
+        "one": "{count} Klang ersetzt",
+        "other": "{count} Klänge ersetzt"
+      },
+      "keptAsCode": {
+        "one": "{count} Teil als Code behalten",
+        "other": "{count} Teile als Code behalten"
+      },
+      "dropped": {
+        "one": "{count} Teil weggelassen",
+        "other": "{count} Teile weggelassen"
+      }
+    }
+  },
+  "prelude": {
+    "title": "Setup-Code",
+    "cardTooltip": "Setup-Code anzeigen",
+    "cardHint": "Läuft vor allen Spuren",
+    "namesLabel": "Definiert: {names}",
+    "explain": "Läuft vor allen Spuren – hier stehen eigene Funktionen und Konstanten.",
+    "editorLabel": "Code",
+    "remove": "Setup-Code entfernen",
+    "removeHint": "Mit Rückgängig ({shortcut}) holst du ihn zurück.",
+    "emptyHint": "Leerer Setup-Code wird nicht gespeichert – zum Löschen „Setup-Code entfernen“ nutzen."
+  },
+  "noteGrid": {
+    "length": "Länge",
+    "barsOption": { "one": "{count} Takt", "other": "{count} Takte" },
+    "barsUnit": { "one": "Takt", "other": "Takte" },
+    "barLabel": "Takt {bar}",
+    "barOf": "Takt {bar} / {total}",
+    "barsOf": "Takte {from}–{to} / {total}",
+    "navigation": "Takte wechseln",
+    "prev": "Vorherige Takte",
+    "next": "Nächste Takte",
+    "follow": "Wiedergabe folgen",
+    "overview": "Alle Takte – Klick springt hin",
+    "overviewBar": { "one": "Takt {bar} – {count} Note", "other": "Takt {bar} – {count} Noten" },
+    "repeatFirst": "Takt 1 in leeren Takten wiederholen",
+    "barsRemoved": { "one": "Gekürzt – {count} Note in den entfernten Takten ist weg", "other": "Gekürzt – {count} Noten in den entfernten Takten sind weg" },
+    "range": "Tonbereich",
+    "octaveUp": "Oktave höher",
+    "octaveDown": "Oktave tiefer",
+    "allOctaves": "Alle Oktaven zeigen",
+    "hiddenNotes": { "one": "{count} verdeckt", "other": "{count} verdeckt" },
+    "posStep": "Step {step}",
+    "posBar": "Takt {bar}, Step {step}",
+    "cellNote": { "one": "{name} – Note, {count} Step lang", "other": "{name} – Note, {count} Steps lang" },
+    "cellHeld": "{name} – gehalten ab {start}",
+    "resize": "Ziehen, um die Note länger oder kürzer zu machen"
+  },
+  "song": {
+    "region": "Song-Zeitleiste",
+    "view": "Ansicht",
+    "viewTracks": "Spuren",
+    "viewSong": "Song",
+    "create": "Song-Ablauf anlegen",
+    "createHint": "Ordne deine Spuren in Abschnitte wie Intro, Strophe und Drop – jede Spur pro Abschnitt an oder aus.",
+    "openTimeline": "Song-Zeitleiste öffnen",
+    "short": "{bars} · {time}",
+    "summary": "{sections} · {bars} · {time} min",
+    "sectionCount": { "one": "{count} Abschnitt", "other": "{count} Abschnitte" },
+    "bars": { "one": "{count} Takt", "other": "{count} Takte" },
+    "sectionFallback": "Abschnitt {number}",
+    "tip": "Klick auf Zellen schaltet eine Spur im Abschnitt an oder aus – Ziehen malt.",
+    "looping": "„{name}“ in Schleife",
+    "wholeSong": "Ganzer Song",
+    "addSection": "Abschnitt",
+    "menu": "Song-Optionen",
+    "showTracks": "Zurück zu den Spuren",
+    "removeArrangement": "Song-Ablauf entfernen",
+    "gridLabel": "Spuren pro Abschnitt",
+    "tracksColumn": "Spuren",
+    "trackSettings": "Spur-Einstellungen",
+    "always": "läuft durchgehend",
+    "nameLabel": "Name des Abschnitts",
+    "rename": "Umbenennen",
+    "renameTooltip": "Klicken zum Umbenennen",
+    "loopOn": "Nur „{name}“ in Schleife",
+    "loopOff": "Wieder den ganzen Song spielen",
+    "sectionMenu": "Optionen für „{name}“",
+    "insertBefore": "Abschnitt davor einfügen",
+    "insertAfter": "Abschnitt danach einfügen",
+    "duplicate": "Duplizieren",
+    "moveLeft": "Nach links",
+    "moveRight": "Nach rechts",
+    "deleteSection": "Abschnitt löschen",
+    "lengthOf": "Länge von „{name}“",
+    "shorter": "Einen Takt kürzer",
+    "longer": "Einen Takt länger",
+    "cellLabel": "{track} in {section}: {state}",
+    "cellOn": "an",
+    "cellOff": "aus",
+    "cellOnVariant": "an, mit {code}",
+    "variantAdd": "Variante für {track} in {section} hinzufügen",
+    "variantAddTooltip": "Variante für diesen Abschnitt hinzufügen",
+    "variantEdit": "Variante {code} bearbeiten",
+    "variantTitle": "{track} in „{section}“",
+    "variantLabel": "Variante (Strudel-Code)",
+    "variantHint": "Wird nur in diesem Abschnitt an die Spur angehängt – z. B. .lpf(800) für dumpfer oder .gain(0.5) für leiser.",
+    "variantRemove": "Variante entfernen",
+    "done": "Fertig"
+  },
+  "samples": {
+    "open": "Samples",
+    "title": "Deine Samples",
+    "subtitle": "Zieh eigene Klänge hinein – jeder Slot wird ein Strudel-Klang, spielbar mit s(\"name\"), Varianten mit s(\"name:1\").",
+    "listLabel": "Sample-Slots",
+    "nameLabel": "Klangname",
+    "removeSlot": "Slot „{name}“ löschen",
+    "emptySlot": "Noch leer – Audiodateien hierher ziehen.",
+    "variants": { "one": "{count} Variante", "other": "{count} Varianten" },
+    "preview": "{ref} anhören ({file})",
+    "missingFile": "{ref} fehlt ({file})",
+    "removeFile": "{file} entfernen",
+    "missing": { "one": "„{file}“ fehlt – hierher ziehen, um sie zurückzuholen.", "other": "{count} Dateien fehlen (z. B. „{file}“) – hierher ziehen, um sie zurückzuholen." },
+    "addVariant": "Hinzufügen",
+    "dropHere": "+ Audio hierher ziehen",
+    "dropHint": "WAV, MP3, OGG, FLAC … oder ein ganzer Ordner: jeder Unterordner wird ein Klang.",
+    "chooseFiles": "Dateien wählen …",
+    "chooseFolder": "Ordner wählen …",
+    "privacy": "Deine Dateien bleiben auf diesem Gerät – nichts wird hochgeladen. Bei fremden Samples achte bitte selbst auf die Nutzungsrechte.",
+    "dropOverlayTitle": "Loslassen, um Samples hinzuzufügen",
+    "dropOverlayText": "Jede Datei wird ein Klang – Ordner werden ein Klang mit Varianten.",
+    "suggestions": "Deine Samples",
+    "useTooltip": "{name} verwenden (Shift: ans Muster anhängen)",
+    "manage": "Samples verwalten",
+    "addOwn": "Eigene Samples hinzufügen",
+    "toast": {
+      "added": { "one": "Sample hinzugefügt: {names}", "other": "{count} Samples hinzugefügt: {names}" },
+      "relinked": { "one": "{count} fehlende Datei gefunden", "other": "{count} fehlende Dateien gefunden" },
+      "skipped": { "one": "{count} Datei übersprungen (kein Audio)", "other": "{count} Dateien übersprungen (kein Audio)" }
+    }
+  },
+  "projectFile": {
+    "menu": "Projekt",
+    "openFile": "Datei öffnen …",
+    "download": "Projekt herunterladen (.zip)",
+    "openTitle": "Projekt öffnen",
+    "more": { "one": "… und {count} weitere Spur", "other": "… und {count} weitere Spuren" },
+    "missingHint": { "one": "{count} Sample-Datei ist nicht dabei. Zieh sie später hinein, um sie zu hören.", "other": "{count} Sample-Dateien sind nicht dabei. Zieh sie später hinein, um sie zu hören." },
+    "dropTitle": "Loslassen, um das Projekt zu öffnen",
+    "dropText": "Ein strudelmixr-Projekt (.zip oder strudelmixr.json).",
+    "dropAnyTitle": "Loslassen zum Importieren",
+    "dropAnyText": "Projekte (.zip, .json), Samples (Audiodateien oder Ordner), MIDI-Dateien (.mid) oder Strudel-Code (.js, .txt).",
+    "toast": {
+      "opened": { "one": "Projekt geöffnet · {count} Spur", "other": "Projekt geöffnet · {count} Spuren" },
+      "samples": { "one": "{count} Sample", "other": "{count} Samples" },
+      "missing": { "one": "{count} Datei fehlt", "other": "{count} Dateien fehlen" },
+      "downloaded": "Projekt heruntergeladen"
+    },
+    "errors": {
+      "invalid": "Diese Projektdatei ist beschädigt oder unvollständig.",
+      "notJson": "Das ist keine Projektdatei (kein gültiges JSON).",
+      "notProject": "Diese JSON-Datei ist kein strudelmixr-Projekt.",
+      "version": "Dieses Projekt wurde mit einer neueren strudelmixr-Version gespeichert.",
+      "notZip": "Diese Datei ist kein ZIP-Archiv.",
+      "zipUnsupported": "Dieses ZIP nutzt ein Format, das wir nicht lesen können (z. B. Passwort oder sehr große Archive).",
+      "zipBroken": "Dieses ZIP-Archiv scheint beschädigt zu sein.",
+      "emptyZip": "In diesem ZIP ist weder ein Projekt noch eine Audiodatei.",
+      "unknownFile": "„{name}“ lässt sich hier nicht verwenden – zieh Projekte, Audiodateien oder Strudel-Code hinein.",
+      "unreadable": "Die Datei konnte nicht gelesen werden.",
+      "exportFailed": "Das Projekt konnte nicht gepackt werden – bitte noch einmal versuchen."
+    }
+  },
+  "songBar": {
+    "label": "Song-Wiedergabe",
+    "sections": "Abschnitte – Klick spielt ab dort",
+    "playFrom": "Ab „{name}“ spielen",
+    "fromStart": "Von vorn spielen",
+    "barOf": "Takt {bar} / {total}",
+    "position": "Takt {bar} / {total} · {time} / {duration}"
+  }
+}

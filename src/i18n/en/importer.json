@@ -1,0 +1,67 @@
+{
+  "error": {
+    "syntax": "The code can't be read in line {line}, column {column}: {message}",
+    "noPattern": "No playable pattern found. Strudel code usually contains lines like $: s(\"bd sd\")."
+  },
+  "note": {
+    "tempo": "Tempo: {bpm} BPM.",
+    "tempoAdjusted": "Tempo {original} BPM was set to {bpm} BPM (whole numbers from 40 to 220).",
+    "tempoNotConstant": "The tempo {code} isn't a fixed number – using {bpm} BPM.",
+    "samplesDropped": "Sounds from {code} aren't loaded – strudelmixr only uses freely licensed sounds, unknown sounds were replaced.",
+    "setupDropped": "Setting {code} was left out.",
+    "statementDropped": "Line {line} ({code}) doesn't play anything and was left out – no change in sound.",
+    "notPlayed": "Line {line} ({code}) isn't played by Strudel (only $: patterns are) and was left out – no change in sound.",
+    "variableInlined": "Variable „{name}“ was inserted where it's used – sounds like the original.",
+    "muted": "This track was muted in the original, so it's imported muted.",
+    "overwritten": "The name „{name}“ is used again later and Strudel only plays the last one – this track is imported muted.",
+    "drums": "Drum pattern turned into a step grid (kit „{kit}“) – same rhythm.",
+    "drumKits": "The drum rows used different drum machines – the grid uses kit „{kit}“ for all of them.",
+    "melody": "Melody turned into a note grid ({root}{octave} {scale}) – same notes.",
+    "chords": "Chord progression turned into a chord block – same chords.",
+    "sample": "Sample pattern turned into a sample block – same pattern.",
+    "codeSource": "Kept as code (sounds like the original): {code}",
+    "codeBlock": "Kept as code block (sounds like the original): {code}",
+    "gainClamped": "Volume {gain} is outside 0–1 – set to {volume}, so it sounds a bit different.",
+    "gainPattern": "The changing volume {code} is kept as a code block (as velocity) – sounds like the original.",
+    "gainVelocity": "Volumes inside the code were rewritten as velocity, so the track volume doesn't override them – sounds like the original.",
+    "sound": "Sound „{from}“ isn't available – replaced with „{to}“, so it sounds different.",
+    "bank": "Drum machine „{from}“ replaced with kit „{to}“ – same rhythm, different drum sounds.",
+    "drumSound": "Drum sound „{from}“ replaced with „{to}“ from kit „{kit}“ – sounds different.",
+    "recipe": {
+      "distortedGuitar": "Sound „{from}“ isn't available – replaced with a {to} sound shaped like a distorted guitar (extra blocks right after the source) – sounds similar, not identical.",
+      "cleanGuitar": "Sound „{from}“ isn't available – replaced with a {to} sound shaped like a plucked guitar (extra blocks right after the source) – sounds similar, not identical.",
+      "synthBass": "Sound „{from}“ isn't available – replaced with a {to} sound shaped like a synth bass (extra blocks right after the source) – sounds similar, not identical.",
+      "bass": "Sound „{from}“ isn't available – replaced with a {to} sound shaped like a bass (extra blocks right after the source) – sounds similar, not identical.",
+      "organ": "Sound „{from}“ isn't available – replaced with a {to} sound shaped like an organ (extra blocks right after the source) – sounds similar, not identical.",
+      "pad": "Sound „{from}“ isn't available – replaced with a {to} sound shaped like strings or a pad (extra blocks right after the source) – sounds similar, not identical.",
+      "brass": "Sound „{from}“ isn't available – replaced with a {to} sound shaped like a wind instrument (extra blocks right after the source) – sounds similar, not identical.",
+      "flute": "Sound „{from}“ isn't available – replaced with a {to} sound shaped like a flute (extra blocks right after the source) – sounds similar, not identical.",
+      "bells": "Sound „{from}“ isn't available – replaced with a {to} sound shaped like a bell or mallet (extra blocks right after the source) – sounds similar, not identical.",
+      "lead": "Sound „{from}“ isn't available – replaced with a {to} sound shaped like a synth lead (extra blocks right after the source) – sounds similar, not identical.",
+      "generic": "Sound „{from}“ isn't available – replaced with a {to} sound shaped like a fading instrument (extra blocks right after the source) – sounds similar, not identical."
+    },
+    "visualsDropped": {
+      "one": "1 display function ({names}) left out – it makes no sound.",
+      "other": "{count} display functions ({names}) left out – they don't make any sound."
+    },
+    "preludeKept": "Setup code kept (own functions: {names}) – you'll find it above the tracks.",
+    "preludeKeptPlain": "Setup code kept (constants and settings) – you'll find it above the tracks.",
+    "noteMelody": "Notes turned into a melody block ({root} {scale}, octave {octave}) – same notes as the original.",
+    "arrangement": {
+      "one": "Song structure with 1 section taken over ({tracks} instruments) – you'll find it above the tracks.",
+      "other": "Song structure with {count} sections taken over ({tracks} instruments) – you'll find it above the tracks."
+    },
+    "arrangementCode": "The song structure (arrange) stays one code track: {reason} can't be split into instruments – sounds like the original.",
+    "instrumentUnused": "Instrument „{name}“ isn't used in the song – imported muted.",
+    "samplesSlots": "Samples from {code} are replaced by your own sample slots."
+  },
+  "names": {
+    "drums": "Drums",
+    "melody": "Melody",
+    "bass": "Bass",
+    "chords": "Chords",
+    "noise": "Noise",
+    "track": "Track {n}",
+    "row": "{track} · {part}"
+  }
+}
