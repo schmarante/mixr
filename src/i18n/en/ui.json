@@ -1,7 +1,7 @@
 {
   "page": {
     "loading": "Loading the studio …",
-    "noscript": "strudelmixr needs JavaScript to make music. Please turn on JavaScript in your browser."
+    "noscript": "mixr needs JavaScript to make music. Please turn on JavaScript in your browser."
   },
   "regions": {
     "start": "Start",
@@ -14,7 +14,7 @@
     "playback": "Playback"
   },
   "topbar": {
-    "home": "strudelmixr – home",
+    "home": "mixr – home",
     "undo": "Undo",
     "redo": "Redo",
     "templates": "Templates",
@@ -28,7 +28,7 @@
     "codeShow": "Show code",
     "codeShowTooltip": "See the Strudel code",
     "codeHideTooltip": "Hide the code",
-    "about": "About strudelmixr"
+    "about": "About mixr"
   },
   "transport": {
     "play": "Play",
@@ -72,7 +72,7 @@
   },
   "onboarding": {
     "title": "Music from building blocks",
-    "intro": "Stack sounds, rhythms and effects like on a mixing desk. strudelmixr turns them into {strudel} code live – you hear every change instantly and pick up the code along the way.",
+    "intro": "Stack sounds, rhythms and effects like on a mixing desk. mixr turns them into {strudel} code live – you hear every change instantly and pick up the code along the way.",
     "tip": "Tip: {key} starts and stops the music. Nothing can break – you can undo everything."
   },
   "workspace": {
@@ -476,7 +476,7 @@
     "more": { "one": "… and {count} more track", "other": "… and {count} more tracks" },
     "missingHint": { "one": "{count} sample file isn't included. Drop it in later to hear it.", "other": "{count} sample files aren't included. Drop them in later to hear them." },
     "dropTitle": "Drop to open the project",
-    "dropText": "A strudelmixr project (.zip or strudelmixr.json).",
+    "dropText": "A mixr project (.zip or mixr.json).",
     "dropAnyTitle": "Drop to import",
     "dropAnyText": "Projects (.zip, .json), samples (audio files or folders), MIDI files (.mid) or Strudel code (.js, .txt).",
     "toast": {
@@ -488,8 +488,8 @@
     "errors": {
       "invalid": "This project file is damaged or incomplete.",
       "notJson": "This file isn't a project file (no valid JSON).",
-      "notProject": "This JSON file isn't a strudelmixr project.",
-      "version": "This project was saved with a newer strudelmixr version.",
+      "notProject": "This JSON file isn't a mixr project.",
+      "version": "This project was saved with a newer mixr version.",
       "notZip": "This file isn't a ZIP archive.",
       "zipUnsupported": "This ZIP uses a format we can't read (e.g. password or very large archives).",
       "zipBroken": "This ZIP archive seems to be damaged.",

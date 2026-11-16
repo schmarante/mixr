@@ -1,5 +1,5 @@
 /**
- * Klang-Ersetzung: strudelmixr hat nur frei lizenzierte, selbst gehostete Klänge
+ * Klang-Ersetzung: mixr hat nur frei lizenzierte, selbst gehostete Klänge
  * (public/samples/*) und die eingebauten Synths von superdough. Alles andere wird
  * durch einen möglichst ähnlichen freien Klang ersetzt.
  */

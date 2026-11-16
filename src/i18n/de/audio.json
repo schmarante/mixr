@@ -23,10 +23,10 @@
   "inLine": " (Zeile {line})",
   "unknownName": "Unbekannter Name „{name}“ – Tippfehler im Code?",
   "notAFunction": "„{name}“ ist keine bekannte Strudel-Funktion – Tippfehler im Code?",
-  "newerFunction": "„{name}“ gibt es erst in einer neueren Strudel-Version als der, die strudelmixr nutzt – auf strudel.cc läuft es bereits.",
+  "newerFunction": "„{name}“ gibt es erst in einer neueren Strudel-Version als der, die mixr nutzt – auf strudel.cc läuft es bereits.",
   "unsupported": {
-    "osc": "„{name}“ sendet OSC-Nachrichten (z. B. an SuperCollider/SuperDirt). Dafür braucht es einen lokalen OSC-Server – das geht in strudelmixr nicht. Auf dem eigenen Rechner: strudel.cc zusammen mit der OSC-Brücke von Strudel verwenden.",
-    "other": "„{name}“ wird in strudelmixr nicht unterstützt."
+    "osc": "„{name}“ sendet OSC-Nachrichten (z. B. an SuperCollider/SuperDirt). Dafür braucht es einen lokalen OSC-Server – das geht in mixr nicht. Auf dem eigenen Rechner: strudel.cc zusammen mit der OSC-Brücke von Strudel verwenden.",
+    "other": "„{name}“ wird in mixr nicht unterstützt."
   },
   "extensionNotLoaded": "Eine Erweiterung für diesen Code konnte nicht geladen werden ({pkg}) – bitte Verbindung prüfen und den Code ändern oder erneut Play drücken.",
   "invalidExpression": "Ungültiger Ausdruck im Code: {detail}",

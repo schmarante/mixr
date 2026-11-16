@@ -23,10 +23,10 @@
   "inLine": " (line {line})",
   "unknownName": "Unknown name “{name}” – a typo in the code?",
   "notAFunction": "“{name}” isn't a known Strudel function – a typo in the code?",
-  "newerFunction": "“{name}” only exists in a newer Strudel version than the one strudelmixr uses – it already works on strudel.cc.",
+  "newerFunction": "“{name}” only exists in a newer Strudel version than the one mixr uses – it already works on strudel.cc.",
   "unsupported": {
-    "osc": "“{name}” sends OSC messages (e.g. to SuperCollider/SuperDirt). That needs a local OSC server and doesn't work in strudelmixr – on your own computer, use strudel.cc together with the Strudel OSC bridge.",
-    "other": "“{name}” isn't supported in strudelmixr."
+    "osc": "“{name}” sends OSC messages (e.g. to SuperCollider/SuperDirt). That needs a local OSC server and doesn't work in mixr – on your own computer, use strudel.cc together with the Strudel OSC bridge.",
+    "other": "“{name}” isn't supported in mixr."
   },
   "extensionNotLoaded": "An extension for this code couldn't be loaded ({pkg}) – please check your connection and change the code or press Play again.",
   "invalidExpression": "Invalid expression in the code: {detail}",

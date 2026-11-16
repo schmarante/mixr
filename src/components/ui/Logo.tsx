@@ -1,5 +1,5 @@
 /**
- * strudelmixr-Logo: ein Strudel (Spirale) auf warmem Verlauf.
+ * mixr-Logo: ein Strudel (Spirale) auf warmem Verlauf.
  * Wird sowohl im SSR-Fallback (statisch) als auch in der Topbar-Insel genutzt.
  */
 export function LogoMark({ size = 32, className }: { size?: number; className?: string }) {
@@ -27,8 +27,8 @@ export function LogoWordmark() {
   return (
     <span className="flex items-center gap-2.5">
       <LogoMark />
-      <span className="hidden text-[15px] font-semibold tracking-tight text-fg sm:inline">
-        strudel<span className="text-accent">mixr</span>
+      <span className="hidden text-[15px] font-semibold tracking-tight text-accent sm:inline">
+        mixr
       </span>
     </span>
   );

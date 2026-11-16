@@ -1,13 +1,13 @@
 {
   "heading": "Über {name}",
-  "description": "Musik aus Bausteinen: Klänge, Rhythmen und Effekte wie in einem Mischpult stapeln – strudelmixr schreibt daraus live Strudel-Code.",
+  "description": "Musik aus Bausteinen: Klänge, Rhythmen und Effekte wie in einem Mischpult stapeln – mixr schreibt daraus live Strudel-Code.",
   "close": "Schließen",
   "author": "Autor",
   "email": "E-Mail",
   "version": "Version",
   "language": "Sprache",
   "madeWith": "Designed with ❤️. Powered by Claude.",
-  "openSource": "strudelmixr baut auf großartigen Open-Source-Projekten auf. Danke an alle, die daran mitarbeiten!",
+  "openSource": "mixr baut auf großartigen Open-Source-Projekten auf. Danke an alle, die daran mitarbeiten!",
   "groups": {
     "engine": "Musik-Engine",
     "app": "In der Oberfläche",
@@ -15,7 +15,7 @@
     "build": "Zum Bauen"
   },
   "purposes": {
-    "strudel": "Live-Coding-Musik im Browser – das Herz von strudelmixr",
+    "strudel": "Live-Coding-Musik im Browser – das Herz von mixr",
     "strudelCore": "Patterns, Mini-Notation und Auswertung des erzeugten Codes",
     "strudelTonal": "Tonleitern, Akkorde und Voicings",
     "strudelWebaudio": "Klangerzeugung, Effekte und Sample-Wiedergabe (Web Audio)",
@@ -30,6 +30,7 @@
     "react": "Interaktive Inseln: Mixer, Inspector, Code-Ansicht",
     "nanostores": "Zustand und Event-Bus zwischen den Inseln",
     "codemirror": "Code-Editor mit Hervorhebung, Suche und Autovervollständigung",
+    "outfit": "Schrift der Oberfläche und des Logos",
     "uzuDrumkit": "Drum-Kit „Modern“ und Standard-Drums – nur die Dateien von Switch Angel",
     "freepats": "Drum-Kit „Analog“ (Roberto, zenvoid.org – mit Yoshimi und Geonkick synthetisiert)",
     "hydrogen808": "Drum-Kit „808“ (ArtemioLabs – aus Sinus und Rauschen synthetisiert)",
@@ -48,7 +49,7 @@
   "licenses": {
     "proprietary": "proprietär"
   },
-  "footnote": "Strudel und seine Pakete stehen unter der GNU AGPL-3.0. Alle Samples werden von strudelmixr selbst ausgeliefert und stehen unter freien Lizenzen. „Salamander Grand Piano“ von Alexander Holm, lizenziert unter {ccBy}. Details: {details}.",
+  "footnote": "Strudel und seine Pakete stehen unter der GNU AGPL-3.0. Alle Samples werden von mixr selbst ausgeliefert und stehen unter freien Lizenzen. „Salamander Grand Piano“ von Alexander Holm, lizenziert unter {ccBy}. Details: {details}.",
   "table": {
     "project": "Projekt",
     "purpose": "Wofür",

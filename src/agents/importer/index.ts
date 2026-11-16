@@ -1,6 +1,6 @@
 /**
  * Importer-Agent: verwandelt fremden Strudel-Code (REPL-Code von strudel.cc,
- * Dateien, Share-Links) in ein editierbares strudelmixr-Projekt.
+ * Dateien, Share-Links) in ein editierbares mixr-Projekt.
  *
  * Signaturen sind verbindlich (UI-Dialog und WebMCP verlassen sich darauf).
  *

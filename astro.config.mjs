@@ -31,7 +31,7 @@ const inDdev = process.env.IS_DDEV_PROJECT === 'true';
  * - Standard (ddev, eigener Server): SSR mit @astrojs/node – der Server rendert die Seite
  *   gleich in der Sprache aus Cookie bzw. Accept-Language.
  * - BUILD_TARGET=static (GitHub Pages): rein statisch, die Sprache wählt der Browser.
- *   BASE_PATH (z. B. „/strudelmixr/“) und SITE_URL setzt der Workflow aus den Pages-Einstellungen.
+ *   BASE_PATH (z. B. „/mixr/“) und SITE_URL setzt der Workflow aus den Pages-Einstellungen.
  */
 const isStatic = process.env.BUILD_TARGET === 'static';
 

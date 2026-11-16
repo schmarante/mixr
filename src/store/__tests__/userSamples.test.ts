@@ -87,11 +87,11 @@ describe('ZIP', () => {
     const json = new TextEncoder().encode(JSON.stringify({ hello: 'world'.repeat(50) }));
     const audio = new Uint8Array([1, 2, 3, 4, 5, 250, 0, 7]);
     const zip = await createZip([
-      { path: 'strudelmixr.json', data: json },
+      { path: 'mixr.json', data: json },
       { path: 'samples/kick/kick.wav', data: audio },
     ]);
     const back = await readZip(zip);
-    expect(back.map((e) => e.path)).toEqual(['strudelmixr.json', 'samples/kick/kick.wav']);
+    expect(back.map((e) => e.path)).toEqual(['mixr.json', 'samples/kick/kick.wav']);
     expect(back[0]!.data).toEqual(json);
     expect(back[1]!.data).toEqual(audio);
   });
@@ -100,7 +100,7 @@ describe('ZIP', () => {
 describe('Projektdatei', () => {
   it('Manifest mit eindeutigen Pfaden, Roundtrip über JSON', () => {
     const file = buildProjectFile(AST, SETTINGS);
-    expect(file.format).toBe('strudelmixr');
+    expect(file.format).toBe('mixr');
     expect(file.version).toBe(1);
     expect(file.settings.samples![0]!.files.map((f) => f.path)).toEqual(['samples/kick/kick.wav', 'samples/kick/kick-2.wav']);
     const parsed = parseProjectFile(JSON.stringify(file));
@@ -119,8 +119,8 @@ describe('Projektdatei', () => {
     };
     expect(fail('nope')).toBe('ui.projectFile.errors.notJson');
     expect(fail('{"format":"other"}')).toBe('ui.projectFile.errors.notProject');
-    expect(fail('{"format":"strudelmixr","version":9}')).toBe('ui.projectFile.errors.version');
-    expect(fail('{"format":"strudelmixr","version":1,"settings":{"bpm":120},"ast":{"nodes":[{"id":1}],"edges":[]}}')).toBe('ui.projectFile.errors.invalid');
+    expect(fail('{"format":"mixr","version":9}')).toBe('ui.projectFile.errors.version');
+    expect(fail('{"format":"mixr","version":1,"settings":{"bpm":120},"ast":{"nodes":[{"id":1}],"edges":[]}}')).toBe('ui.projectFile.errors.invalid');
   });
 
   it('ZIP-Export → Import: Projekt und Audiodaten kommen zurück, fehlende bleiben im Manifest', async () => {
@@ -137,6 +137,7 @@ describe('Projektdatei', () => {
     expect(archive.blobs.get('file-3')).toEqual(new Uint8Array([9, 8, 7]));
   });
 
+
   it('ZIP ohne Projekt = Sample-Ordner', async () => {
     const zip = await createZip([
       { path: 'drums/kick/a.wav', data: new Uint8Array([1]) },
@@ -148,8 +149,8 @@ describe('Projektdatei', () => {
   });
 
   it('Download-Name', () => {
-    expect(projectDownloadName('Mein Lied!', 'zip')).toBe('strudelmixr-mein-lied.zip');
-    expect(projectDownloadName('', 'zip')).toBe('strudelmixr.zip');
+    expect(projectDownloadName('Mein Lied!', 'zip')).toBe('mixr-mein-lied.zip');
+    expect(projectDownloadName('', 'zip')).toBe('mixr.zip');
   });
 });
 

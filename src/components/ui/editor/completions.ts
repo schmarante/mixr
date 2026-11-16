@@ -1,5 +1,5 @@
 /**
- * Autovervollständigung für Strudel-Code: Funktionen (nur die, die in strudelmixr laufen –
+ * Autovervollständigung für Strudel-Code: Funktionen (nur die, die in mixr laufen –
  * Klasse 'engine' aus src/data/strudelFunctions.ts, inkl. Aliase), Klang-Controls
  * (src/blocks/controls.ts, mit Gruppe) und Klangnamen (eingebaute + eigene Sample-Slots).
  *

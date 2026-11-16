@@ -401,7 +401,7 @@ class ProgramConverter {
   }
 
   /**
-   * Song-Ablauf im Format des strudelmixr-Compilers: pro Spur ein Instrument
+   * Song-Ablauf im Format des mixr-Compilers: pro Spur ein Instrument
    * (`const beatPart = s(…)…`) und ein eigenes `$: arrange([4, silence], [8, beatPart],
    * [8, beatPart.lpf(800)]).gain(0.9)`. Jedes arrange(…) verwendet genau EIN Instrument,
    * alle haben dieselben Abschnittslängen. Hinter arrange(…) erlaubt: `.gain(zahl)`

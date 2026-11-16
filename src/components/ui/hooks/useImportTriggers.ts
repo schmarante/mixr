@@ -39,7 +39,7 @@ export async function importFromFile(file: File): Promise<void> {
  * - Einfügen (Strg/⌘+V) außerhalb von Eingabefeldern: sieht der Text nach Strudel-Code
  *   aus oder ist er ein strudel.cc-Link → Import-Dialog vorbefüllt öffnen.
  * - Dateien/Ordner aufs Fenster ziehen: Code → Import-Dialog, Audio/Ordner → Sample-Slots
- *   (über einer Slot-Kachel: in diesen Slot), Projekt-ZIP/strudelmixr.json → Projekt öffnen.
+ *   (über einer Slot-Kachel: in diesen Slot), Projekt-ZIP/mixr.json → Projekt öffnen.
  */
 export function useImportTriggers(): void {
   useEffect(() => {

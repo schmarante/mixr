@@ -106,7 +106,7 @@ export async function audibleTrackCount(): Promise<number> {
 
 function midiFileName(): string {
   const base = projectName.get().trim().replace(/[^\p{L}\p{N}_-]+/gu, '-').replace(/^-+|-+$/g, '');
-  return `${base ? `strudelmixr-${base}` : 'strudelmixr'}.mid`;
+  return `${base ? `mixr-${base}` : 'mixr'}.mid`;
 }
 
 function saveBytes(bytes: Uint8Array, fileName: string): void {
@@ -123,7 +123,7 @@ function saveBytes(bytes: Uint8Array, fileName: string): void {
 /** Exportiert und lädt die Datei herunter. Liefert die Hinweise (übersetzt) oder wirft. */
 export async function downloadMidi(bars: number): Promise<string[]> {
   const { exportMidi } = await import('../../../agents/midi/export');
-  const res = await exportMidi(visualAstStore.get(), projectSettings.get(), { bars, title: projectName.get() || 'strudelmixr' });
+  const res = await exportMidi(visualAstStore.get(), projectSettings.get(), { bars, title: projectName.get() || 'mixr' });
   if (res.tracks.length === 0) throw new Error('no notes');
   saveBytes(res.bytes, midiFileName());
   showToast(t('midi.ui.toastExported', { count: res.tracks.length, bars: res.bars }));

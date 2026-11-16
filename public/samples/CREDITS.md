@@ -1,7 +1,7 @@
-# Samples in strudelmixr
+# Samples in mixr
 
 Every sound in this folder is under a free license with a clearly documented source, and is served
-by strudelmixr itself (no external CDN). Each folder registers its sounds through its `strudel.json` map.
+by mixr itself (no external CDN). Each folder registers its sounds through its `strudel.json` map.
 
 | Folder | Source | Author | License | Proof |
 |---|---|---|---|---|
@@ -12,7 +12,7 @@ by strudelmixr itself (no external CDN). Each folder registers its sounds throug
 | `sonicpi/` | [Sonic Pi](https://github.com/sonic-pi-net/sonic-pi/tree/stable/etc/samples) – a selection | Sonic Pi project / Freesound authors | CC0-1.0 | `sonicpi/LICENSE.sonic-pi.md`, `README.sources.md` |
 
 **Attribution (CC-BY-3.0):** "Salamander Grand Piano" by Alexander Holm, licensed under
-[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/). strudelmixr uses a selection of 30 notes (MP3).
+[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/). mixr uses a selection of 30 notes (MP3).
 
 **GPL:** the FLAC files in `drums/emu808/` are taken unchanged from the Hydrogen project
 (GPL-3.0-or-later, see `COPYING`).

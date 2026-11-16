@@ -1,5 +1,5 @@
 /**
- * Alle Funktionen der strudel.cc-API-Referenz (mit Aliasen) und ob sie in strudelmixr laufen.
+ * Alle Funktionen der strudel.cc-API-Referenz (mit Aliasen) und ob sie in mixr laufen.
  *
  * GENERIERT von scripts/import-strudel-functions.mjs – nicht von Hand bearbeiten.
  * Reine Daten ohne Imports.

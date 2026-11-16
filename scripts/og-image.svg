@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <!-- Vorlage für public/og-image.png (Link-Vorschau, 1200×630) – rendern mit:
-       rsvg-convert -w 1200 -h 630 scripts/og-image.svg -o public/og-image.png -->
+  <!-- Vorlage für public/og-image.png (Link-Vorschau, 1200×630) – rendern mit „npm run og-image“
+       (scripts/render-og-image.mjs, nur mit der mitgelieferten Schrift aus src/fonts). -->
   <defs>
     <radialGradient id="bg" cx="0.3" cy="0.45" r="0.85">
       <stop offset="0" stop-color="#1c2130" />
@@ -26,8 +26,8 @@
     </g>
   </g>
 
-  <g font-family="Noto Sans, DejaVu Sans, Arial, sans-serif">
-    <text x="490" y="300" font-size="104" font-weight="700" letter-spacing="-2" fill="#eceef3">strudel<tspan fill="#ff8a4c">mixr</tspan></text>
+  <g font-family="Outfit">
+    <text x="488" y="300" font-size="128" font-weight="800" letter-spacing="-2" fill="#ff8a4c">mixr</text>
     <text x="494" y="364" font-size="38" fill="#d5d9e3">Music from building blocks</text>
     <text x="494" y="422" font-size="27" fill="#8f97aa">Drums · Melodies · Effects · Song arrangement</text>
     <text x="494" y="462" font-size="27" fill="#8f97aa">Live Strudel code · MIDI import &amp; export</text>

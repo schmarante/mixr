@@ -1,7 +1,7 @@
 /**
  * WebMCP-Agent („Der AI-Assistant“ aus der Architektur-Spezifikation)
  *
- * Stellt strudelmixr als Werkzeugkasten für KI-Agenten im Browser bereit
+ * Stellt mixr als Werkzeugkasten für KI-Agenten im Browser bereit
  * (WebMCP, https://webmachinelearning.github.io/webmcp/ – `document.modelContext`).
  * Ein Agent in Chrome & Co. kann damit das Projekt lesen, Spuren und Bausteine
  * anlegen, Beats/Melodien setzen, Tempo ändern und abspielen – über dieselbe
@@ -343,7 +343,7 @@ export const TOOLS: ModelContextTool[] = [
     name: 'get_project',
     title: 'Read project',
     description:
-      'Returns the current strudelmixr project: tempo, setup code (custom functions/constants that run before all tracks), playback state, all tracks with their block chains (ids, types, parameters) and the generated Strudel code. Call this first and after changes to get ids.',
+      'Returns the current mixr project: tempo, setup code (custom functions/constants that run before all tracks), playback state, all tracks with their block chains (ids, types, parameters) and the generated Strudel code. Call this first and after changes to get ids.',
     inputSchema: { type: 'object', properties: {} },
     annotations: { readOnlyHint: true },
     execute: async () => projectSnapshot(),
@@ -401,7 +401,7 @@ export const TOOLS: ModelContextTool[] = [
     name: 'import_strudel_code',
     title: 'Import Strudel code',
     description:
-      'Turns Strudel code (as written on strudel.cc, or a strudel.cc share link) into an editable strudelmixr project: setcpm becomes the tempo, every $: block a track; drum patterns, melodies, chords and effects become blocks, everything else is kept as code. Sounds strudelmixr does not ship are swapped for free ones. mode "replace" (default) replaces the project, "append" adds the tracks. Undoable. Returns the notes about swapped, kept and dropped parts.',
+      'Turns Strudel code (as written on strudel.cc, or a strudel.cc share link) into an editable mixr project: setcpm becomes the tempo, every $: block a track; drum patterns, melodies, chords and effects become blocks, everything else is kept as code. Sounds mixr does not ship are swapped for free ones. mode "replace" (default) replaces the project, "append" adds the tracks. Undoable. Returns the notes about swapped, kept and dropped parts.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -450,7 +450,7 @@ export const TOOLS: ModelContextTool[] = [
       const res = await exportMidi(visualAstStore.get(), projectSettings.get(), bars === undefined ? {} : { bars });
       if (res.tracks.length === 0) fail('No audible track plays any notes – nothing to export.');
       return ok(`Exported ${res.tracks.length} MIDI track(s), ${res.bars} bar(s) at ${res.bpm} BPM.`, {
-        fileName: 'strudelmixr.mid',
+        fileName: 'mixr.mid',
         mimeType: 'audio/midi',
         base64: toBase64(res.bytes),
         bytes: res.bytes.length,

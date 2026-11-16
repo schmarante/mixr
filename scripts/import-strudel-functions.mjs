@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Erzeugt src/data/strudelFunctions.ts: alle Funktionen der strudel.cc-API-Referenz
- * mit Aliasen und der Angabe, ob sie in strudelmixr laufen.
+ * mit Aliasen und der Angabe, ob sie in mixr laufen.
  *
  *   node scripts/import-strudel-functions.mjs [functions.txt] [--scope scope.json]
  *
@@ -9,9 +9,9 @@
  *   „name alias1, alias2“ (Quelle: API-Referenz auf strudel.cc).
  *
  * scope.json (Standard: research/strudel-scope.json, falls vorhanden) – gemessener Scope:
- *   { "strudelmixr": { "globals": [...], "methods": [...] },
+ *   { "mixr": { "globals": [...], "methods": [...] },
  *     "strudelcc":   { "globals": [...], "methods": [...] } }
- * Messen: Seite öffnen (strudelmixr: Code mit tune/midi/accX/csound abspielen, damit die
+ * Messen: Seite öffnen (mixr: Code mit tune/midi/accX/csound abspielen, damit die
  * Zusatzpakete geladen sind; strudel.cc: nach dem Laden), dann in der Browser-Konsole
  * SCOPE_SNIPPET (unten) ausführen und das Ergebnis unter dem jeweiligen Schlüssel speichern.
  * Ohne scope.json bleibt die Klassifikation der bisherigen Datei erhalten (neue Namen → Fehler).
@@ -164,7 +164,7 @@ async function main() {
 
   const entries = parseFunctions(readFileSync(listPath, 'utf8'));
   const scope = existsSync(scopePath) ? JSON.parse(readFileSync(scopePath, 'utf8')) : null;
-  const mixr = scopeSet(scope?.strudelmixr);
+  const mixr = scopeSet(scope?.mixr);
   const cc = scopeSet(scope?.strudelcc);
   const previous = mixr ? new Map() : await previousStatuses();
 
@@ -207,7 +207,7 @@ async function main() {
   for (const { status } of result) counts[status] = (counts[status] ?? 0) + 1;
 
   const out = `/**
- * Alle Funktionen der strudel.cc-API-Referenz (mit Aliasen) und ob sie in strudelmixr laufen.
+ * Alle Funktionen der strudel.cc-API-Referenz (mit Aliasen) und ob sie in mixr laufen.
  *
  * GENERIERT von scripts/import-strudel-functions.mjs – nicht von Hand bearbeiten.
  * Reine Daten ohne Imports.

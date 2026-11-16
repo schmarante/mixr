@@ -1,6 +1,6 @@
 /**
  * General-MIDI-Wissen für Import und Export: Programmnamen, Drum-Noten,
- * Zuordnung zu strudelmixr-Klängen und -Drum-Instrumenten.
+ * Zuordnung zu mixr-Klängen und -Drum-Instrumenten.
  */
 import { recipeFor, type Recipe } from '../importer/sounds';
 
@@ -32,7 +32,7 @@ export function programName(program: number): string {
 export const DRUM_CHANNEL = 9;
 
 /**
- * Klang + Ersatz-Rezept für ein GM-Programm. Die Synths von strudelmixr haben feste
+ * Klang + Ersatz-Rezept für ein GM-Programm. Die Synths von mixr haben feste
  * Programme (Export) – die Rundreise ergibt wieder denselben Klang.
  */
 export function soundForProgram(program: number): { sound: string; recipe: Recipe | null } {
@@ -44,7 +44,7 @@ export function soundForProgram(program: number): { sound: string; recipe: Recip
   return recipe ? { sound: recipe.sound, recipe } : { sound: 'piano', recipe: null };
 }
 
-/** Programme, die direkt einem strudelmixr-Synth entsprechen (beide Richtungen). */
+/** Programme, die direkt einem mixr-Synth entsprechen (beide Richtungen). */
 const PROGRAM_SOUND: Record<number, string> = {
   0: 'piano',
   80: 'square',
@@ -54,7 +54,7 @@ const PROGRAM_SOUND: Record<number, string> = {
   90: 'supersaw',
 };
 
-/** strudelmixr-Klang → GM-Programm für den Export. */
+/** mixr-Klang → GM-Programm für den Export. */
 export function programForSound(sound: string | undefined): number {
   const s = (sound ?? '').toLowerCase().replace(/:\d+$/, '');
   switch (s) {

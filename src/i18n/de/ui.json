@@ -1,7 +1,7 @@
 {
   "page": {
     "loading": "Studio wird geladen …",
-    "noscript": "strudelmixr braucht JavaScript, um Musik zu machen. Bitte aktiviere JavaScript in deinem Browser."
+    "noscript": "mixr braucht JavaScript, um Musik zu machen. Bitte aktiviere JavaScript in deinem Browser."
   },
   "regions": {
     "start": "Start",
@@ -14,7 +14,7 @@
     "playback": "Wiedergabe"
   },
   "topbar": {
-    "home": "strudelmixr – Startseite",
+    "home": "mixr – Startseite",
     "undo": "Rückgängig",
     "redo": "Wiederholen",
     "templates": "Vorlagen",
@@ -28,7 +28,7 @@
     "codeShow": "Code anzeigen",
     "codeShowTooltip": "Strudel-Code ansehen",
     "codeHideTooltip": "Code ausblenden",
-    "about": "Über strudelmixr"
+    "about": "Über mixr"
   },
   "transport": {
     "play": "Abspielen",
@@ -72,7 +72,7 @@
   },
   "onboarding": {
     "title": "Musik aus Bausteinen",
-    "intro": "Stapel Klänge, Rhythmen und Effekte wie in einem Mischpult. strudelmixr schreibt daraus live {strudel}-Code – du hörst jede Änderung sofort und lernst den Code ganz nebenbei.",
+    "intro": "Stapel Klänge, Rhythmen und Effekte wie in einem Mischpult. mixr schreibt daraus live {strudel}-Code – du hörst jede Änderung sofort und lernst den Code ganz nebenbei.",
     "tip": "Tipp: {key} startet und stoppt die Musik. Nichts kann kaputtgehen – alles lässt sich rückgängig machen."
   },
   "workspace": {
@@ -476,7 +476,7 @@
     "more": { "one": "… und {count} weitere Spur", "other": "… und {count} weitere Spuren" },
     "missingHint": { "one": "{count} Sample-Datei ist nicht dabei. Zieh sie später hinein, um sie zu hören.", "other": "{count} Sample-Dateien sind nicht dabei. Zieh sie später hinein, um sie zu hören." },
     "dropTitle": "Loslassen, um das Projekt zu öffnen",
-    "dropText": "Ein strudelmixr-Projekt (.zip oder strudelmixr.json).",
+    "dropText": "Ein mixr-Projekt (.zip oder mixr.json).",
     "dropAnyTitle": "Loslassen zum Importieren",
     "dropAnyText": "Projekte (.zip, .json), Samples (Audiodateien oder Ordner), MIDI-Dateien (.mid) oder Strudel-Code (.js, .txt).",
     "toast": {
@@ -488,8 +488,8 @@
     "errors": {
       "invalid": "Diese Projektdatei ist beschädigt oder unvollständig.",
       "notJson": "Das ist keine Projektdatei (kein gültiges JSON).",
-      "notProject": "Diese JSON-Datei ist kein strudelmixr-Projekt.",
-      "version": "Dieses Projekt wurde mit einer neueren strudelmixr-Version gespeichert.",
+      "notProject": "Diese JSON-Datei ist kein mixr-Projekt.",
+      "version": "Dieses Projekt wurde mit einer neueren mixr-Version gespeichert.",
       "notZip": "Diese Datei ist kein ZIP-Archiv.",
       "zipUnsupported": "Dieses ZIP nutzt ein Format, das wir nicht lesen können (z. B. Passwort oder sehr große Archive).",
       "zipBroken": "Dieses ZIP-Archiv scheint beschädigt zu sein.",

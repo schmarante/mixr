@@ -7,7 +7,7 @@
     "tempo": "Tempo: {bpm} BPM.",
     "tempoAdjusted": "Tempo {original} BPM was set to {bpm} BPM (whole numbers from 40 to 220).",
     "tempoNotConstant": "The tempo {code} isn't a fixed number – using {bpm} BPM.",
-    "samplesDropped": "Sounds from {code} aren't loaded – strudelmixr only uses freely licensed sounds, unknown sounds were replaced.",
+    "samplesDropped": "Sounds from {code} aren't loaded – mixr only uses freely licensed sounds, unknown sounds were replaced.",
     "setupDropped": "Setting {code} was left out.",
     "statementDropped": "Line {line} ({code}) doesn't play anything and was left out – no change in sound.",
     "notPlayed": "Line {line} ({code}) isn't played by Strudel (only $: patterns are) and was left out – no change in sound.",

@@ -1,15 +1,17 @@
 <h1>
   <img width="38" align="top" src="public/favicon.svg" alt="">
-  <b>strudelmixr</b>
+  <b>mixr</b>
 </h1>
 
 Music from building blocks – a visual, beginner-friendly studio for [Strudel](https://strudel.cc) live coding.
 
+<sub>mixr is an independent, unofficial project and not affiliated with the Strudel team.</sub>
+
 **Drums · Melody · Chords · Samples · Effects · free Strudel code · import from strudel.cc**
 
-<a href="https://schmarante.github.io/strudelmixr/"><img src="https://img.shields.io/badge/%E2%96%B6%20Live%20demo-schmarante.github.io%2Fstrudelmixr-2ea44f?style=for-the-badge" alt="Live demo"></a>
+<a href="https://schmarante.github.io/mixr/"><img src="https://img.shields.io/badge/%E2%96%B6%20Live%20demo-schmarante.github.io%2Fmixr-2ea44f?style=for-the-badge" alt="Live demo"></a>
 
-Stack sounds, rhythms and effects like on a mixing desk – strudelmixr writes the Strudel code live. You hear every change instantly and pick up the code along the way. Everything runs in your browser – **no install, no account, no third-party servers.**
+Stack sounds, rhythms and effects like on a mixing desk – mixr writes the Strudel code live. You hear every change instantly and pick up the code along the way. Everything runs in your browser – **no install, no account, no third-party servers.**
 
 ## Highlights
 
@@ -21,7 +23,7 @@ Stack sounds, rhythms and effects like on a mixing desk – strudelmixr writes t
 - **55 building blocks** – rhythm (euclid, off, echo, chunk, iter, swing, shuffle, mask …), pitch (transpose, scale steps, arpeggio, vibrato), samples (chop, slice, striate, loopAt, sample range, cut groups) and sound (filters, filter envelope and sweep, reverb, echo, phaser, vowel, tremolo, compressor, FM, bitcrusher, distortion …), each explained in plain words; expert controls under "More options". **Any parameter** reaches all 411 Strudel sound controls with typo suggestions.
 - **Song arrangement** – turn loops into a song: sections (intro, drop, breakdown …) as a timeline, switch tracks per section with a click or drag, per-section variations like `.lpf(800)`, loop a single section while working on it.
 - **Your own samples** – drag audio files (wav, mp3, ogg, flac …) or whole folders into sample slots like on Shadertoy – folders work like strudel.cc's "import sounds". Use them as `s("name:2")`. Samples stay in your browser.
-- **Project files** – download everything as a ZIP (`strudelmixr.json` + samples) and drag it back in later – as ZIP, as JSON or file by file.
+- **Project files** – download everything as a ZIP (`mixr.json` + samples) and drag it back in later – as ZIP, as JSON or file by file.
 - **Never limiting** – code blocks for sound, rhythm and effects take any Strudel code: whatever Strudel can do, works here too.
 - **MIDI in and out** – drop a `.mid` file (or use **⋯ → Import MIDI…**): channel 10 becomes drum grids, other channels melody blocks with held notes (or exact `note("…")` code), tempo and velocities come along, longer pieces become a song arrangement. **Export as MIDI…** writes what Strudel actually plays (code blocks and arrangement included) as a Standard MIDI File – own small SMF reader/writer, no dependency ([`src/lib/midi/smf.ts`](src/lib/midi/smf.ts), [`src/agents/midi/`](src/agents/midi/)).
 - **Import Strudel code** – paste code from strudel.cc (or a share link, or drop a file) and get an editable project: tracks, drum grids, chords and effects become blocks, everything else stays as code ([Importing code](#importing-strudel-code)).
@@ -33,7 +35,7 @@ Stack sounds, rhythms and effects like on a mixing desk – strudelmixr writes t
 - **Strudel coverage** – 473 of the 544 functions in the strudel.cc reference run as they are (incl. microtonal tunings, MIDI, device sensors and Csound, loaded only when used); editor widgets like `pianoroll` are ignored, functions that only exist in newer Strudel versions or need an OSC server get a clear message ([`src/data/strudelFunctions.ts`](src/data/strudelFunctions.ts)).
 - **AI agents in the browser** – tools for [WebMCP](#webmcp): agents can read the project, add tracks and blocks, set drum patterns and melodies, arrange songs, import code, change the tempo and play.
 - **English and German** – picked from the browser language, switchable under **About** (instantly, remembered; `?lang=en|de` also works).
-- **Free sounds only** – every sample has a clearly documented free license and is served by strudelmixr itself ([credits](public/samples/CREDITS.md)).
+- **Free sounds only** – every sample has a clearly documented free license and is served by mixr itself ([credits](public/samples/CREDITS.md)).
 - Dark design, comfortable down to tablet size.
 
 **Browser:** current Chrome, Edge, Firefox or Safari. Audio starts after the first click (browser rule).
@@ -48,11 +50,11 @@ Paste Strudel code anywhere on the page (Ctrl/⌘+V), drop a `.js`/`.txt`/`.stru
 - `lpf`, `hpf`, `room`, `crush`, `distort`, `pan`, ADSR, `fast`, `slow`, `ply`, `jux(rev)`, `degradeBy`, `sometimesBy`, filter sweeps … with plain values → effect and rhythm blocks; `delay` only with an explicit time; `gain` → track volume; `slider(3000, …)` → a real control set to 3000.
 - Everything else stays as a code block, in its original place in the chain – it sounds exactly like the original. Every conversion is checked to produce the same events in Strudel as the original code.
 - Visual-only editor functions (`_pianoroll`, `punchcard`, `color` …) are left out – they make no sound and also don't break code blocks.
-- Sounds strudelmixr doesn't ship (General MIDI soundfonts, drum machine samples with unclear licenses) are swapped for free ones; instruments get a matching shape (e.g. a distorted guitar becomes a sawtooth with distortion, filter and a plucked envelope). The preview lists every swap.
+- Sounds mixr doesn't ship (General MIDI soundfonts, drum machine samples with unclear licenses) are swapped for free ones; instruments get a matching shape (e.g. a distorted guitar becomes a sawtooth with distortion, filter and a plucked envelope). The preview lists every swap.
 
 ## WebMCP
 
-[WebMCP](https://webmachinelearning.github.io/webmcp/) lets a page offer tools to AI agents in the browser. strudelmixr registers them on start when `document.modelContext` is available (secure context; Chrome: origin trial from 149 or `chrome://flags/#enable-webmcp-testing`):
+[WebMCP](https://webmachinelearning.github.io/webmcp/) lets a page offer tools to AI agents in the browser. mixr registers them on start when `document.modelContext` is available (secure context; Chrome: origin trial from 149 or `chrome://flags/#enable-webmcp-testing`):
 
 | Tool | |
 |---|---|
@@ -76,7 +78,7 @@ Everything runs in the [DDEV](https://ddev.com) container (Node 24) – no Node 
 
 ```bash
 ddev start                 # starts the container + Astro dev server (daemon, HMR)
-ddev launch                # opens https://strudelmixr.dev.dasachtegebot.local
+ddev launch                # opens https://mixr.dev.dasachtegebot.local
 ddev npm test              # tests (Vitest) – generated code is checked against real Strudel
 ddev npm run check         # type check (astro check, TypeScript strictest)
 ddev npm run build         # production build (SSR, @astrojs/node standalone) into dist/
@@ -89,7 +91,7 @@ The dev server runs as a `web_extra_daemon` (see `.ddev/config.yaml`) and is ser
 ### Deployment
 
 - **Own server (SSR):** `npm run build` + `node dist/server/entry.mjs` – the server renders the page directly in the visitor's language (cookie / `Accept-Language`).
-- **Static hosting / GitHub Pages:** `BUILD_TARGET=static BASE_PATH=/strudelmixr/ npm run build` writes a static site to `dist/` (the browser picks the language). Every push to `master` runs [`.github/workflows/pages.yml`](.github/workflows/pages.yml): tests, type check, static build, deploy to https://schmarante.github.io/strudelmixr/ (Settings → Pages → Source: **GitHub Actions**).
+- **Static hosting / GitHub Pages:** `BUILD_TARGET=static BASE_PATH=/mixr/ npm run build` writes a static site to `dist/` (the browser picks the language). Every push to `master` runs [`.github/workflows/pages.yml`](.github/workflows/pages.yml): tests, type check, static build, deploy to https://schmarante.github.io/mixr/ (Settings → Pages → Source: **GitHub Actions**).
 
 ## Architecture
 
@@ -117,11 +119,11 @@ Astro with **SSR** and **islands**: the server renders the page shell, the inter
 | UI islands | `src/components/ui/` | `TopBar`, `NodeWorkspace`, `ParameterSidebar`, `CodeMonitor` |
 | Languages | `src/i18n/` | `en`/`de` language files per area, typed keys (`t('ui.topbar.play')`), SSR language detection |
 | Sample slots | `src/store/userSamples.ts`, `src/agents/UserSamplesAgent.ts` | Own samples in IndexedDB, registered with the engine |
-| Project files | `src/store/projectFile.ts`, `src/lib/zip.ts` | `strudelmixr.json` + samples as ZIP (own small ZIP reader/writer, no dependency) |
+| Project files | `src/store/projectFile.ts`, `src/lib/zip.ts` | `mixr.json` + samples as ZIP (own small ZIP reader/writer, no dependency) |
 | MIDI | `src/lib/midi/smf.ts`, `src/agents/midi/` | Standard MIDI File reader/writer; MIDI → project (drum grids, melodies, arrangement), project → MIDI (notes from the real Strudel evaluation) |
 | Strudel extensions | `src/agents/strudelExtensions.ts`, `src/data/strudelFunctions.ts` | Loads xen/MIDI/motion/Csound on demand; classification of the whole Strudel API |
 | Templates | `src/data/templates.ts` | Starter projects |
-| Credits | `src/data/credits.ts` | Everything strudelmixr is built on – for **About** and this README |
+| Credits | `src/data/credits.ts` | Everything mixr is built on – for **About** and this README |
 
 ### Languages
 
@@ -129,18 +131,18 @@ All user-facing texts live in `src/i18n/<lang>/<area>.json` (`common`, `ui`, `bl
 
 ## License
 
-strudelmixr is free software under the [**GNU AGPL-3.0-or-later**](LICENSE) – like [Strudel](https://codeberg.org/uzu/strudel), on which it is built. Anyone running strudelmixr publicly or passing it on must meet the AGPL obligations (among others, offer the source code to its users). Only samples with a clearly documented free license are used (CC0, Unlicense, CC-BY-3.0, GPL-3.0-or-later) – origin, authors and license texts are listed in [`public/samples/CREDITS.md`](public/samples/CREDITS.md). Required attribution: "Salamander Grand Piano" by Alexander Holm, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/). All other libraries keep their own licenses (see below and in the app under **About**).
+mixr is free software under the [**GNU AGPL-3.0-or-later**](LICENSE) – like [Strudel](https://codeberg.org/uzu/strudel), on which it is built. Anyone running mixr publicly or passing it on must meet the AGPL obligations (among others, offer the source code to its users). Only samples with a clearly documented free license are used (CC0, Unlicense, CC-BY-3.0, GPL-3.0-or-later) – origin, authors and license texts are listed in [`public/samples/CREDITS.md`](public/samples/CREDITS.md). Required attribution: "Salamander Grand Piano" by Alexander Holm, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/). All other libraries keep their own licenses (see below and in the app under **About**).
 
 ## Built with
 
 <!-- credits:start – generated by scripts/sync-readme.mjs from src/data/credits.ts and src/i18n/en/about.json, do not edit by hand -->
-strudelmixr is built on great open-source projects. Thanks to everyone who contributes to them!
+mixr is built on great open-source projects. Thanks to everyone who contributes to them!
 
 ### Music engine
 
 | Project | Used for | License |
 |---|---|---|
-| [Strudel](https://strudel.cc) | Live-coding music in the browser – the heart of strudelmixr | AGPL-3.0-or-later |
+| [Strudel](https://strudel.cc) | Live-coding music in the browser – the heart of mixr | AGPL-3.0-or-later |
 | [@strudel/core, mini, transpiler](https://codeberg.org/uzu/strudel) | Patterns, mini-notation and running the generated code | AGPL-3.0-or-later |
 | [@strudel/tonal](https://codeberg.org/uzu/strudel) | Scales, chords and voicings | AGPL-3.0-or-later |
 | [@strudel/webaudio, superdough, supradough](https://codeberg.org/uzu/strudel) | Sound generation, effects and sample playback (Web Audio) | AGPL-3.0-or-later |
@@ -162,6 +164,7 @@ strudelmixr is built on great open-source projects. Thanks to everyone who contr
 | [React](https://react.dev) | Interactive islands: mixer, inspector, code view | MIT |
 | [Nano Stores](https://github.com/nanostores/nanostores) | State and event bus between the islands | MIT |
 | [CodeMirror 6](https://codemirror.net) | Code editor with highlighting, search and autocompletion | MIT |
+| [Outfit](https://github.com/Outfitio/Outfit-Fonts) | Typeface for the interface and logo | OFL-1.1 |
 
 ### Sounds & samples
 

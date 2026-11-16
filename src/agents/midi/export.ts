@@ -11,7 +11,7 @@
  * - Drums (`s` = bd/sd/hh/oh/cp/rim, auch mit Bank oder Kit-Präfix) → Kanal 10, GM-Noten.
  * - Andere Samples → Kanal 10 als Perkussion (grob passende GM-Note, Hinweis).
  * - Velocity = gain × velocity (× 127).
- * - Eine MIDI-Spur je strudelmixr-Spur (Drums einer gemischten Spur als eigene MIDI-Spur).
+ * - Eine MIDI-Spur je mixr-Spur (Drums einer gemischten Spur als eigene MIDI-Spur).
  */
 import { t, type TKey, type TParams } from '../../i18n';
 import { writeMidi, type MidiEvent, type MidiTrack } from '../../lib/midi/smf';
@@ -317,7 +317,7 @@ export async function exportMidi(ast: VisualAst, settings: ProjectSettings, opti
 
   const conductor: MidiTrack = {
     events: [
-      { type: 'trackName', tick: 0, text: options.title?.trim() || 'strudelmixr' },
+      { type: 'trackName', tick: 0, text: options.title?.trim() || 'mixr' },
       { type: 'timeSignature', tick: 0, numerator: 4, denominator: 4, clocks: 24, thirtySeconds: 8 },
       { type: 'tempo', tick: 0, microsecondsPerQuarter: Math.round(60_000_000 / bpm) },
       { type: 'endOfTrack', tick: endTick },

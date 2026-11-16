@@ -1,5 +1,5 @@
 /**
- * MIDI-Import: Standard MIDI File → editierbares strudelmixr-Projekt.
+ * MIDI-Import: Standard MIDI File → editierbares mixr-Projekt.
  *
  * Reine Funktion (Node/SSR-sicher), Ergebnis wie beim Code-Importer
  * (`ImportResult`: AST, Einstellungen, übersetzbare Hinweise, Statistik), damit

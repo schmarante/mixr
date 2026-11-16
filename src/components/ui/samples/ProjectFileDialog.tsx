@@ -12,7 +12,7 @@ import { IconButton } from '../primitives/IconButton';
 import { CloseIcon, ImportIcon, InfoIcon, PlusIcon, WarningIcon } from '../primitives/Icons';
 import { autoplayPref } from '../shared/StartOptions';
 
-/** Dialog „Projekt öffnen“ für strudelmixr.json / Projekt-ZIP: ersetzen oder hinzufügen. */
+/** Dialog „Projekt öffnen“ für mixr.json / Projekt-ZIP: ersetzen oder hinzufügen. */
 export function ProjectFileDialog() {
   const { t } = useT();
   const pending = useStore(pendingProject);

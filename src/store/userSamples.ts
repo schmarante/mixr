@@ -84,7 +84,7 @@ export function newSampleId(prefix: 'slot' | 'file'): string {
 /* IndexedDB                                                           */
 /* ------------------------------------------------------------------ */
 
-const DB_NAME = 'strudelmixr-samples';
+const DB_NAME = 'mixr-samples';
 const STORE = 'files';
 let dbPromise: Promise<IDBDatabase> | null = null;
 

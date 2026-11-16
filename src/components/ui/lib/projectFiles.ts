@@ -6,7 +6,7 @@ import {
   exportProjectZip,
   openProjectArchive,
   parseProjectFile,
-  PROJECT_FILE_NAME,
+  isManifestName,
   ProjectFileError,
   projectDownloadName,
   projectSettingsOf,
@@ -135,8 +135,8 @@ function samplesToast(res: { slots: string[]; relinked: number; skipped: number 
 
 /**
  * Verarbeitet hereinkommende Dateien:
- * - ZIP mit strudelmixr.json → Projekt (Dialog ersetzen/hinzufügen), sonst Sample-Ordner
- * - strudelmixr.json → Projekt (fehlende Samples markiert)
+ * - ZIP mit mixr.json → Projekt (Dialog ersetzen/hinzufügen), sonst Sample-Ordner
+ * - mixr.json → Projekt (fehlende Samples markiert)
  * - Audio (auch in Ordnern) → Slots (bzw. in den Ziel-Slot, fehlende werden verknüpft)
  * - .mid/.midi → MIDI-Import (Vorschau, dann ersetzen/hinzufügen)
  * - .js/.txt/.strudel → Code-Import
@@ -152,7 +152,7 @@ export async function handleIncomingFiles(files: DroppedFile[], targetSlotId?: s
           const meta = archive.project.settings.samples?.flatMap((s) => s.files).find((f) => f.id === id);
           await putSampleBlob(id, new Blob([data as BlobPart], { type: meta?.mime ?? '' }));
         }
-        projectName.set(stem(zip.file.name).replace(/^strudelmixr-?/, ''));
+        projectName.set(stem(zip.file.name).replace(/^mixr-?/, ''));
         await offerProject(archive.project, stem(zip.file.name));
         return;
       }
@@ -173,7 +173,7 @@ export async function handleIncomingFiles(files: DroppedFile[], targetSlotId?: s
     const json = files.find((f) => isJsonName(f.path));
     if (json) {
       const project = parseProjectFile(await json.file.text());
-      if (json.file.name !== PROJECT_FILE_NAME) projectName.set(stem(json.file.name).replace(/^strudelmixr-?/, ''));
+      if (!isManifestName(json.file.name)) projectName.set(stem(json.file.name).replace(/^mixr-?/, ''));
       await offerProject(project, stem(json.file.name));
       return;
     }
@@ -248,7 +248,7 @@ function saveBytes(bytes: Uint8Array, fileName: string, type: string): void {
   setTimeout(() => URL.revokeObjectURL(url), 2000);
 }
 
-/** Lädt das Projekt als ZIP herunter (strudelmixr.json + samples/…). */
+/** Lädt das Projekt als ZIP herunter (mixr.json + samples/…). */
 export async function downloadProject(): Promise<void> {
   try {
     const { zip, missing } = await exportProjectZip(visualAstStore.get(), projectSettings.get(), getSampleBlob);

@@ -1,5 +1,5 @@
 /**
- * Projekt-Infos und alles, worauf strudelmixr aufbaut – Single Source für den
+ * Projekt-Infos und alles, worauf mixr aufbaut – Single Source für den
  * „Über“-Dialog (src/components/ui/topbar/AboutDialog.tsx) und den Credits-Abschnitt
  * der README.md (scripts/sync-readme.mjs, läuft vor jedem Build).
  *
@@ -10,7 +10,7 @@
  */
 
 export const ABOUT = {
-  name: 'strudelmixr',
+  name: 'mixr',
   author: 'Marco Schrenk',
   email: 'mail@marco-schrenk.de',
 };
@@ -58,6 +58,7 @@ export const CREDITS: CreditGroup[] = [
       { id: 'react', name: 'React', url: 'https://react.dev', license: 'MIT' },
       { id: 'nanostores', name: 'Nano Stores', url: 'https://github.com/nanostores/nanostores', license: 'MIT' },
       { id: 'codemirror', name: 'CodeMirror 6', url: 'https://codemirror.net', license: 'MIT' },
+      { id: 'outfit', name: 'Outfit', url: 'https://github.com/Outfitio/Outfit-Fonts', license: 'OFL-1.1' },
     ],
   },
   {

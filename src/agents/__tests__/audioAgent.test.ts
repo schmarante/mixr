@@ -131,7 +131,7 @@ describe('describeError', () => {
 
   it('Funktionen aus einer neueren Strudel-Version bzw. bewusst nicht unterstützte', () => {
     expect(describeError(new TypeError('s(...).juxFlip is not a function'))).toBe(
-      '„juxFlip“ gibt es erst in einer neueren Strudel-Version als der, die strudelmixr nutzt – auf strudel.cc läuft es bereits.',
+      '„juxFlip“ gibt es erst in einer neueren Strudel-Version als der, die mixr nutzt – auf strudel.cc läuft es bereits.',
     );
     // Alias einer neuen Funktion
     expect(describeError(new TypeError('s(...).flux is not a function'))).toMatch(/^„flux“ gibt es erst in einer neueren/);
@@ -146,7 +146,7 @@ describe('describeError', () => {
 
     languageStore.set('en');
     expect(describeError(new TypeError('s(...).juxFlip is not a function'))).toBe(
-      '“juxFlip” only exists in a newer Strudel version than the one strudelmixr uses – it already works on strudel.cc.',
+      '“juxFlip” only exists in a newer Strudel version than the one mixr uses – it already works on strudel.cc.',
     );
     expect(describeError(new TypeError('s(...).osc is not a function'))).toMatch(/^“osc” sends OSC messages .*local OSC server/);
   });

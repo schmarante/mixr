@@ -6,7 +6,7 @@ import type { ProjectSettings, VisualAst } from '../types/ast';
  * (z. B. aus einem useEffect oder Astro-<script>), nie beim SSR.
  */
 
-const KEY = 'strudelmixr:project:v1';
+const KEY = 'mixr:project:v1';
 
 interface StoredProject {
   ast: VisualAst;

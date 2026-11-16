@@ -9,7 +9,7 @@ import type { ResolvedTrack } from '../../../types/ast';
  * Tastatur-Alternative: Alt+←/→ (siehe useGlobalShortcuts).
  */
 
-export const DND_MIME = 'application/x-strudelmixr-block';
+export const DND_MIME = 'application/x-mixr-block';
 
 export interface DragInfo {
   blockId: string;

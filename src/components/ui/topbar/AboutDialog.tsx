@@ -21,7 +21,7 @@ function fill(text: string, parts: Record<string, ReactNode>): ReactNode[] {
 
 /**
  * „Über“-Dialog: Name, Beschreibung, Autor, Version, Sprachwahl und alle Projekte,
- * Klänge und Werkzeuge, auf denen strudelmixr aufbaut (Liste: src/data/credits.ts,
+ * Klänge und Werkzeuge, auf denen mixr aufbaut (Liste: src/data/credits.ts,
  * Texte: src/i18n/<sprache>/about.json – dieselben Quellen erzeugen den Credits-Abschnitt
  * der README). Ein Sprachwechsel wirkt sofort, der Dialog bleibt offen.
  */
@@ -57,11 +57,7 @@ export function AboutDialog({ open, onClose }: { open: boolean; onClose: () => v
               <div>
                 <h2 id="about-title" className="text-lg font-semibold">
                   {fill(t('about.heading'), {
-                    name: (
-                      <>
-                        strudel<span className="text-accent">mixr</span>
-                      </>
-                    ),
+                    name: <span className="text-accent">mixr</span>,
                   })}
                 </h2>
                 <p className="mt-1 text-sm text-muted">{t('about.description')}</p>

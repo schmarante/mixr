@@ -1,5 +1,5 @@
 # Tests, builds the static site (BUILD_TARGET=static → dist/) and deploys it to GitHub Pages:
-# https://schmarante.github.io/strudelmixr/
+# https://schmarante.github.io/mixr/
 #
 # The app itself runs with SSR (ddev / Node server); GitHub Pages only serves static files, so this
 # workflow builds the static variant: same app, language picked by the browser instead of the server.
@@ -53,8 +53,8 @@ jobs:
       - name: Type check
         run: npm run check
 
-      # project page lives in a sub directory (/strudelmixr/): base path and public URL come from the Pages
-      # settings (base_path "/strudelmixr", base_url "https://schmarante.github.io/strudelmixr") – astro.config.mjs
+      # project page lives in a sub directory (/mixr/): base path and public URL come from the Pages
+      # settings (base_path "/mixr", base_url "https://schmarante.github.io/mixr") – astro.config.mjs
       # reads both. Repository variable SITE_URL (Settings → Secrets and variables → Actions → Variables)
       # overrides the URL, e.g. for a custom domain.
       - name: Build

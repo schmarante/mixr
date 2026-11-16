@@ -649,7 +649,7 @@ describe('Rundreise (Strudel-Events identisch)', () => {
 /* Beispiel (nur lokal – fremdes Werk, nicht im Repo)                  */
 /* ------------------------------------------------------------------ */
 
-const EXAMPLE = process.env['STRUDEL_IMPORT_EXAMPLE'] ?? 'node_modules/.cache/strudelmixr-local/import-example-feelgood.js';
+const EXAMPLE = process.env['STRUDEL_IMPORT_EXAMPLE'] ?? 'node_modules/.cache/mixr-local/import-example-feelgood.js';
 
 describe.runIf(existsSync(EXAMPLE))('lokales Beispiel (feelgood)', () => {
   const code = existsSync(EXAMPLE) ? readFileSync(EXAMPLE, 'utf8') : '';

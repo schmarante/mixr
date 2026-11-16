@@ -4,12 +4,12 @@ import type { ProjectSettings, UserSampleFile, UserSampleSlot, VisualAst } from 
 import { baseName, isAudioFileName, sanitizeSampleName } from './userSamples';
 
 /**
- * Projektdatei „strudelmixr.json“ und Projekt-ZIP (JSON + samples/<slot>/<datei>).
+ * Projektdatei „mixr.json“ und Projekt-ZIP (JSON + samples/<slot>/<datei>).
  * Reine Funktionen (Node-tauglich, getestet); Audiodaten kommen über einen Getter.
  */
 
-export const PROJECT_FILE_NAME = 'strudelmixr.json';
-export const PROJECT_FORMAT = 'strudelmixr';
+export const PROJECT_FILE_NAME = 'mixr.json';
+export const PROJECT_FORMAT = 'mixr';
 export const PROJECT_VERSION = 1;
 
 export interface ProjectSampleFile extends UserSampleFile {
@@ -60,7 +60,7 @@ export function buildProjectFile(ast: VisualAst, settings: ProjectSettings): Pro
   return file;
 }
 
-/** Dateiname des Downloads: strudelmixr-<name>.zip bzw. .json */
+/** Dateiname des Downloads: mixr-<name>.zip bzw. .json */
 export function projectDownloadName(name: string, ext: 'zip' | 'json'): string {
   const slug = name
     .normalize('NFKD')
@@ -69,7 +69,7 @@ export function projectDownloadName(name: string, ext: 'zip' | 'json'): string {
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
     .slice(0, 40);
-  return `strudelmixr${slug ? `-${slug}` : ''}.${ext}`;
+  return `mixr${slug ? `-${slug}` : ''}.${ext}`;
 }
 
 /**
@@ -146,7 +146,12 @@ function checkSamples(v: unknown): ProjectSampleSlot[] {
   });
 }
 
-/** Prüft und normalisiert eine strudelmixr.json. @throws ProjectFileError */
+/** mixr.json */
+export function isManifestName(fileName: string): boolean {
+  return fileName === PROJECT_FILE_NAME;
+}
+
+/** Prüft und normalisiert eine mixr.json. @throws ProjectFileError */
 export function parseProjectFile(text: string): ProjectFile {
   let data: unknown;
   try {
@@ -184,7 +189,7 @@ export function projectSettingsOf(project: ProjectFile): ProjectSettings {
 }
 
 export interface OpenedArchive {
-  /** Projekt aus strudelmixr.json (fehlt bei reinen Sample-Archiven). */
+  /** Projekt aus mixr.json (fehlt bei reinen Sample-Archiven). */
   project: ProjectFile | null;
   /** Audiodaten je Datei-ID des Projekts. */
   blobs: Map<string, Uint8Array>;
@@ -201,8 +206,8 @@ export async function openProjectArchive(data: Uint8Array): Promise<OpenedArchiv
   } catch (err) {
     throw new ProjectFileError(err instanceof ZipError && err.reason === 'unsupported' ? 'ui.projectFile.errors.zipUnsupported' : 'ui.projectFile.errors.zipBroken');
   }
-  // strudelmixr.json im Wurzelordner oder in genau einem Unterordner (z. B. nach Entpacken/Neu-Packen)
-  const manifest = entries.find((e) => baseName(e.path) === PROJECT_FILE_NAME && e.path.split('/').length <= 2);
+  // mixr.json im Wurzelordner oder in genau einem Unterordner (z. B. nach Entpacken/Neu-Packen)
+  const manifest = entries.find((e) => isManifestName(baseName(e.path)) && e.path.split('/').length <= 2);
   if (!manifest) {
     return { project: null, blobs: new Map(), looseAudio: entries.filter((e) => isAudioFileName(e.path)) };
   }

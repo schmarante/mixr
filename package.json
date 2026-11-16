@@ -1,5 +1,5 @@
 {
-  "name": "strudelmixr",
+  "name": "mixr",
   "type": "module",
   "version": "0.0.1",
   "license": "AGPL-3.0-or-later",
@@ -15,7 +15,8 @@
     "check": "astro check",
     "test": "vitest run",
     "astro": "astro",
-    "readme": "node scripts/sync-readme.mjs"
+    "readme": "node scripts/sync-readme.mjs",
+    "og-image": "node scripts/render-og-image.mjs"
   },
   "dependencies": {
     "@astrojs/node": "^11.1.12",
@@ -51,6 +52,7 @@
     "@strudel/transpiler": "^1.2.6",
     "@types/node": "^26.6.6",
     "typescript": "^6.0.3",
-    "vitest": "^5.1.0"
+    "vitest": "^5.1.0",
+    "wawoff2": "^2.0.1"
   }
 }
