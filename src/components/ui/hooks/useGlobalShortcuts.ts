@@ -2,8 +2,11 @@ import { useEffect } from 'react';
 import { getBlockDef } from '../../../blocks/catalog';
 import { resolvedTracks, uiState } from '../../../store/agentBus';
 import { moveBlock, moveTrack, redo, removeBlock, selectNode, undo } from '../../../store/actions';
+import { t } from '../../../i18n';
+import { showToast } from '../lib/importFlow';
 import { keepPreludeSelection } from '../lib/prelude';
 import { togglePlayback } from '../lib/transport';
+import { nextVisualizerMode, visualizerEnabled } from '../lib/visualizerPref';
 
 /** Ist das Ziel ein Feld, in dem Tasten „normal“ funktionieren sollen? */
 export function isTypingTarget(target: EventTarget | null): boolean {
@@ -33,6 +36,7 @@ function locateBlock(blockId: string) {
  * - Strg/Cmd+Z, Shift+Strg/Cmd+Z, Strg+Y: Rückgängig / Wiederholen
  * - Entf/Backspace: ausgewählten Baustein löschen
  * - Esc: Auswahl aufheben
+ * - V: nächster Visualizer-Modus (nur bei eingeschaltetem Visualizer)
  * - Alt+←/→: ausgewählten Baustein verschieben; Alt+↑/↓: ausgewählte Spur verschieben
  */
 export function useGlobalShortcuts(): void {
@@ -67,6 +71,14 @@ export function useGlobalShortcuts(): void {
       }
 
       if (typing) return;
+
+      if (!mod && !e.altKey && key.toLowerCase() === 'v' && visualizerEnabled.get()) {
+        e.preventDefault();
+        const next = nextVisualizerMode();
+        showToast(t('ui.visualizer.switched', { name: t(`ui.visualizer.modes.${next}`) }));
+        return;
+      }
+
       const selected = uiState.get().selectedNodeId;
 
       if (key === 'Escape') {

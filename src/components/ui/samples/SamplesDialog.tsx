@@ -49,7 +49,7 @@ export function SamplesDialog() {
       onClick={(e) => {
         if (e.target === e.currentTarget) close();
       }}
-      className="m-auto max-h-[min(90dvh,54rem)] w-[min(64rem,calc(100vw-1.5rem))] overflow-hidden rounded-3xl border border-line-strong bg-panel p-0 text-fg shadow-2xl shadow-black/70 backdrop:bg-black/60 open:motion-safe:animate-slide-up"
+      className="m-auto max-h-[min(90dvh,54rem)] w-[min(64rem,calc(100vw-1.5rem))] overflow-hidden rounded-3xl border border-line-strong bg-panel-solid p-0 text-fg shadow-2xl shadow-black/70 backdrop:bg-black/60 open:motion-safe:animate-slide-up"
     >
       {open && (
         <div className="flex max-h-[inherit] flex-col">

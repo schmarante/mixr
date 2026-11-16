@@ -44,7 +44,7 @@ export function Toast() {
           onMouseLeave={() => setPaused(false)}
           onFocus={() => setPaused(true)}
           onBlur={() => setPaused(false)}
-          className="pointer-events-auto flex max-w-full items-center gap-3 rounded-2xl border border-line-strong bg-raised py-2 pr-2 pl-3.5 text-sm text-fg shadow-2xl shadow-black/60 motion-safe:animate-slide-up"
+          className="pointer-events-auto flex max-w-full items-center gap-3 rounded-2xl border border-line-strong bg-raised-solid py-2 pr-2 pl-3.5 text-sm text-fg shadow-2xl shadow-black/60 motion-safe:animate-slide-up"
         >
           <CheckIcon size={16} className="shrink-0 text-ok" />
           <span className="min-w-0">{current.text}</span>

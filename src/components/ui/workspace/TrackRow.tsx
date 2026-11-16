@@ -57,7 +57,7 @@ export function TrackRow({ rt, index, count, selectedId, dropGap, anySolo, diagn
       role="group"
       aria-label={t('ui.workspace.trackGroup', { name: track.params.name })}
       className={cx(
-        'relative flex flex-col overflow-visible border bg-panel transition-colors duration-150 @3xl:flex-row',
+        'glass relative flex flex-col overflow-visible border bg-panel transition-colors duration-150 @3xl:flex-row',
         trackSelected ? cx('ring-1', color.ring, color.border) : containsSelection ? 'border-line-strong' : 'border-line',
       )}
     >

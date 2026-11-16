@@ -73,7 +73,7 @@ export default function ParameterSidebar() {
       data-inspector
       className={cx(
         hasSelection ? 'block' : 'hidden sm:block',
-        'relative max-h-[min(58dvh,42rem)] shrink-0 overflow-y-auto border-t border-line-strong bg-panel shadow-[0_-12px_32px_-12px_rgb(0_0_0/0.6)] motion-safe:animate-fade-in',
+        'relative max-h-[min(58dvh,42rem)] shrink-0 overflow-y-auto glass-scroll border-t border-line-strong bg-panel shadow-[0_-12px_32px_-12px_rgb(0_0_0/0.6)] motion-safe:animate-fade-in',
       )}
     >
       <div className="mx-auto max-w-[110rem] px-4 py-5 sm:px-6">

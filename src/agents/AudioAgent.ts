@@ -22,15 +22,19 @@ import {
   codeOverride,
   compiledStrudelCode,
   lastEvaluation,
+  outputAnalyser,
   playbackState,
   playingCode,
   projectEpoch,
+  trackHits,
   transportCommand,
   uiState,
   type CodeRange,
   type PlaybackState,
+  type TrackHit,
 } from '../store/agentBus';
 import { neededExtensions, type ExtensionId } from './strudelExtensions';
+import { trackBlocksOf, trackHitsBetween, type TrackBlock } from './trackHits';
 
 type StrudelWeb = typeof import('@strudel/web');
 
@@ -425,6 +429,10 @@ let lastAttempted: string | null = null;
 let miniLocations: { code: string; keys: Set<string> } | null = null;
 /** Schlüssel der zuletzt veröffentlichten Highlighter-Positionen (nur bei Änderung neu setzen). */
 let lastLocationsKey = '';
+/** Spurblöcke des zuletzt evaluierten Codes – ordnen Hap-Positionen einer Spur zu. */
+let trackBlocks: TrackBlock[] = [];
+/** Zyklus des letzten Anschlag-Ticks (−1 = neu beginnen). */
+let lastHitCycle = -1;
 
 /** Fehlermeldung als Funktion: liefert den Text in der aktuellen Sprache. */
 type ErrorText = (() => string) | null;
@@ -498,6 +506,7 @@ function onAfterEval({ code, meta }: { code: string; meta?: { miniLocations?: un
   const keys = new Set<string>();
   for (const l of locs) if (Array.isArray(l) && typeof l[0] === 'number' && typeof l[1] === 'number') keys.add(`${l[0]}:${l[1]}`);
   miniLocations = { code, keys };
+  trackBlocks = trackBlocksOf(code);
   playingCode.set(code);
   if (codeErrorRange.get()) codeErrorRange.set(null);
 }
@@ -569,7 +578,28 @@ async function createEngine(ctx: AudioContext): Promise<Engine> {
   if (!workletsAvailable(ctx)) console.warn('[AudioAgent] AudioWorklets nicht verfügbar (kein sicherer Kontext?):', location.origin);
   installReplShims(mod);
   document.addEventListener('strudel.log', onStrudelLog);
-  return { mod, repl, extensions: new Set() };
+  const eng: Engine = { mod, repl, extensions: new Set() };
+  tapOutput(eng);
+  return eng;
+}
+
+/** Analyser für den Visualizer – einer für die ganze Sitzung, wird nach jedem Reset neu angehängt. */
+let analyser: AnalyserNode | null = null;
+
+/**
+ * Hängt den Analyser an den Master-Ausgang von superdough. Muss nach jedem
+ * `resetGlobalEffects()` erneut laufen, weil superdough den Ausgang dabei neu anlegt.
+ */
+function tapOutput(eng: Engine): void {
+  try {
+    const master = eng.mod.getSuperdoughAudioController().output.destinationGain;
+    if (!master) return;
+    analyser ??= new AnalyserNode(master.context, { fftSize: 2048, smoothingTimeConstant: 0.75 });
+    master.connect(analyser);
+    outputAnalyser.set(analyser);
+  } catch (err) {
+    console.warn('[AudioAgent] Visualizer-Analyser nicht angeschlossen:', err);
+  }
 }
 
 /* --------------------------- Zusatzpakete --------------------------- */
@@ -762,6 +792,7 @@ async function evaluateCurrent(eng: Engine): Promise<void> {
     // Nichts zu spielen (z. B. alle Spuren stumm) → Stille, Transport läuft weiter.
     await eng.repl.setPattern(eng.mod.silence, false);
     miniLocations = null;
+    trackBlocks = [];
     playingCode.set(code);
     codeErrorRange.set(null);
     setState({ error: null });
@@ -847,8 +878,29 @@ function playheadLoop(ts: number): void {
     const cycle = eng.repl.scheduler.now();
     setState({ currentCycle: Number.isFinite(cycle) ? Math.max(0, cycle) : 0 });
     updateActiveLocations(eng, cycle);
+    // nur, solange jemand zuhört (Visualizer an)
+    if (trackHits.lc > 0) publishTrackHits(eng, cycle);
   }
   rafId = requestAnimationFrame(playheadLoop);
+}
+
+/** Visualizer: welche Spuren seit dem letzten Tick angeschlagen haben. */
+function publishTrackHits(eng: Engine, cycle: number): void {
+  const pattern = eng.repl.scheduler.pattern;
+  if (!pattern || !Number.isFinite(cycle) || cycle < 0) return;
+  // Erster Tick, Neustart oder Sprung (Tab im Hintergrund): Fenster neu beginnen
+  if (lastHitCycle < 0 || cycle < lastHitCycle || cycle - lastHitCycle > 1) {
+    lastHitCycle = cycle;
+    return;
+  }
+  let hits: TrackHit[] = [];
+  try {
+    hits = trackHitsBetween(pattern, lastHitCycle, cycle, trackBlocks, { _cps: eng.repl.scheduler.cps });
+  } catch {
+    /* Abfragefehler: dieser Tick ohne Anschläge */
+  }
+  lastHitCycle = cycle;
+  if (hits.length) trackHits.set({ hits });
 }
 
 /** Highlighter: gerade klingende Mini-Atome veröffentlichen (nur bei offenem Code-Panel, nur bei Änderung). */
@@ -880,6 +932,7 @@ function clearActiveLocations(): void {
 function startPlayhead(): void {
   if (rafId !== null) return;
   lastPlayheadUpdate = 0;
+  lastHitCycle = -1;
   rafId = requestAnimationFrame(playheadLoop);
 }
 
@@ -904,6 +957,10 @@ function play(): void {
     setState({ status: 'error', error: errorTextOf(err), isPlaying: false });
     return;
   }
+
+  // Frischer Start: Nachhall, Echo und vorausgeplante Töne des letzten Durchlaufs abschneiden –
+  // sonst überlagern sie sich bei schnellem Stop/Play-Wechsel zu Interferenzen.
+  if (engine && !engine.repl.scheduler.started) cutTails(engine);
 
   void (async () => {
     try {
@@ -958,6 +1015,7 @@ function cutTails(eng: Engine): void {
   } catch (err) {
     console.warn('[AudioAgent] Ausklang nicht abgeschnitten:', err);
   }
+  tapOutput(eng);
 }
 
 /**
@@ -1028,7 +1086,6 @@ export function startAudioAgent(): void {
 
   // Neues Projekt: Ausklang abschneiden, von vorne spielen.
   projectEpoch.listen(onProjectLoaded);
-
   // Sprachwechsel: aktuelle Fehlermeldung in der neuen Sprache anzeigen.
   languageStore.listen(() => {
     const render = errorText;

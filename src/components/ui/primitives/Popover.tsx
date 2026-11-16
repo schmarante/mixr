@@ -108,7 +108,7 @@ export function Popover({
       aria-label={label}
       style={pos ? { top: pos.top, left: pos.left, maxHeight: pos.maxHeight } : { top: -9999, left: -9999 }}
       className={cx(
-        'fixed z-50 flex flex-col overflow-hidden rounded-2xl border border-line-strong bg-panel shadow-2xl shadow-black/60',
+        'fixed z-50 flex flex-col overflow-hidden rounded-2xl border border-line-strong bg-panel-solid shadow-2xl shadow-black/60',
         'motion-safe:animate-pop-in',
         className,
       )}

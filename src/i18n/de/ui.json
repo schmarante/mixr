@@ -28,7 +28,14 @@
     "codeShow": "Code anzeigen",
     "codeShowTooltip": "Strudel-Code ansehen",
     "codeHideTooltip": "Code ausblenden",
-    "about": "Über mixr"
+    "about": "Über mixr",
+    "visualizerShow": "Visualizer einblenden",
+    "visualizerHide": "Visualizer ausblenden"
+  },
+  "visualizer": {
+    "next": "Visualizer wechseln",
+    "switched": "Visualizer: {name} – Taste V wechselt",
+    "modes": { "warp": "Warp", "plasma": "Plasma", "mesh": "Mesh" }
   },
   "transport": {
     "play": "Abspielen",

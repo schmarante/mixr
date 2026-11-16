@@ -135,7 +135,7 @@ export function SongPlayBar({ arr, compact = false }: { arr: Arrangement; compac
   }
 
   return (
-    <div className="flex flex-col gap-2 rounded-2xl border border-line bg-panel px-3 py-2.5" role="region" aria-label={t('ui.songBar.label')}>
+    <div className="glass relative flex flex-col gap-2 rounded-2xl border border-line bg-panel px-3 py-2.5" role="region" aria-label={t('ui.songBar.label')}>
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
         {fromStartButton}
         <div className="flex min-w-0 flex-1 items-center gap-3">

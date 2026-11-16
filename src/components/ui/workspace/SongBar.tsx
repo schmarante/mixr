@@ -65,7 +65,7 @@ export function SongBar({ arr }: { arr: Arrangement | undefined }) {
   }
 
   return (
-    <div className="flex flex-wrap items-center gap-3">
+    <div className="glass relative flex flex-wrap items-center gap-3 rounded-2xl border border-line bg-panel px-2 py-1.5">
       <ViewSwitch />
       {view === 'tracks' && <SongPlayBar arr={arr} compact />}
     </div>

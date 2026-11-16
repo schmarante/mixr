@@ -171,7 +171,7 @@ export function ImportDialog() {
         if (e.target === e.currentTarget) closeImport();
       }}
       className={cx(
-        'm-auto w-[min(72rem,calc(100vw-1.5rem))] overflow-hidden rounded-3xl border border-line-strong bg-panel p-0 text-fg shadow-2xl shadow-black/70 backdrop:bg-black/60 open:motion-safe:animate-slide-up',
+        'm-auto w-[min(72rem,calc(100vw-1.5rem))] overflow-hidden rounded-3xl border border-line-strong bg-panel-solid p-0 text-fg shadow-2xl shadow-black/70 backdrop:bg-black/60 open:motion-safe:animate-slide-up',
         'max-h-[min(92dvh,56rem)] lg:h-[min(90dvh,50rem)]',
       )}
     >

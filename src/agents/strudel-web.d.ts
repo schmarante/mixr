@@ -66,6 +66,8 @@ declare module '@strudel/web' {
   export function getAudioContext(): AudioContext;
   /** Trennt Orbits (Hall, Echo, Filter) und Ausgang – alles Klingende verstummt sofort. */
   export function resetGlobalEffects(): void;
+  /** Mischpult von superdough; `output.destinationGain` ist der Master vor `destination` (wird bei resetGlobalEffects neu angelegt). */
+  export function getSuperdoughAudioController(): { output: { destinationGain: GainNode | null } };
   export function samples(
     sampleMap: string | Record<string, unknown>,
     baseUrl?: string,

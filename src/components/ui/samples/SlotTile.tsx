@@ -117,7 +117,7 @@ export function SlotTile({ slot }: { slot: UserSampleSlot }) {
                   type="button"
                   onClick={() => removeSampleFile(slot.id, f.id)}
                   aria-label={t('ui.samples.removeFile', { file: f.fileName })}
-                  className="absolute -top-1.5 -right-1.5 hidden size-4 items-center justify-center rounded-full bg-raised text-muted ring-1 ring-line group-focus-within/var:flex group-hover/var:flex hover:text-danger"
+                  className="absolute -top-1.5 -right-1.5 hidden size-4 items-center justify-center rounded-full bg-raised-solid text-muted ring-1 ring-line group-focus-within/var:flex group-hover/var:flex hover:text-danger"
                 >
                   <CloseIcon size={10} />
                 </button>

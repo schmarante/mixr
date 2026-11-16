@@ -229,6 +229,11 @@ export const TimelineIcon = (p: IconProps) => (
     <rect x="16" y="14" width="5" height="5" rx="1.5" />
   </Svg>
 );
+export const BarsIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M5 20v-6M10 20V8M15 20v-9M20 20V4" />
+  </Svg>
+);
 export const WaveIcon = (p: IconProps) => (
   <Svg {...p}>
     <path d="M3 12h2M7 8v8M11 4v16M15 7v10M19 10v4M21 12h0" />

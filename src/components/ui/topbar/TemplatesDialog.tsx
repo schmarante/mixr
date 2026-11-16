@@ -29,7 +29,7 @@ export function TemplatesDialog({ open, onClose, title }: { open: boolean; onClo
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
-      className="m-auto max-h-[min(88dvh,52rem)] w-[min(60rem,calc(100vw-2rem))] overflow-hidden rounded-3xl border border-line-strong bg-panel p-0 text-fg shadow-2xl shadow-black/70 backdrop:bg-black/60 open:motion-safe:animate-slide-up"
+      className="m-auto max-h-[min(88dvh,52rem)] w-[min(60rem,calc(100vw-2rem))] overflow-hidden rounded-3xl border border-line-strong bg-panel-solid p-0 text-fg shadow-2xl shadow-black/70 backdrop:bg-black/60 open:motion-safe:animate-slide-up"
     >
       {open && (
         <div className="flex max-h-[inherit] flex-col">

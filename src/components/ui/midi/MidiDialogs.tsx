@@ -45,7 +45,7 @@ function Dialog({
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
-      className={`m-auto max-h-[min(88dvh,46rem)] ${wide ? 'w-[min(40rem,calc(100vw-1.5rem))]' : 'w-[min(32rem,calc(100vw-1.5rem))]'} overflow-hidden rounded-3xl border border-line-strong bg-panel p-0 text-fg shadow-2xl shadow-black/70 backdrop:bg-black/60 open:motion-safe:animate-slide-up`}
+      className={`m-auto max-h-[min(88dvh,46rem)] ${wide ? 'w-[min(40rem,calc(100vw-1.5rem))]' : 'w-[min(32rem,calc(100vw-1.5rem))]'} overflow-hidden rounded-3xl border border-line-strong bg-panel-solid p-0 text-fg shadow-2xl shadow-black/70 backdrop:bg-black/60 open:motion-safe:animate-slide-up`}
     >
       {open && <div className="flex max-h-[inherit] flex-col">{children}</div>}
     </dialog>

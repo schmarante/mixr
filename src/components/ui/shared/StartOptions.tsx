@@ -144,7 +144,7 @@ export function StartOptions({ onDone, compact = false }: { onDone?: () => void;
                   onDone?.();
                 }}
                 title={blockDescription(def.type)}
-                className="group flex flex-col items-start gap-1.5 rounded-2xl border border-dashed border-line-strong bg-panel p-3.5 text-left transition-colors hover:border-accent/60 hover:bg-card"
+                className="glass relative group flex flex-col items-start gap-1.5 rounded-2xl border border-dashed border-line-strong bg-panel p-3.5 text-left transition-colors hover:border-accent/60 hover:bg-card"
               >
                 <span className="text-2xl leading-none transition-transform group-hover:scale-110" aria-hidden="true">
                   {def.icon}

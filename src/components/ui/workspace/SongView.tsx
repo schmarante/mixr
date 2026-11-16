@@ -489,10 +489,10 @@ export function SongView({ arr, tracks }: { arr: Arrangement; tracks: ResolvedTr
       <SongPlayBar arr={arr} />
 
       {/* Zeitleiste (scrollt in sich – Kopf und Spurnamen bleiben stehen) */}
-      <div ref={gridRef} className="min-h-0 flex-1 overflow-auto rounded-2xl border border-line bg-panel" data-keep-space>
+      <div ref={gridRef} className="glass-scroll min-h-0 flex-1 overflow-auto rounded-2xl border border-line bg-panel" data-keep-space>
         <div className="relative inline-flex min-w-full flex-col pb-2" role="grid" aria-label={t('ui.song.gridLabel')} aria-rowcount={tracks.length + 1}>
-          <div className="sticky top-0 z-20 flex border-b border-line bg-panel" role="row">
-            <div className="sticky left-0 z-30 flex shrink-0 items-end bg-panel px-3 pb-2 text-xs text-faint" style={{ width: nameWidth }} role="columnheader">
+          <div className="sticky top-0 z-20 flex border-b border-line bg-panel-solid/90 backdrop-blur-sm" role="row">
+            <div className="sticky left-0 z-30 flex shrink-0 items-end bg-panel-solid px-3 pb-2 text-xs text-faint" style={{ width: nameWidth }} role="columnheader">
               {t('ui.song.tracksColumn')}
             </div>
             {sections.map((s, i) => (
@@ -508,7 +508,7 @@ export function SongView({ arr, tracks }: { arr: Arrangement; tracks: ResolvedTr
             const selected = selectedId === rt.track.id;
             return (
               <div key={rt.track.id} className="flex h-14" role="row">
-                <div className="sticky left-0 z-20 flex shrink-0 items-center bg-panel px-2" style={{ width: nameWidth }} role="rowheader">
+                <div className="sticky left-0 z-20 flex shrink-0 items-center bg-panel-solid/90 backdrop-blur-sm px-2" style={{ width: nameWidth }} role="rowheader">
                   <button
                     type="button"
                     onClick={() => selectNode(selected ? null : rt.track.id)}

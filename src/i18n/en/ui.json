@@ -28,7 +28,14 @@
     "codeShow": "Show code",
     "codeShowTooltip": "See the Strudel code",
     "codeHideTooltip": "Hide the code",
-    "about": "About mixr"
+    "about": "About mixr",
+    "visualizerShow": "Show visualizer",
+    "visualizerHide": "Hide visualizer"
+  },
+  "visualizer": {
+    "next": "Switch visualizer",
+    "switched": "Visualizer: {name} – press V to switch",
+    "modes": { "warp": "Warp", "plasma": "Plasma", "mesh": "Mesh" }
   },
   "transport": {
     "play": "Play",

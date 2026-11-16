@@ -128,3 +128,29 @@ export const codeErrorRange = atom<({ code: string } & CodeRange) | null>(null);
  * Schreiber: AudioAgent.
  */
 export const lastEvaluation = atom<{ code: string; ok: boolean } | null>(null);
+
+/**
+ * Analyser am Master-Ausgang (nach allen Effekten) für den Hintergrund-Visualizer.
+ * null, solange die Engine noch nicht geladen ist. Schreiber: AudioAgent.
+ */
+export const outputAnalyser = atom<AnalyserNode | null>(null);
+
+/** Ein Anschlag einer Spur: Spurname plus, was über den Klang bekannt ist (für Frequenz-Schätzungen). */
+export interface TrackHit {
+  /** Spurname wie im Compiler-Kommentar. */
+  name: string;
+  /** Frequenz in Hz (`freq`), falls angegeben. */
+  freq?: number;
+  /** Note als MIDI-Zahl oder Notenname („c3“, „eb4“). */
+  note?: number | string;
+  /** `n` (bei Synths Tonhöhe, bei Samples Index). */
+  n?: number;
+  /** Klangquelle (`s`), z. B. „bd“, „hh“, „sawtooth“, „piano“. */
+  s?: string;
+}
+
+/**
+ * Spur-Anschläge seit dem letzten Playhead-Tick (~30×/s). Wird nur berechnet, solange
+ * jemand zuhört (Visualizer); neues Objekt je Tick mit Anschlägen. Schreiber: AudioAgent.
+ */
+export const trackHits = atom<{ hits: readonly TrackHit[] } | null>(null);

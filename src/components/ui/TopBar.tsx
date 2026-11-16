@@ -10,6 +10,7 @@ import { useImportTriggers } from './hooks/useImportTriggers';
 import { DropOverlay } from './import/DropOverlay';
 import { MidiDialogs } from './midi/MidiDialogs';
 import { midiExportOpen, pickMidiFile } from './lib/midiFlow';
+import { nextVisualizerMode, setVisualizerEnabled, visualizerEnabled, visualizerMode } from './lib/visualizerPref';
 import { ImportDialog } from './import/ImportDialog';
 import { openImport } from './lib/importFlow';
 import { keepPreludeSelection } from './lib/prelude';
@@ -18,7 +19,7 @@ import { cx } from './lib/cx';
 import { modKey } from './lib/platform';
 import { LogoWordmark } from './Logo';
 import { IconButton, PeerTooltip } from './primitives/IconButton';
-import { CodeIcon, DownloadIcon, FolderIcon, ImportIcon, InfoIcon, MidiIcon, RedoIcon, SparklesIcon, UndoIcon, WaveIcon } from './primitives/Icons';
+import { BarsIcon, CodeIcon, DownloadIcon, FolderIcon, ImportIcon, InfoIcon, MidiIcon, RedoIcon, SparklesIcon, UndoIcon, WaveIcon } from './primitives/Icons';
 import { OverflowMenu } from './primitives/Menu';
 import { downloadProject, filesFromInput, handleIncomingFiles, OPEN_FILE_ACCEPT, samplesDialogOpen } from './lib/projectFiles';
 import { ProjectFileDialog } from './samples/ProjectFileDialog';
@@ -42,6 +43,8 @@ export default function TopBar() {
   const { t } = useT();
   const history = useStore(historyState);
   const codeOpen = useStore(uiState).codePanelOpen;
+  const visualizerOn = useStore(visualizerEnabled);
+  const vizMode = useStore(visualizerMode);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const mod = modKey();
@@ -49,7 +52,7 @@ export default function TopBar() {
   const hasTemplates = TEMPLATES.length > 0;
 
   return (
-    <header className="relative z-20 grid h-16 shrink-0 grid-cols-[1fr_auto_1fr] items-center gap-3 border-b border-line bg-panel px-3 sm:px-5">
+    <header className="glass relative z-20 grid h-16 shrink-0 grid-cols-[1fr_auto_1fr] items-center gap-3 border-b border-line bg-panel px-3 sm:px-5">
       <div className="flex min-w-0 items-center gap-3">
         <a href={withBase('')} className="rounded-lg" aria-label={t('ui.topbar.home')}>
           <LogoWordmark />
@@ -134,6 +137,23 @@ export default function TopBar() {
             { id: 'download', label: t('ui.projectFile.download'), icon: <DownloadIcon size={15} />, onSelect: () => void downloadProject() },
             { id: 'midiImport', label: t('midi.ui.importMenu'), icon: <MidiIcon size={15} />, onSelect: pickMidiFile },
             { id: 'midiExport', label: t('midi.ui.exportMenu'), icon: <MidiIcon size={15} />, onSelect: () => midiExportOpen.set(true) },
+            ...(visualizerOn
+              ? [
+                  {
+                    id: 'visualizerNext',
+                    label: t('ui.visualizer.next'),
+                    icon: <SparklesIcon size={15} />,
+                    hint: `${t(`ui.visualizer.modes.${vizMode}`)} · V`,
+                    onSelect: () => void nextVisualizerMode(),
+                  },
+                ]
+              : []),
+            {
+              id: 'visualizer',
+              label: visualizerOn ? t('ui.topbar.visualizerHide') : t('ui.topbar.visualizerShow'),
+              icon: <BarsIcon size={15} />,
+              onSelect: () => setVisualizerEnabled(!visualizerOn),
+            },
             { id: 'about', label: t('ui.topbar.about'), icon: <InfoIcon size={15} />, onSelect: () => setAboutOpen(true) },
           ]}
         />

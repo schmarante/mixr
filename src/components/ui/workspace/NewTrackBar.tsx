@@ -16,7 +16,7 @@ function addTrackWithSource(type: BlockType) {
 export function NewTrackBar() {
   const { t } = useT();
   return (
-    <div className="flex flex-col gap-3 rounded-2xl border border-dashed border-line-strong px-4 py-3.5 sm:flex-row sm:items-center">
+    <div className="glass relative flex flex-col gap-3 rounded-2xl border border-dashed border-line-strong px-4 py-3.5 sm:flex-row sm:items-center">
       <span className="flex items-center gap-2 text-sm font-medium text-muted">
         <PlusIcon size={16} />
         {t('ui.workspace.newTrack')}

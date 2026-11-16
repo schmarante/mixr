@@ -276,8 +276,8 @@ export default function CodeMonitor() {
         id="code-monitor"
         aria-label={t('ui.code.panelLabel')}
         className={cx(
-          'flex min-h-0 flex-col border-line-strong bg-panel motion-safe:animate-fade-in',
-          'max-lg:fixed max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-40 max-lg:h-[72dvh] max-lg:rounded-t-3xl max-lg:border-t max-lg:shadow-2xl max-lg:shadow-black',
+          'glass flex min-h-0 flex-col lg:relative border-line-strong bg-panel motion-safe:animate-fade-in',
+          'max-lg:bg-panel-solid max-lg:fixed max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-40 max-lg:h-[72dvh] max-lg:rounded-t-3xl max-lg:border-t max-lg:shadow-2xl max-lg:shadow-black',
           'lg:w-[26rem] lg:shrink-0 lg:border-l xl:w-[30rem]',
         )}
       >

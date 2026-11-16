@@ -44,7 +44,7 @@ export function PreludeCard({ code, selected }: { code: string; selected: boolea
       onClick={() => selectNode(selected ? null : PRELUDE_ID)}
       title={t('ui.prelude.cardTooltip')}
       className={cx(
-        'group flex w-full min-w-0 items-center gap-3 border bg-panel px-4 py-3 text-left transition-colors duration-150',
+        'glass relative group flex w-full min-w-0 items-center gap-3 border bg-panel px-4 py-3 text-left transition-colors duration-150',
         selected ? 'border-accent/50 ring-1 ring-accent/50' : 'border-line hover:border-line-strong hover:bg-card/60',
       )}
     >

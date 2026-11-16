@@ -51,7 +51,7 @@ function ItemActions({ block, label, visible }: { block: BlockNode; label: strin
   return (
     <div
       className={cx(
-        'absolute -top-3 right-2 z-10 flex gap-0.5 rounded-full border border-line-strong bg-raised p-0.5 shadow-lg shadow-black/40 transition-opacity duration-150',
+        'absolute -top-3 right-2 z-10 flex gap-0.5 rounded-full border border-line-strong bg-raised-solid p-0.5 shadow-lg shadow-black/40 transition-opacity duration-150',
         visible
           ? 'opacity-100'
           : 'pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100',

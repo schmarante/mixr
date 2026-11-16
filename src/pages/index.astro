@@ -5,6 +5,7 @@ import TopBar from '../components/ui/TopBar.tsx';
 import NodeWorkspace from '../components/ui/NodeWorkspace.tsx';
 import ParameterSidebar from '../components/ui/ParameterSidebar.tsx';
 import CodeMonitor from '../components/ui/CodeMonitor.tsx';
+import Visualizer from '../components/ui/Visualizer.tsx';
 import { LogoWordmark } from '../components/ui/Logo.tsx';
 import { translate } from '../i18n';
 import { requestLanguage } from '../i18n/server';
@@ -19,11 +20,12 @@ const lang = requestLanguage(Astro);
 ---
 
 <Layout>
+  <Visualizer client:only="react" />
   <div class="flex h-dvh flex-col">
     <TopBar client:only="react">
       <header
         slot="fallback"
-        class="grid h-16 shrink-0 grid-cols-[1fr_auto_1fr] items-center gap-3 border-b border-line bg-panel px-3 sm:px-5"
+        class="glass relative grid h-16 shrink-0 grid-cols-[1fr_auto_1fr] items-center gap-3 border-b border-line bg-panel px-3 sm:px-5"
       >
         <div class="flex items-center"><LogoWordmark /></div>
         <div class="flex items-center gap-3.5" aria-hidden="true">

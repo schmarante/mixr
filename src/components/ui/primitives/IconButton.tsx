@@ -16,7 +16,7 @@ export function PeerTooltip({ text, kbd, side = 'bottom' }: { text: string; kbd?
     <span
       role="presentation"
       className={cx(
-        'pointer-events-none absolute z-50 whitespace-nowrap rounded-md border border-line-strong bg-raised px-2 py-1 text-xs font-medium text-fg shadow-lg shadow-black/40',
+        'pointer-events-none absolute z-50 whitespace-nowrap rounded-md border border-line-strong bg-raised-solid px-2 py-1 text-xs font-medium text-fg shadow-lg shadow-black/40',
         // scale-0 im Ruhezustand: unsichtbare Tooltips erzeugen so keinen Scroll-Overflow
         'scale-0 opacity-0 transition-opacity duration-150 peer-hover:scale-100 peer-hover:opacity-100 peer-hover:delay-300 peer-focus-visible:scale-100 peer-focus-visible:opacity-100',
         SIDE_CLASSES[side],

@@ -34,15 +34,22 @@
   --font-mono: ui-monospace, "JetBrains Mono", "Cascadia Code", "SFMono-Regular", Menlo, Consolas, "Liberation Mono",
     monospace;
 
-  /* Flächen (von tief nach hoch) */
+  /* Grundfläche (Body) – darauf liegt ggf. der Visualizer */
   --color-canvas: #0b0d12;
-  --color-panel: #10131a;
-  --color-card: #171b24;
-  --color-raised: #1e2330;
-  --color-hover: #262c3a;
+  /* Flächen (von tief nach hoch): Weiß-Transparenzen über der Grundfläche, damit der
+     Visualizer durchscheinen kann. Werte so gewählt, dass sie verschachtelt (Karte im Panel)
+     ungefähr die früheren Volltöne ergeben. */
+  --color-panel: rgb(255 255 255 / 0.025);
+  --color-card: rgb(255 255 255 / 0.04);
+  --color-raised: rgb(255 255 255 / 0.07);
+  --color-hover: rgb(255 255 255 / 0.105);
   /* Raster: jede zweite Vierergruppe etwas dunkler */
-  --color-cell: #1f2431;
-  --color-cell-alt: #191d28;
+  --color-cell: rgb(255 255 255 / 0.07);
+  --color-cell-alt: rgb(255 255 255 / 0.045);
+  /* Deckende Varianten für schwebende Ebenen (Popover, Dialoge, Tooltips, Toasts),
+     unter denen nichts durchscheinen darf */
+  --color-panel-solid: #10131a;
+  --color-raised-solid: #1e2330;
 
   /* Linien */
   --color-line: rgb(255 255 255 / 0.07);
@@ -148,6 +155,34 @@
   * {
     scrollbar-width: thin;
     scrollbar-color: rgb(255 255 255 / 0.14) transparent;
+  }
+}
+
+/*
+ * Glas-Flächen: Header, Spuren, Seitenleisten. Nur bei aktivem Visualizer (html[data-viz])
+ * wird der Hintergrund weichgezeichnet und leicht abgedunkelt – sonst kostet der Blur nichts.
+ *
+ * `.glass` legt den Blur auf ein Pseudoelement hinter das Element (das muss positioniert sein).
+ * So wird das Element selbst weder zum Bezugsrahmen für position:fixed-Nachfahren (Toast und
+ * Drop-Overlay stecken im Header) noch zum Stapelkontext (Tooltips ragen in Nachbarspuren).
+ * `.glass-scroll` ist für Scroll-Container – dort würde das Pseudoelement mitscrollen.
+ */
+@layer components {
+  [data-viz] .glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: inherit;
+    background: rgb(11 13 18 / 0.3);
+    -webkit-backdrop-filter: blur(18px) saturate(1.25);
+    backdrop-filter: blur(18px) saturate(1.25);
+  }
+  [data-viz] .glass-scroll {
+    background-image: linear-gradient(rgb(11 13 18 / 0.3), rgb(11 13 18 / 0.3));
+    -webkit-backdrop-filter: blur(18px) saturate(1.25);
+    backdrop-filter: blur(18px) saturate(1.25);
   }
 }
 

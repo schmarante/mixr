@@ -109,6 +109,18 @@ export const TRACK_COLOR_LABEL_KEYS: Record<TrackColor, TKey> = {
   fuchsia: 'ui.colors.fuchsia',
 };
 
+/** Spurfarben als RGB (die 400er-Töne wie bei `solid`) – für Canvas-Zeichnungen (Visualizer). */
+export const TRACK_COLOR_RGB: Record<TrackColor, readonly [number, number, number]> = {
+  violet: [167, 139, 250],
+  sky: [56, 189, 248],
+  emerald: [52, 211, 153],
+  amber: [251, 191, 36],
+  rose: [251, 113, 133],
+  cyan: [34, 211, 238],
+  lime: [163, 230, 53],
+  fuchsia: [232, 121, 249],
+};
+
 export function trackColor(color: TrackColor | undefined): TrackColorClasses {
   return TRACK_COLOR_CLASSES[color ?? 'violet'] ?? TRACK_COLOR_CLASSES.violet;
 }
