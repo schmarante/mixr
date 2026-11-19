@@ -145,6 +145,17 @@
     @apply outline-2 outline-offset-2 outline-accent;
   }
 
+  /* Auswahllisten: deckendes dunkles Popup. Die Felder selbst haben eine fast transparente
+     Fläche (bg-card), die die Optionen sonst erben – helle Schrift auf hellem Grund. */
+  select {
+    color-scheme: dark;
+  }
+  select option,
+  select optgroup {
+    background-color: var(--color-raised-solid);
+    color: var(--color-fg);
+  }
+
   /* Native <dialog> */
   dialog::backdrop {
     background: rgb(5 6 9 / 0.7);
